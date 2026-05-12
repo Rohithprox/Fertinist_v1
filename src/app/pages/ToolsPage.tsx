@@ -37,7 +37,7 @@ function OvulationCalculator() {
 
   return (
     <div className="flex flex-col gap-[24px]">
-      <div className="grid grid-cols-2 gap-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
         <div className="flex flex-col gap-[8px]">
           <label className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[0.6px] uppercase text-[#4f434f]">First Day of Last Period</label>
           <input
@@ -108,7 +108,7 @@ function BMICalculator() {
 
   return (
     <div className="flex flex-col gap-[24px]">
-      <div className="grid grid-cols-2 gap-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
         <div className="flex flex-col gap-[8px]">
           <label className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[0.6px] uppercase text-[#4f434f]">Weight (kg)</label>
           <input
@@ -174,7 +174,7 @@ function IVFSuccessEstimator() {
 
   return (
     <div className="flex flex-col gap-[24px]">
-      <div className="grid grid-cols-2 gap-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
         <div className="flex flex-col gap-[8px]">
           <label className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[0.6px] uppercase text-[#4f434f]">Age</label>
           <input
@@ -339,8 +339,8 @@ export function ToolsPage() {
       <Header />
 
       {/* Hero */}
-      <div className="relative w-full pt-[130px] bg-[#ffeffc]">
-        <div className="max-w-[1440px] mx-auto px-[80px] py-[64px]">
+      <div className="relative w-full pt-[70px] lg:pt-[130px] bg-[#ffeffc]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
           <div className="inline-flex flex-col items-stretch gap-[8px] mb-[16px]">
             <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[56px] leading-[64px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Your Fertility Toolkit</h1>
             <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
@@ -352,7 +352,7 @@ export function ToolsPage() {
       </div>
 
       {/* Tool Selector + Calculator */}
-      <div className="max-w-[1440px] mx-auto px-[80px] py-[64px]">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
         <SectionHeader title="Interactive Tools" subtitle="Select a tool below to get started — all calculations are private and happen in your browser." />
 
         <div className="flex gap-[32px]">
@@ -403,7 +403,7 @@ export function ToolsPage() {
 
       {/* Disclaimer */}
       <div className="bg-[#fff7fa] w-full py-[48px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           <div className="flex items-start gap-[16px] bg-white rounded-[16px] p-[24px]" style={{ border: "1px solid rgba(167,75,153,0.12)" }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 mt-[1px]">
               <circle cx="12" cy="12" r="10" stroke="#a74b99" strokeWidth="1.8" />
@@ -418,7 +418,7 @@ export function ToolsPage() {
 
       {/* CTA */}
       <div className="w-full py-[64px]" style={{ background: "linear-gradient(135deg, #650a76 0%, #a74b99 100%)" }}>
-        <div className="max-w-[1440px] mx-auto px-[80px] flex flex-col items-center text-center gap-[20px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] flex flex-col items-center text-center gap-[20px]">
           <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-white text-[40px] leading-[1.1] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>
             Tools are a starting point. Our specialists are the answer.
           </h2>
@@ -438,7 +438,7 @@ export function ToolsPage() {
         </div>
       </div>
 
-      <SharedFooter topOffset={2600} />
+      <SharedFooter />
     </div>
   );
 }

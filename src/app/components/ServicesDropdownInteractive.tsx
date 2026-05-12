@@ -97,7 +97,7 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
       />
 
       {/* Integrated Section - flows with the page */}
-      <div className="absolute left-0 right-0 top-[116px] z-[70] flex justify-center">
+      <div className="absolute left-0 right-0 top-full z-[70] flex justify-center">
         <div className="w-full max-w-[1440px]">
           {/* Main Section - matches page style */}
           <div className="relative bg-[#ffeffc] shadow-[0px_6px_12px_-3px_rgba(0,0,0,0.06)]">

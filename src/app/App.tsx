@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../imports/HomePage/HomePage";
-import { ServicesDropdown } from "./components/ServicesDropdown";
 import { IVFPage } from "./pages/IVFPage";
 import { IUIPage } from "./pages/IUIPage";
 import { ICSIPage } from "./pages/ICSIPage";
@@ -18,12 +17,7 @@ export default function App() {
     <BrowserRouter>
       <div className="relative w-full min-h-screen bg-white" style={{ overflowX: "clip" }}>
         <Routes>
-          <Route path="/" element={
-            <>
-              <HomePage />
-              <ServicesDropdown />
-            </>
-          } />
+          <Route path="/" element={<HomePage />} />
           <Route path="/treatments/ivf" element={<IVFPage />} />
           <Route path="/treatments/iui" element={<IUIPage />} />
           <Route path="/treatments/icsi" element={<ICSIPage />} />

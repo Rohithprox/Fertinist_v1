@@ -113,8 +113,8 @@ export function LocationsPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative w-full pt-[130px]" style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
-        <div className="max-w-[1440px] mx-auto px-[80px] py-[80px] flex flex-col items-center text-center">
+      <div className="relative w-full pt-[70px] lg:pt-[130px]" style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px] flex flex-col items-center text-center">
           <div className="inline-flex flex-col items-center gap-[16px] mb-[24px]">
             <span className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[2px] uppercase text-[rgba(255,255,255,0.7)] px-[16px] py-[6px] rounded-full border border-[rgba(255,255,255,0.3)]">
               Andhra Pradesh · India
@@ -138,8 +138,8 @@ export function LocationsPage() {
       </div>
 
       {/* Location Cards */}
-      <div className="max-w-[1440px] mx-auto px-[80px] py-[64px]">
-        <div className="grid grid-cols-2 gap-[32px]">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px]">
           <LocationCard
             name="Nellore"
             badge="Flagship Clinic"
@@ -168,13 +168,13 @@ export function LocationsPage() {
 
       {/* What to expect section */}
       <div className="bg-[#fff7fa] w-full py-[64px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           <div className="inline-flex flex-col items-stretch gap-[8px] mb-[48px]">
             <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] leading-[48px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>What to Expect at Your Visit</h2>
             <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
           </div>
 
-          <div className="grid grid-cols-3 gap-[24px]">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-[24px]">
             {[
               {
                 icon: (
@@ -219,7 +219,7 @@ export function LocationsPage() {
 
       {/* Book Appointment CTA */}
       <div className="w-full py-[80px]" style={{ background: "linear-gradient(135deg, #650a76 0%, #a74b99 100%)" }}>
-        <div className="max-w-[1440px] mx-auto px-[80px] flex flex-col items-center text-center gap-[24px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] flex flex-col items-center text-center gap-[24px]">
           <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-white text-[48px] leading-[1.1] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>
             Ready to Begin Your Journey?
           </h2>
@@ -247,7 +247,7 @@ export function LocationsPage() {
         </div>
       </div>
 
-      <SharedFooter topOffset={1680} />
+      <SharedFooter />
     </div>
   );
 }

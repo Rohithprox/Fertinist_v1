@@ -82,8 +82,8 @@ export function AboutUsPage() {
       <Header />
 
       {/* Hero */}
-      <div className="relative w-full pt-[130px]" style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
-        <div className="max-w-[1440px] mx-auto px-[80px] py-[80px] flex flex-col items-center text-center">
+      <div className="relative w-full pt-[70px] lg:pt-[130px]" style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px] flex flex-col items-center text-center">
           <span className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[2px] uppercase text-[rgba(255,255,255,0.7)] px-[16px] py-[6px] rounded-full border border-[rgba(255,255,255,0.3)] mb-[24px]">
             Nellore · Andhra Pradesh · Since 2010
           </span>
@@ -97,7 +97,7 @@ export function AboutUsPage() {
         </div>
 
         {/* Stats bar */}
-        <div className="max-w-[1440px] mx-auto px-[80px] pb-[0px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] pb-[0px]">
           <div className="bg-[rgba(255,255,255,0.12)] backdrop-blur-sm rounded-t-[24px] px-[48px] py-[32px] grid grid-cols-4 divide-x divide-[rgba(255,255,255,0.2)]">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center gap-[6px] px-[24px]">
@@ -116,8 +116,8 @@ export function AboutUsPage() {
       </div>
 
       {/* Our Story */}
-      <div className="max-w-[1440px] mx-auto px-[80px] py-[80px]">
-        <div className="grid grid-cols-2 gap-[64px] items-center">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[64px] items-center">
           <div>
             <div className="inline-flex flex-col items-stretch gap-[8px] mb-[28px]">
               <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] leading-[48px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Our Story</h2>
@@ -147,12 +147,12 @@ export function AboutUsPage() {
 
       {/* Mission & Vision */}
       <div className="bg-[#ffeffc] w-full py-[80px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           <div className="inline-flex flex-col items-stretch gap-[8px] mb-[48px]">
             <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] leading-[48px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Mission & Vision</h2>
             <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
           </div>
-          <div className="grid grid-cols-2 gap-[32px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[32px]">
             {/* Mission */}
             <div className="bg-white rounded-[24px] p-[40px] flex flex-col gap-[20px]" style={{ boxShadow: "0 4px 24px rgba(167,75,153,0.10)", border: "1px solid rgba(167,75,153,0.10)" }}>
               <div className="flex items-center gap-[16px]">
@@ -189,12 +189,12 @@ export function AboutUsPage() {
       </div>
 
       {/* Why Choose Fertinest */}
-      <div className="max-w-[1440px] mx-auto px-[80px] py-[80px]">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px]">
         <div className="inline-flex flex-col items-stretch gap-[8px] mb-[48px]">
           <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] leading-[48px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Why Choose Fertinest?</h2>
           <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
         </div>
-        <div className="grid grid-cols-3 gap-[24px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
           {whyChooseItems.map((item, i) => (
             <div key={i} className="bg-white rounded-[20px] p-[32px] flex flex-col gap-[16px] transition-all duration-300 hover:-translate-y-[4px]"
               style={{ boxShadow: "0 2px 16px rgba(167,75,153,0.08)", border: "1px solid rgba(167,75,153,0.08)" }}
@@ -213,7 +213,7 @@ export function AboutUsPage() {
 
       {/* Our Commitment */}
       <div className="bg-[#fff7fa] w-full py-[80px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           <div className="inline-flex flex-col items-stretch gap-[8px] mb-[36px]">
             <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] leading-[48px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Our Commitment to You</h2>
             <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
@@ -234,7 +234,7 @@ export function AboutUsPage() {
 
       {/* CTA */}
       <div className="w-full py-[80px]" style={{ background: "linear-gradient(135deg, #650a76 0%, #a74b99 100%)" }}>
-        <div className="max-w-[1440px] mx-auto px-[80px] flex flex-col items-center text-center gap-[24px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] flex flex-col items-center text-center gap-[24px]">
           <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-white text-[48px] leading-[1.1] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>
             Begin Your Journey With Us
           </h2>
@@ -253,7 +253,7 @@ export function AboutUsPage() {
         </div>
       </div>
 
-      <SharedFooter topOffset={3500} />
+      <SharedFooter />
     </div>
   );
 }

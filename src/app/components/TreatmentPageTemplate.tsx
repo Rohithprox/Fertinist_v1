@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { Header } from "./shared/Header";
-import imgFertinestLogo from "../../imports/HomePage/1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
-import imgPhone from "../../imports/HomePage/f6ff35424cf3f566b22f601b5b2c71f39fb514d9.png";
-import imgEmail from "../../imports/HomePage/48e6a4e439e50ac0191d8b0b62687ccdc0bc6db0.png";
+import { Footer as SharedFooter } from "./shared/Footer";
 
 interface Step {
   number: string;
@@ -73,11 +71,11 @@ export function TreatmentPageTemplate({
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
         {/* Content */}
-        <div className="relative max-w-[1440px] mx-auto px-[80px] py-[72px]">
+        <div className="relative max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[72px]">
           <div className="flex flex-col gap-[24px] max-w-[640px]">
             <div className="inline-flex flex-col items-start gap-[10px]">
               <h1
-                className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[64px] leading-[72px] m-0"
+                className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.1] m-0"
                 style={{ fontVariationSettings: "'wdth' 100" }}
               >
                 {treatmentName}
@@ -110,10 +108,10 @@ export function TreatmentPageTemplate({
 
       {/* ── What is [Treatment]? ── */}
       <div className="bg-[#ffeffc] w-full py-[80px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
-          <div className="flex gap-[80px] items-start">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-[80px] items-start">
             {/* Left: sticky heading */}
-            <div className="w-[320px] shrink-0">
+            <div className="w-full lg:w-[320px] shrink-0">
               <div className="inline-flex flex-col gap-[10px]">
                 <h2
                   className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[40px] leading-[48px] m-0"
@@ -162,7 +160,7 @@ export function TreatmentPageTemplate({
 
       {/* ── Is it right for you? ── */}
       <div className="bg-white w-full py-[80px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           <div className="flex flex-col items-center gap-[48px]">
             <div className="inline-flex flex-col items-center gap-[10px]">
               <h2
@@ -174,7 +172,7 @@ export function TreatmentPageTemplate({
               <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
             </div>
 
-            <div className="grid grid-cols-2 gap-[20px] w-full max-w-[1040px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] w-full max-w-[1040px]">
               {rightForYouItems.map((item, i) => (
                 <div
                   key={i}
@@ -213,7 +211,7 @@ export function TreatmentPageTemplate({
 
       {/* ── Timeline / Journey ── */}
       <div className="bg-[#ffeffc] w-full py-[80px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           {/* Heading */}
           <div className="flex flex-col items-center gap-[10px] mb-[16px]">
             <h2
@@ -330,9 +328,9 @@ export function TreatmentPageTemplate({
 
       {/* ── CTA Banner ── */}
       <div className="bg-white w-full py-[72px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px]">
           <div
-            className="rounded-[28px] px-[64px] py-[56px] flex items-center justify-between gap-[48px]"
+            className="rounded-[28px] px-6 sm:px-10 lg:px-[64px] py-10 lg:py-[56px] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-[48px]"
             style={{
               background: "linear-gradient(135deg, #ffeffc 0%, #ffe0f8 100%)",
               border: "1px solid rgba(167,75,153,0.15)",
@@ -372,104 +370,7 @@ export function TreatmentPageTemplate({
         </div>
       </div>
 
-      {/* ── Footer ── */}
-      <div className="bg-[#fff7fa] w-full pt-[48px] pb-[32px]">
-        <div className="max-w-[1440px] mx-auto px-[80px]">
-          <div className="flex gap-[64px] items-start mb-[40px]">
-            {/* Logo + contact */}
-            <div className="flex flex-col gap-[24px] w-[260px] shrink-0">
-              <img
-                src={imgFertinestLogo}
-                alt="Fertinest Logo"
-                className="h-[56px] object-contain object-left"
-                style={{ maxWidth: "180px" }}
-              />
-              <div className="flex flex-col gap-[14px]">
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[#943687] text-[16px] m-0">
-                  Contact Us
-                </p>
-                <div className="flex items-center gap-[10px]">
-                  <img
-                    src={imgPhone}
-                    alt=""
-                    className="w-[18px] h-[18px] object-contain shrink-0"
-                  />
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                    +91 9182039911
-                  </p>
-                </div>
-                <div className="flex items-center gap-[10px]">
-                  <img
-                    src={imgEmail}
-                    alt=""
-                    className="w-[18px] h-[18px] object-contain shrink-0"
-                  />
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                    mythrifertinest@gmail.com
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Nav columns */}
-            <div className="flex gap-[64px] flex-1">
-              <div className="flex flex-col gap-[12px]">
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[#943687] text-[17px] m-0">
-                  Services / Treatments
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Fertility Treatments
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Infertility Conditions
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Maternity &amp; Surgical Care
-                </p>
-              </div>
-              <div className="flex flex-col gap-[12px]">
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[#943687] text-[17px] m-0">
-                  Locations
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Nellore
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Ananthapur
-                </p>
-              </div>
-              <div className="flex flex-col gap-[12px]">
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[#943687] text-[17px] m-0">
-                  Resources
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Fertility Calculators
-                </p>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                  Blogs
-                </p>
-                <Link to="/about" className="hover:opacity-80 transition-opacity">
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] text-black m-0">
-                    About Us
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="w-full mb-[24px]"
-            style={{ height: "1px", background: "rgba(148,54,135,0.15)" }}
-          />
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[14px] text-black text-center m-0">
-            All Rights Reserved &copy; 2026, Mythri Fertinest | Imagined and
-            Crafted By{" "}
-            <span className="font-['Manrope',sans-serif] font-bold">
-              TZYN Studio
-            </span>
-          </p>
-        </div>
-      </div>
+      <SharedFooter />
     </div>
   );
 }

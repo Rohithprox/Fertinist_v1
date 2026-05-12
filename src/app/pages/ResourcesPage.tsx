@@ -148,8 +148,8 @@ export function ResourcesPage() {
       <Header />
 
       {/* Hero */}
-      <div className="relative w-full pt-[130px] bg-[#ffeffc]">
-        <div className="max-w-[1440px] mx-auto px-[80px] py-[64px]">
+      <div className="relative w-full pt-[70px] lg:pt-[130px] bg-[#ffeffc]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
           <div className="inline-flex flex-col items-stretch gap-[8px] mb-[16px]">
             <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[56px] leading-[64px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Fertility Resources</h1>
             <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
@@ -161,7 +161,7 @@ export function ResourcesPage() {
       </div>
 
       {/* Category Filter */}
-      <div className="max-w-[1440px] mx-auto px-[80px] py-[40px]">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[40px]">
         <div className="flex gap-[12px] flex-wrap">
           {categories.map(cat => (
             <button
@@ -182,7 +182,7 @@ export function ResourcesPage() {
 
       {/* Featured Article (only shown when "all" selected) */}
       {activeCategory === "all" && featured && (
-        <div className="max-w-[1440px] mx-auto px-[80px] mb-[48px]">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] mb-[48px]">
           <div
             className="rounded-[24px] p-[48px] flex items-center gap-[48px] cursor-pointer transition-all duration-300 hover:-translate-y-[4px]"
             style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)", boxShadow: "0 8px 40px rgba(167,75,153,0.30)" }}
@@ -214,8 +214,8 @@ export function ResourcesPage() {
       )}
 
       {/* Articles Grid */}
-      <div className="max-w-[1440px] mx-auto px-[80px] pb-[80px]">
-        <div className="grid grid-cols-3 gap-[24px]">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] pb-[80px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
           {rest.map((article, i) => (
             <ArticleCard key={i} article={article} />
           ))}
@@ -228,7 +228,7 @@ export function ResourcesPage() {
         )}
       </div>
 
-      <SharedFooter topOffset={2200} />
+      <SharedFooter />
     </div>
   );
 }

@@ -3000,6 +3000,7 @@ function MeetOurDoctors() {
 
 export default function HomePage() {
   return (
+    <>
     <div className="bg-white relative w-full h-[6400px]" style={{ overflowX: "clip" }} data-name="Home Page">
       <HomepageMobile />
       <div className="absolute h-[548px] left-[710px] top-[165px] w-[681px]" data-name="Gemini_Generated_Image_5wvf7r5wvf7r5wvf 1">
@@ -3248,7 +3249,8 @@ export default function HomePage() {
         </div>
       </div>
       <MeetOurDoctors />
-      <SharedFooter topOffset={5980} />
     </div>
+    <SharedFooter />
+    </>
   );
 }
