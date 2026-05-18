@@ -18,6 +18,16 @@ import imgPhone1 from "./f6ff35424cf3f566b22f601b5b2c71f39fb514d9.png";
 import imgEmail from "./48e6a4e439e50ac0191d8b0b62687ccdc0bc6db0.png";
 import { Header as SharedHeader } from "../../app/components/shared/Header";
 import { Footer as SharedFooter } from "../../app/components/shared/Footer";
+import imgT1  from "../../Fertinest testimonials/1.png";
+import imgT2  from "../../Fertinest testimonials/2.png";
+import imgT3  from "../../Fertinest testimonials/3.png";
+import imgT4  from "../../Fertinest testimonials/4.png";
+import imgT5  from "../../Fertinest testimonials/5.png";
+import imgT6  from "../../Fertinest testimonials/6.png";
+import imgT7  from "../../Fertinest testimonials/7.png";
+import imgT8  from "../../Fertinest testimonials/8.png";
+import imgT9  from "../../Fertinest testimonials/9.png";
+import imgT10 from "../../Fertinest testimonials/10.png";
 
 function Heading() {
   return (
@@ -2998,6 +3008,180 @@ function MeetOurDoctors() {
   );
 }
 
+function ClotheslineMarquee() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox]);
+
+  type Card = { img: string; rotate: number; swing: number; delay: number };
+
+  const cards: Card[] = [
+    { img: imgT1,  rotate: -3,   swing: 3.2, delay: 0    },
+    { img: imgT2,  rotate:  2.5, swing: 2.8, delay: -0.7 },
+    { img: imgT3,  rotate: -2,   swing: 3.5, delay: -1.4 },
+    { img: imgT4,  rotate:  4,   swing: 3.0, delay: -2.0 },
+    { img: imgT5,  rotate: -2.5, swing: 2.7, delay: -0.3 },
+    { img: imgT6,  rotate:  3,   swing: 3.4, delay: -1.7 },
+    { img: imgT7,  rotate: -3.5, swing: 2.9, delay: -0.9 },
+    { img: imgT8,  rotate:  2,   swing: 3.1, delay: -2.3 },
+    { img: imgT9,  rotate: -2,   swing: 3.3, delay: -1.1 },
+    { img: imgT10, rotate:  3.5, swing: 2.8, delay: -0.5 },
+  ];
+
+  // CARD_W=170, CARD_H=240: center at y=240 in container → scale(1.5) fits exactly (top=60, bottom=420)
+  const GAP    = 90;
+  const CARD_W = 170;
+  const CARD_H = 240;
+  const SET_W  = cards.length * (CARD_W + GAP);
+  const loopCards = [...cards, ...cards];
+
+  const swingKF = cards.map((c, i) => `
+    @keyframes cl-swing-${i} {
+      0%,100% { transform:rotate(${(c.rotate - 1.4).toFixed(2)}deg); }
+      50%     { transform:rotate(${(c.rotate + 1.4).toFixed(2)}deg); }
+    }
+  `).join('');
+
+  return (
+    <>
+      {/* ── Lightbox (fixed, shown on card click) ── */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position:"fixed", inset:0, zIndex:9999,
+            background:"rgba(0,0,0,0.90)",
+            display:"flex", alignItems:"center", justifyContent:"center",
+            cursor:"zoom-out",
+            backdropFilter:"blur(6px)",
+          }}
+        >
+          <img
+            src={lightbox}
+            alt="Patient testimonial"
+            onClick={e => e.stopPropagation()}
+            style={{
+              maxHeight:"90vh", maxWidth:"88vw",
+              borderRadius:"10px",
+              boxShadow:"0 40px 100px rgba(0,0,0,0.6)",
+              objectFit:"contain",
+              cursor:"default",
+            }}
+          />
+          <button
+            onClick={() => setLightbox(null)}
+            style={{
+              position:"fixed", top:"20px", right:"28px",
+              width:"40px", height:"40px", borderRadius:"50%",
+              background:"rgba(255,255,255,0.18)", border:"1px solid rgba(255,255,255,0.3)",
+              color:"white", fontSize:"22px", lineHeight:"1",
+              cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center",
+              backdropFilter:"blur(4px)",
+            }}
+          >×</button>
+        </div>
+      )}
+
+      {/* ── Clothesline section ── */}
+      <div style={{ position:"absolute", left:0, top:"4668px", width:"1440px", height:"420px", overflow:"hidden" }}>
+        <style>{`
+          ${swingKF}
+          @keyframes cl-scroll {
+            0%   { transform:translateX(0); }
+            100% { transform:translateX(-${SET_W}px); }
+          }
+          .cl-card {
+            transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
+            cursor: zoom-in;
+          }
+          .cl-card:hover {
+            transform: scale(1.5) !important;
+            box-shadow: 0 28px 60px rgba(0,0,0,0.38), 0 6px 16px rgba(0,0,0,0.18) !important;
+          }
+          .cl-hang:has(.cl-card:hover) {
+            z-index: 10;
+          }
+        `}</style>
+
+        {/* Background */}
+        <div style={{ position:"absolute", inset:0, background:"linear-gradient(180deg,#ede8ee 0%,#e2d8e4 100%)" }} />
+
+        {/* Catenary rope */}
+        <svg
+          style={{ position:"absolute", left:"-20px", top:"80px", zIndex:2, overflow:"visible", pointerEvents:"none" }}
+          width="1480" height="22" viewBox="0 0 1480 22"
+        >
+          <path d="M 0 6 Q 740 18 1480 6" stroke="rgba(0,0,0,0.12)" strokeWidth="5" fill="none" strokeLinecap="round" transform="translate(0,3)" />
+          <path d="M 0 6 Q 740 18 1480 6" stroke="#3a2030" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.82" />
+        </svg>
+
+        {/* Scrolling track — never pauses */}
+        <div
+          className="cl-track"
+          style={{ position:"absolute", top:0, left:0, display:"flex", alignItems:"flex-start", animation:`cl-scroll 36s linear infinite`, willChange:"transform" }}
+        >
+          {loopCards.map((card, i) => {
+            const ki = i % cards.length;
+            return (
+              <div key={i} style={{ flexShrink:0, display:"flex", flexDirection:"column", alignItems:"center", paddingTop:"86px", marginRight:`${GAP}px` }}>
+
+                {/* Metallic pin */}
+                <div style={{
+                  width:"14px", height:"14px", borderRadius:"50%",
+                  background:"radial-gradient(circle at 35% 32%, #e0e0e0, #3a3a3a)",
+                  boxShadow:"0 3px 7px rgba(0,0,0,0.45), inset 0 -1px 2px rgba(0,0,0,0.25)",
+                  zIndex:3, flexShrink:0,
+                }} />
+
+                {/* Swinging group */}
+                <div
+                  className="cl-hang"
+                  style={{
+                    display:"flex", flexDirection:"column", alignItems:"center",
+                    transformOrigin:"top center",
+                    animation:`cl-swing-${ki} ${card.swing}s ease-in-out infinite`,
+                    animationDelay:`${card.delay}s`,
+                    position:"relative",
+                  }}
+                >
+                  {/* Twine */}
+                  <div style={{ width:"1.5px", height:"20px", background:"linear-gradient(180deg,rgba(60,30,40,0.5),rgba(60,30,40,0.15))" }} />
+
+                  {/* Testimonial card — click to open lightbox */}
+                  <div
+                    className="cl-card"
+                    onClick={() => setLightbox(card.img)}
+                    style={{
+                      width:`${CARD_W}px`, height:`${CARD_H}px`,
+                      borderRadius:"5px",
+                      border:"5px solid white",
+                      overflow:"hidden",
+                      position:"relative",
+                      boxShadow:"0 10px 28px rgba(0,0,0,0.22), 0 2px 6px rgba(0,0,0,0.10)",
+                      background:"white",
+                    }}
+                  >
+                    <img
+                      src={card.img}
+                      alt="Patient testimonial"
+                      style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", pointerEvents:"none", imageRendering:"auto" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -3139,115 +3323,7 @@ export default function HomePage() {
         </div>
         <p className="font-['Plus_Jakarta_Sans',sans-serif] font-normal text-[#4f434f] text-[17px] m-0 text-center leading-[28px]">Track your cycle, estimate success rates, and plan your path to parenthood.</p>
       </div>
-      <div className="absolute h-[20px] left-[1303px] top-[4917px] w-[21px]" data-name="Pin">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgPin} />
-      </div>
-      <div className="absolute bg-[#eaeaea] h-[420px] left-0 top-[4668px] w-[1440px]" />
-      <div className="absolute flex h-[146.582px] items-center justify-center left-[68.23px] top-[4721.27px] w-[121.288px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[5.84deg] skew-x-[0.04deg]">
-          <div className="bg-[#068] h-[136.286px] w-[108.088px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[140.765px] items-center justify-center left-[369.98px] top-[4730.58px] w-[113.74px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[-2.44deg] skew-x-[-0.02deg]">
-          <div className="bg-[#068] h-[136.29px] w-[108.085px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[140.765px] items-center justify-center left-[649.89px] top-[4718.07px] w-[113.74px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[-2.44deg] skew-x-[-0.02deg]">
-          <div className="bg-[#ab4a9c] h-[136.29px] w-[108.085px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[140.946px] items-center justify-center left-[929.75px] top-[4718.19px] w-[113.972px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[2.54deg] skew-x-[0.02deg]">
-          <div className="bg-[#43b960] h-[136.29px] w-[108.085px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[140.946px] items-center justify-center left-[1195.55px] top-[4729.98px] w-[113.972px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[2.54deg] skew-x-[0.02deg]">
-          <div className="bg-[#068] h-[136.29px] w-[108.085px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[140.292px] items-center justify-center left-[1062.96px] top-[4901.08px] w-[113.137px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[-2.17deg] skew-x-[-0.02deg]">
-          <div className="bg-[#ab4a9c] h-[136.291px] w-[108.084px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[142.126px] items-center justify-center left-[512.71px] top-[4883.56px] w-[115.485px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[3.21deg] skew-x-[0.02deg]">
-          <div className="bg-[#43b960] h-[136.29px] w-[108.085px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[140.292px] items-center justify-center left-[788.46px] top-[4897.47px] w-[113.137px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[-2.17deg] skew-x-[-0.02deg]">
-          <div className="bg-[#068] h-[136.291px] w-[108.084px]" />
-        </div>
-      </div>
-      <div className="absolute flex h-[142.126px] items-center justify-center left-[210.63px] top-[4878px] w-[115.485px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
-        <div className="flex-none rotate-[3.21deg] skew-x-[0.02deg]">
-          <div className="bg-[#ab4a9c] h-[136.29px] w-[108.085px]" />
-        </div>
-      </div>
-      <div className="absolute h-[145px] left-[51px] top-[4943px] w-[139px]" data-name="Logo Graphic 2">
-        <div className="absolute inset-0 opacity-41 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[135.24%] left-0 max-w-none top-0 w-[84.01%]" src={imgLogoGraphic1} />
-        </div>
-      </div>
-      <div className="absolute flex h-[8.344px] items-center justify-center left-[98.38px] top-[4752.83px] w-[78.984px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
-        <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
-          <div className="h-0 relative w-[79.424px]">
-            <div className="absolute inset-[-1px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 79.4239 1">
-                <line id="Line 1" stroke="var(--stroke-0, white)" x2="79.4239" y1="0.5" y2="0.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex h-[8.344px] items-center justify-center left-[90.07px] top-[4766.74px] w-[78.984px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
-        <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
-          <div className="h-0 relative w-[79.424px]">
-            <div className="absolute inset-[-1px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 79.4239 1">
-                <line id="Line 1" stroke="var(--stroke-0, white)" x2="79.4239" y1="0.5" y2="0.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex h-[8.344px] items-center justify-center left-[90.07px] top-[4793.17px] w-[78.984px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
-        <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
-          <div className="h-0 relative w-[79.424px]">
-            <div className="absolute inset-[-1px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 79.4239 1">
-                <line id="Line 1" stroke="var(--stroke-0, white)" x2="79.4239" y1="0.5" y2="0.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex h-[8.344px] items-center justify-center left-[90.07px] top-[4780.65px] w-[78.984px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
-        <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
-          <div className="h-0 relative w-[79.424px]">
-            <div className="absolute inset-[-1px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 79.4239 1">
-                <line id="Line 1" stroke="var(--stroke-0, white)" x2="79.4239" y1="0.5" y2="0.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex h-[8.344px] items-center justify-center left-[90.07px] top-[4820.98px] w-[78.984px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
-        <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
-          <div className="h-0 relative w-[79.424px]">
-            <div className="absolute inset-[-1px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 79.4239 1">
-                <line id="Line 1" stroke="var(--stroke-0, white)" x2="79.4239" y1="0.5" y2="0.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ClotheslineMarquee />
       <MeetOurDoctors />
     </div>
     <SharedFooter />
