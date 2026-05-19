@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ServicesDropdownInteractive } from "../ServicesDropdownInteractive";
 import imgFertinestLogo from "../../../imports/HomePage/1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
-import imgPhone from "../../../imports/HomePage/ae80eef40c182e316b8185947a4106e808fe0d4c.png";
 
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
@@ -124,7 +123,9 @@ export function Header() {
 
           {/* Phone icon + number */}
           <div style={{ position: "absolute", left: "76.736%", top: "clamp(24px, 3.125vw, 45px)", height: "clamp(32px, 3.472vw, 50px)", display: "flex", alignItems: "center", gap: "clamp(4px, 0.556vw, 8px)" }}>
-            <img alt="" src={imgPhone} style={{ width: "clamp(14px, 1.667vw, 24px)", height: "clamp(14px, 1.667vw, 24px)", objectFit: "contain", flexShrink: 0, pointerEvents: "none" }} />
+            <svg style={{ width: "clamp(14px, 1.667vw, 24px)", height: "clamp(14px, 1.667vw, 24px)", flexShrink: 0, display: "block" }} viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.19h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 8.09 8.09l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
             <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, color: "white", fontSize: "clamp(10px, 1.25vw, 18px)", letterSpacing: "-0.35px", whiteSpace: "nowrap" }}>
               9182039911
             </span>
@@ -174,7 +175,9 @@ export function Header() {
               </Link>
             ))}
             <div className="flex items-center gap-2.5 py-4">
-              <img src={imgPhone} alt="" className="w-[18px] h-[18px] object-contain shrink-0" />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0288c2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.19h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 8.09 8.09l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
               <span className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[#0288c2] text-[16px]">
                 9182039911
               </span>

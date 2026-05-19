@@ -1763,7 +1763,7 @@ function ViewMoreServices() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="absolute left-0 top-[1320px] w-[1440px] flex justify-center" style={{ zIndex: 20 }}>
+    <div className="absolute left-0 top-[1340px] w-[1440px] flex justify-center" style={{ zIndex: 20 }}>
       <button
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -3123,7 +3123,7 @@ function ClotheslineMarquee() {
         {/* Scrolling track — never pauses */}
         <div
           className="cl-track"
-          style={{ position:"absolute", top:0, left:0, display:"flex", alignItems:"flex-start", animation:`cl-scroll 36s linear infinite`, willChange:"transform" }}
+          style={{ position:"absolute", top:0, left:0, display:"flex", alignItems:"flex-start", animation:`cl-scroll 36s linear infinite`, willChange:"transform", zIndex:3 }}
         >
           {loopCards.map((card, i) => {
             const ki = i % cards.length;
