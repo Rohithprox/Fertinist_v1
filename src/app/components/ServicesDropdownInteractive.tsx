@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imgLogoGraphic3 from "../../imports/Group7/33a9e540ef550c40ed9e368f8cbf4c7140399000.png";
 
@@ -57,6 +57,55 @@ const serviceContent: Record<ServiceSection, { title: string; items: Array<{ mai
   },
 };
 
+const navSections: Array<{ key: ServiceSection; label: string; icon: React.ReactNode }> = [
+  {
+    key: "fertility-treatments",
+    label: "Fertility Treatments",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="1.5"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+      </svg>
+    ),
+  },
+  {
+    key: "infertility-conditions",
+    label: "Infertility Conditions",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    ),
+  },
+  {
+    key: "maternity-surgical-care",
+    label: "Maternity & Surgical Care",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
+  },
+  {
+    key: "minimal-access-surgeries",
+    label: "Minimal Access Surgeries",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="6" cy="6" r="3"/>
+        <circle cx="6" cy="18" r="3"/>
+        <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+        <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+        <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+      </svg>
+    ),
+  },
+];
+
 interface ServicesDropdownInteractiveProps {
   isOpen: boolean;
   onClose: () => void;
@@ -83,144 +132,87 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
       "Surgical Sperm Retrieval": "/treatments/pesa-tesa",
     };
     const route = routes[treatment];
-    if (route) {
-      navigate(route);
-    }
+    if (route) navigate(route);
   };
 
   return (
     <>
-      {/* Transparent Backdrop - click to close */}
-      <div
-        className="fixed inset-0 z-[60]"
-        onClick={onClose}
-      />
+      {/* Backdrop */}
+      <div className="fixed inset-0 z-[60]" onClick={onClose} />
 
-      {/* Integrated Section - flows with the page */}
+      {/* Dropdown panel */}
       <div className="absolute left-0 right-0 top-full z-[70] flex justify-center">
         <div className="w-full max-w-[1440px]">
-          {/* Main Section - matches page style */}
           <div className="relative bg-[#ffeffc] shadow-[0px_6px_12px_-3px_rgba(0,0,0,0.06)]">
             <div className="relative flex items-start justify-center min-h-[360px] px-12 py-8">
 
-              {/* Left Navigation */}
-              <div className="w-[280px] flex flex-col gap-4 pt-1">
-                {/* Fertility Treatments */}
-                <div
-                  className={`cursor-pointer transition-colors duration-200 ${
-                    (hoveredSection === "fertility-treatments" || activeSection === "fertility-treatments")
-                      ? "text-[#ab4a9c]"
-                      : "text-black"
-                  }`}
-                  onMouseEnter={() => setHoveredSection("fertility-treatments")}
-                  onMouseLeave={() => setHoveredSection(null)}
-                  onClick={() => setActiveSection("fertility-treatments")}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className={`h-6 w-1 rounded-full transition-all duration-200 ${
-                      (hoveredSection === "fertility-treatments" || activeSection === "fertility-treatments")
-                        ? "bg-[#0287C6]"
-                        : "bg-transparent"
-                    }`} />
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] leading-tight">
-                      Fertility Treatments
-                    </span>
-                  </div>
-                </div>
-
-                {/* Infertility Conditions */}
-                <div
-                  className={`cursor-pointer transition-colors duration-200 ${
-                    (hoveredSection === "infertility-conditions" || activeSection === "infertility-conditions")
-                      ? "text-[#ab4a9c]"
-                      : "text-black"
-                  }`}
-                  onMouseEnter={() => setHoveredSection("infertility-conditions")}
-                  onMouseLeave={() => setHoveredSection(null)}
-                  onClick={() => setActiveSection("infertility-conditions")}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className={`h-6 w-1 rounded-full transition-all duration-200 ${
-                      (hoveredSection === "infertility-conditions" || activeSection === "infertility-conditions")
-                        ? "bg-[#0287C6]"
-                        : "bg-transparent"
-                    }`} />
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] leading-tight">
-                      Infertility Conditions
-                    </span>
-                  </div>
-                </div>
-
-                {/* Maternity & Surgical Care */}
-                <div
-                  className={`cursor-pointer transition-colors duration-200 ${
-                    (hoveredSection === "maternity-surgical-care" || activeSection === "maternity-surgical-care")
-                      ? "text-[#ab4a9c]"
-                      : "text-black"
-                  }`}
-                  onMouseEnter={() => setHoveredSection("maternity-surgical-care")}
-                  onMouseLeave={() => setHoveredSection(null)}
-                  onClick={() => setActiveSection("maternity-surgical-care")}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className={`h-6 w-1 rounded-full transition-all duration-200 ${
-                      (hoveredSection === "maternity-surgical-care" || activeSection === "maternity-surgical-care")
-                        ? "bg-[#0287C6]"
-                        : "bg-transparent"
-                    }`} />
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] leading-tight">
-                      Maternity & Surgical Care
-                    </span>
-                  </div>
-                </div>
-
-                {/* Minimal Access Surgeries */}
-                <div
-                  className={`cursor-pointer transition-colors duration-200 ${
-                    (hoveredSection === "minimal-access-surgeries" || activeSection === "minimal-access-surgeries")
-                      ? "text-[#ab4a9c]"
-                      : "text-black"
-                  }`}
-                  onMouseEnter={() => setHoveredSection("minimal-access-surgeries")}
-                  onMouseLeave={() => setHoveredSection(null)}
-                  onClick={() => setActiveSection("minimal-access-surgeries")}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className={`h-6 w-1 rounded-full transition-all duration-200 ${
-                      (hoveredSection === "minimal-access-surgeries" || activeSection === "minimal-access-surgeries")
-                        ? "bg-[#0287C6]"
-                        : "bg-transparent"
-                    }`} />
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] leading-tight">
-                      Minimal Access Surgeries
-                    </span>
-                  </div>
-                </div>
+              {/* Left nav — category tabs with icons */}
+              <div className="w-[280px] flex flex-col gap-1 pt-1 shrink-0">
+                {navSections.map(({ key, label, icon }) => {
+                  const active = hoveredSection === key || activeSection === key;
+                  return (
+                    <div
+                      key={key}
+                      className={`cursor-pointer rounded-[10px] px-3 py-2.5 transition-all duration-200 ${
+                        active ? "bg-white shadow-sm text-[#ab4a9c]" : "text-[#444] hover:text-[#ab4a9c]"
+                      }`}
+                      onMouseEnter={() => setHoveredSection(key)}
+                      onMouseLeave={() => setHoveredSection(null)}
+                      onClick={() => setActiveSection(key)}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className={`shrink-0 w-[30px] h-[30px] rounded-[8px] flex items-center justify-center transition-colors duration-200 ${
+                          active ? "bg-[#f0dded]" : "bg-[rgba(0,0,0,0.04)]"
+                        }`}>
+                          {icon}
+                        </div>
+                        <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold leading-tight">
+                          {label}
+                        </span>
+                        {active && (
+                          <svg className="ml-auto shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0287C6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
-              {/* Right Content - White Card */}
-              <div className="flex-1 bg-white rounded-[16px] shadow-[0px_2px_6px_rgba(0,0,0,0.06)] p-7 ml-10 max-w-[680px]">
+              {/* Right content — service items */}
+              <div className="flex-1 bg-white rounded-[16px] shadow-[0px_2px_6px_rgba(0,0,0,0.06)] p-7 ml-6 max-w-[680px]">
+                <p className="font-['Manrope',sans-serif] font-bold text-[13px] tracking-[0.6px] uppercase text-[#0287C6] mb-4">
+                  {content.title}
+                </p>
                 <ul className="space-y-3">
                   {content.items.map((item, index) => {
-                    const isClickable = displaySection === "fertility-treatments" &&
-                      (item.main === "IVF" || item.main === "IUI" || item.main === "ICSI" || item.main === "Egg / Sperm / Embryo Freezing" || item.main === "Donor Programs" || item.main === "Surgical Sperm Retrieval");
+                    const isClickable =
+                      displaySection === "fertility-treatments" &&
+                      ["IVF", "IUI", "ICSI", "Egg / Sperm / Embryo Freezing", "Donor Programs", "Surgical Sperm Retrieval"].includes(item.main);
                     return (
                       <li
                         key={index}
-                        className={`flex items-start gap-2.5 text-[15px] leading-[24px] ${
-                          isClickable ? "cursor-pointer hover:opacity-70 transition-opacity" : ""
+                        className={`flex items-start gap-2.5 text-[15px] leading-[24px] group ${
+                          isClickable ? "cursor-pointer" : ""
                         }`}
                         onClick={isClickable ? () => handleTreatmentClick(item.main) : undefined}
                       >
-                        <span className="text-[#943687] mt-0.5">â€¢</span>
+                        <svg
+                          className={`mt-1 shrink-0 transition-colors duration-150 ${isClickable ? "group-hover:stroke-[#650a76]" : ""}`}
+                          width="13" height="13" viewBox="0 0 24 24" fill="none"
+                          stroke="#943687" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6"/>
+                        </svg>
                         <div>
-                          <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[#943687]">
+                          <span className={`font-['Plus_Jakarta_Sans',sans-serif] text-[#943687] font-medium transition-colors duration-150 ${isClickable ? "group-hover:text-[#650a76] group-hover:underline underline-offset-2" : ""}`}>
                             {item.main}
                           </span>
                           {item.sub && (
                             <>
                               {" "}
-                              <span className="text-black font-['Plus_Jakarta_Sans',sans-serif]">
+                              <span className="text-[#666] font-['Plus_Jakarta_Sans',sans-serif]">
                                 {item.sub}
                               </span>
                             </>
@@ -232,8 +224,8 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
                 </ul>
               </div>
 
-              {/* Decorative Logo */}
-              <div className="absolute right-12 top-8 opacity-4 pointer-events-none">
+              {/* Decorative logo */}
+              <div className="absolute right-12 top-8 opacity-[0.04] pointer-events-none">
                 <img src={imgLogoGraphic3} alt="" className="w-[140px] h-auto" />
               </div>
             </div>
