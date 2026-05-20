@@ -402,53 +402,6 @@ export function ToolsPage() {
               </div>
             </div>
 
-            {/* ── Right: tool preview cards ── */}
-            <div className="hidden lg:grid grid-cols-2 gap-[16px] shrink-0 w-[420px]">
-              {[
-                {
-                  name: "Ovulation Calculator",
-                  desc: "Find your fertile window",
-                  color: "#a74b99",
-                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a74b99" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="15" r="1.2" fill="#a74b99"/><circle cx="12" cy="15" r="1.2" fill="#a74b99"/><circle cx="16" cy="15" r="1.2" fill="#a74b99"/></svg>,
-                },
-                {
-                  name: "BMI & Fertility",
-                  desc: "Understand your health range",
-                  color: "#0288c2",
-                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0288c2" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/><rect x="3" y="20" width="18" height="1" rx="0.5" fill="#0288c2" stroke="none"/></svg>,
-                },
-                {
-                  name: "IVF Success Estimator",
-                  desc: "Personalised success rates",
-                  color: "#650a76",
-                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#650a76" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
-                },
-                {
-                  name: "Due Date Calculator",
-                  desc: "Track your pregnancy",
-                  color: "#0288c2",
-                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0288c2" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>,
-                },
-              ].map((tool, i) => (
-                <div
-                  key={tool.name}
-                  className="bg-white rounded-[22px] p-[24px] flex flex-col gap-[16px] cursor-pointer transition-all duration-250 hover:-translate-y-[4px] hover:shadow-lg"
-                  style={{
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
-                    border: `1px solid ${tool.color}20`,
-                    animationDelay: `${i * 80}ms`,
-                  }}
-                >
-                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center shrink-0" style={{ background: `${tool.color}12` }}>
-                    {tool.icon}
-                  </div>
-                  <div>
-                    <p className="font-['Manrope',sans-serif] font-bold text-[14px] text-[#221823] m-0 leading-[21px]">{tool.name}</p>
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[12px] m-0 mt-[3px] leading-[18px]" style={{ color: tool.color }}>{tool.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
 
           </div>
         </div>
