@@ -338,17 +338,123 @@ export function ToolsPage() {
     <div className="bg-white relative w-full" style={{ minHeight: "100vh" }}>
       <Header />
 
-      {/* Hero */}
-      <div className="relative w-full pt-[70px] lg:pt-[130px] bg-[#ffeffc]">
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
-          <div className="inline-flex flex-col items-stretch gap-[8px] mb-[16px]">
-            <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[56px] leading-[64px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Your Fertility Toolkit</h1>
-            <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
+      {/* ── Hero ── */}
+      <div className="relative w-full pt-[70px] lg:pt-[130px] overflow-hidden" style={{ background: "linear-gradient(135deg, #ffeffc 0%, #f5e8ff 55%, #eaf5ff 100%)" }}>
+
+        {/* Decorative blobs */}
+        <div className="absolute top-[-100px] right-[-60px] w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,75,153,0.13) 0%, transparent 68%)" }} />
+        <div className="absolute bottom-[-80px] left-[38%] w-[360px] h-[360px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(2,136,194,0.08) 0%, transparent 70%)" }} />
+        <div className="absolute top-[60px] left-[-40px] w-[280px] h-[280px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(101,10,118,0.06) 0%, transparent 70%)" }} />
+
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[72px] lg:py-[96px]">
+          <div className="flex flex-col lg:flex-row items-center gap-[56px] lg:gap-[80px]">
+
+            {/* ── Left: text ── */}
+            <div className="flex-1 flex flex-col gap-[28px]">
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-[8px] px-[14px] py-[7px] rounded-full self-start" style={{ background: "rgba(167,75,153,0.10)", border: "1px solid rgba(167,75,153,0.22)" }}>
+                <div className="w-[7px] h-[7px] rounded-full shrink-0" style={{ background: "#a74b99" }} />
+                <span className="font-['Manrope',sans-serif] font-bold text-[11px] tracking-[1px] uppercase text-[#a74b99]">Free · No Sign-up Required</span>
+              </div>
+
+              {/* Heading */}
+              <div className="flex flex-col gap-[12px]">
+                <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#221823] text-[48px] sm:text-[58px] lg:text-[70px] leading-[1.03] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>
+                  Your <span style={{ color: "#a74b99" }}>Fertility</span>
+                  <br />
+                  Toolkit
+                </h1>
+                <div className="h-[3px] w-[72px] rounded-full" style={{ background: "linear-gradient(90deg, #a74b99, #650a76)" }} />
+              </div>
+
+              {/* Subtitle */}
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] text-[#4f434f] leading-[30px] m-0 max-w-[500px]">
+                Evidence-based tools to understand your fertility, track your cycle, and plan your path to parenthood — all calculated privately in your browser.
+              </p>
+
+              {/* Trust pills */}
+              <div className="flex flex-wrap gap-[10px]">
+                {[
+                  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a74b99" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, label: "100% Private" },
+                  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0288c2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, label: "Evidence-Based" },
+                  { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#650a76" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, label: "Instant Results" },
+                ].map(item => (
+                  <div key={item.label} className="flex items-center gap-[7px] px-[14px] py-[9px] rounded-full bg-white" style={{ boxShadow: "0 1px 8px rgba(0,0,0,0.07)", border: "1px solid rgba(167,75,153,0.10)" }}>
+                    {item.icon}
+                    <span className="font-['Manrope',sans-serif] font-bold text-[13px] text-[#221823]">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div>
+                <a
+                  href="#tools"
+                  className="inline-flex items-center gap-[10px] font-['Manrope',sans-serif] font-bold text-[16px] text-white px-[32px] py-[16px] rounded-full no-underline transition-all duration-200 hover:opacity-90 hover:-translate-y-[2px]"
+                  style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)", boxShadow: "0 6px 28px rgba(167,75,153,0.35)" }}
+                >
+                  Explore Tools
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* ── Right: tool preview cards ── */}
+            <div className="hidden lg:grid grid-cols-2 gap-[16px] shrink-0 w-[420px]">
+              {[
+                {
+                  name: "Ovulation Calculator",
+                  desc: "Find your fertile window",
+                  color: "#a74b99",
+                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a74b99" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="15" r="1.2" fill="#a74b99"/><circle cx="12" cy="15" r="1.2" fill="#a74b99"/><circle cx="16" cy="15" r="1.2" fill="#a74b99"/></svg>,
+                },
+                {
+                  name: "BMI & Fertility",
+                  desc: "Understand your health range",
+                  color: "#0288c2",
+                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0288c2" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/><rect x="3" y="20" width="18" height="1" rx="0.5" fill="#0288c2" stroke="none"/></svg>,
+                },
+                {
+                  name: "IVF Success Estimator",
+                  desc: "Personalised success rates",
+                  color: "#650a76",
+                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#650a76" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
+                },
+                {
+                  name: "Due Date Calculator",
+                  desc: "Track your pregnancy",
+                  color: "#0288c2",
+                  icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0288c2" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>,
+                },
+              ].map((tool, i) => (
+                <div
+                  key={tool.name}
+                  className="bg-white rounded-[22px] p-[24px] flex flex-col gap-[16px] cursor-pointer transition-all duration-250 hover:-translate-y-[4px] hover:shadow-lg"
+                  style={{
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
+                    border: `1px solid ${tool.color}20`,
+                    animationDelay: `${i * 80}ms`,
+                  }}
+                >
+                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center shrink-0" style={{ background: `${tool.color}12` }}>
+                    {tool.icon}
+                  </div>
+                  <div>
+                    <p className="font-['Manrope',sans-serif] font-bold text-[14px] text-[#221823] m-0 leading-[21px]">{tool.name}</p>
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[12px] m-0 mt-[3px] leading-[18px]" style={{ color: tool.color }}>{tool.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] text-[#4f434f] leading-[30px] m-0 max-w-[560px]">
-            Free, evidence-based tools to help you understand your fertility, track your cycle, and plan your journey.
-          </p>
         </div>
+
+        {/* Bottom fade */}
+        <div className="h-[48px] w-full" style={{ background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.7) 100%)" }} />
       </div>
 
       {/* Tool Selector + Calculator */}
