@@ -1852,7 +1852,7 @@ function Button4() {
 function Group() {
   return (
     <div className="absolute contents left-[900px] top-[2383px]">
-      <div className="absolute h-[300px] left-[900px] top-[2383px] w-[356px]" data-name="Andhra Map 1">
+      <div className="absolute h-[300px] left-[900px] top-[3183px] w-[356px]" data-name="Andhra Map 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAndhraMap1} />
       </div>
     </div>
@@ -2181,7 +2181,7 @@ function Container77() {
 
 function BackgroundBorderShadow2() {
   return (
-    <div className="absolute bg-white left-[290px] max-w-[896px] rounded-[32px] top-[3055px] w-[896px]" data-name="Background+Border+Shadow">
+    <div className="absolute bg-white left-[290px] max-w-[896px] rounded-[32px] top-[3855px] w-[896px]" data-name="Background+Border+Shadow">
       <div className="content-stretch flex flex-col items-start max-w-[inherit] overflow-clip p-px relative rounded-[inherit] size-full">
         <Container77 />
       </div>
@@ -2494,7 +2494,7 @@ function Container93() {
 
 function OurLaboratorySection() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-[683px] items-start left-0 pb-[60px] pl-[99px] pr-[56px] pt-[36px] right-0 top-[1605px]" data-name="Our Laboratory Section">
+    <div className="absolute bg-white content-stretch flex flex-col h-[683px] items-start left-0 pb-[60px] pl-[99px] pr-[56px] pt-[36px] right-0 top-[2405px]" data-name="Our Laboratory Section">
       <Container93 />
     </div>
   );
@@ -2799,7 +2799,7 @@ function Container115() {
 
 function ClinicalSuccessRatesSection() {
   return (
-    <div className="absolute bg-[#fff7fa] content-stretch flex flex-col gap-[80px] items-center left-[-7px] pb-[93px] pt-[97px] right-[-10px] top-[3681px]" data-name="Clinical Success Rates Section">
+    <div className="absolute bg-[#fff7fa] content-stretch flex flex-col gap-[80px] items-center left-[-7px] pb-[93px] pt-[97px] right-[-10px] top-[4481px]" data-name="Clinical Success Rates Section">
       <Container113 />
       <Container115 />
     </div>
@@ -2948,7 +2948,7 @@ function MeetOurDoctors() {
   ];
 
   return (
-    <div className="absolute left-0 top-[5160px] w-[1440px] bg-[#ffeffc] py-[80px]" data-name="Meet Our Doctors">
+    <div className="absolute left-0 top-[1420px] w-[1440px] bg-[#ffeffc] py-[80px]" data-name="Meet Our Doctors">
       {/* Heading */}
       <div className="flex flex-col items-center gap-[8px] mb-[56px]">
         <div className="inline-flex flex-col items-center gap-[8px]">
@@ -3088,7 +3088,7 @@ function ClotheslineMarquee() {
       )}
 
       {/* ── Clothesline section ── */}
-      <div style={{ position:"absolute", left:0, top:"4668px", width:"1440px", height:"420px", overflow:"hidden" }}>
+      <div style={{ position:"absolute", left:0, top:"5468px", width:"1440px", height:"420px", overflow:"hidden" }}>
         <style>{`
           ${swingKF}
           @keyframes cl-scroll {
@@ -3202,12 +3202,12 @@ export default function HomePage() {
       </div>
       <Container64 />
       <ViewMoreServices />
-      <div className="absolute flex h-[380px] items-center justify-center left-[120px] top-[2343px] w-[1200px]">
+      <div className="absolute flex h-[380px] items-center justify-center left-[120px] top-[3143px] w-[1200px]">
         <div className="flex-none rotate-180">
           <div className="bg-[#ab4a9c] h-[380px] rounded-[98px] w-[1200px]" />
         </div>
       </div>
-      <div className="absolute flex items-center justify-center left-[948px] size-[260px] top-[2403px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex items-center justify-center left-[948px] size-[260px] top-[3203px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="-rotate-90 flex-none">
           <div className="relative size-[260px]">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 352.115 352.115">
@@ -3257,10 +3257,10 @@ export default function HomePage() {
           <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
         </p>
       </div>
-      <div className="absolute left-[120px] top-[2435px] w-[760px] flex justify-center">
+      <div className="absolute left-[120px] top-[3235px] w-[760px] flex justify-center">
         <p className="font-['Anek_Latin',sans-serif] font-semibold text-[48px] text-white m-0 leading-[1.1] text-center" style={{ fontVariationSettings: "'wdth' 100" }}>Our Locations</p>
       </div>
-      <div className="absolute left-[140px] top-[2515px] w-[760px] flex justify-center">
+      <div className="absolute left-[140px] top-[3315px] w-[760px] flex justify-center">
         <div className="flex gap-[16px] w-full px-[20px]">
           <a
             href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw"
@@ -3302,21 +3302,22 @@ export default function HomePage() {
           </a>
         </div>
       </div>
+      <MeetOurDoctors />
       <BackgroundBorderShadow2 />
 
       <OurLaboratorySection />
       <ClinicalSuccessRatesSection />
-      <div className="absolute left-[1260px] size-[74px] top-[3194px]" data-name="Next Page">
+      <div className="absolute left-[1260px] size-[74px] top-[3994px]" data-name="Next Page">
         <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgNextPage} />
       </div>
-      <div className="absolute flex items-center justify-center left-[134px] size-[74px] top-[3196px]">
+      <div className="absolute flex items-center justify-center left-[134px] size-[74px] top-[3996px]">
         <div className="flex-none rotate-180">
           <div className="relative size-[74px]" data-name="Next Page">
             <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgNextPage} />
           </div>
         </div>
       </div>
-      <div className="absolute left-0 top-[2800px] w-[1440px] flex flex-col items-center gap-[14px]">
+      <div className="absolute left-0 top-[3600px] w-[1440px] flex flex-col items-center gap-[14px]">
         <div className="inline-flex flex-col items-stretch gap-[8px]">
           <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[48px] leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>Your Fertility Toolkit</h2>
           <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
@@ -3324,7 +3325,6 @@ export default function HomePage() {
         <p className="font-['Plus_Jakarta_Sans',sans-serif] font-normal text-[#4f434f] text-[17px] m-0 text-center leading-[28px]">Track your cycle, estimate success rates, and plan your path to parenthood.</p>
       </div>
       <ClotheslineMarquee />
-      <MeetOurDoctors />
     </div>
     <SharedFooter />
     </>

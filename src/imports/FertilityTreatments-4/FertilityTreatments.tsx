@@ -1683,7 +1683,7 @@ function Container83() {
 
 export default function FertilityTreatments() {
   return (
-    <div className="bg-white relative w-full min-h-screen" data-name="Fertility Treatments">
+    <div className="bg-white relative w-full" data-name="Fertility Treatments">
       <div className="absolute h-[552px] left-0 top-[165px] w-[1445px]" data-name="IVF Hero 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIvfHero1} />
       </div>
@@ -1772,6 +1772,8 @@ export default function FertilityTreatments() {
         <p className="leading-[24px]">Five dedicated stages designed for safety, precision, and the highest success potential.</p>
       </div>
       <Header />
+      {/* Spacer pushes the footer below all absolutely-positioned content (~3610px deep) */}
+      <div style={{ height: "3750px" }} aria-hidden="true" />
       <SharedFooter topOffset={3872} />
     </div>
   );
