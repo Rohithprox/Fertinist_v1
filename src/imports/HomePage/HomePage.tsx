@@ -2979,7 +2979,7 @@ function MeetOurDoctors() {
               style={{ border: `3px solid ${doc.accent}30`, background: `linear-gradient(135deg, ${doc.accent}18, ${doc.accent}35)` }}
             >
               {doc.photo ? (
-                <img src={doc.photo} alt={doc.name} className="w-full h-full object-cover object-top" style={{ transform: "scale(1.35)", transformOrigin: "top center" }} />
+                <img src={doc.photo} alt={doc.name} className="w-full h-full object-cover" style={{ transform: "scale(1.5)", transformOrigin: "50% 18%" }} />
               ) : (
                 <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
                   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke={doc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
