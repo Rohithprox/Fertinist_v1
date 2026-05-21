@@ -387,19 +387,6 @@ export function ToolsPage() {
                 ))}
               </div>
 
-              {/* CTA */}
-              <div>
-                <a
-                  href="#tools"
-                  className="inline-flex items-center gap-[10px] font-['Manrope',sans-serif] font-bold text-[16px] text-white px-[32px] py-[16px] rounded-full no-underline transition-all duration-200 hover:opacity-90 hover:-translate-y-[2px]"
-                  style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)", boxShadow: "0 6px 28px rgba(167,75,153,0.35)" }}
-                >
-                  Explore Tools
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
             </div>
 
 
