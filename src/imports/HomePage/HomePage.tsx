@@ -3,6 +3,7 @@ import svgPaths from "./svg-vjjq4l2gti";
 import imgCompassionateCare from "./18240dddcbf6c4f7795ef985ee035eeefcb55433.png";
 import imgHappyCouple from "./3ad14ffb65dd2e98b968b5d03edbb1317c95771e.png";
 import imgDoctor from "./a80c7ab28b3375de2899d3aa5a1bf96cfc38fe5f.png";
+import imgDoctorNew from "./WhatsApp Image 2026-05-21 at 11.06.49 AM.jpeg";
 import imgImage from "./c07bed52fb37b7ddaae3cfd4898d9b22b9ad0db7.png";
 import imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1 from "./b6bd2fc974842d66a403aa9f941daba3aa320b37-removebg-preview.png";
 import imgLogoGraphic1 from "./33a9e540ef550c40ed9e368f8cbf4c7140399000.png";
@@ -2937,6 +2938,7 @@ function MeetOurDoctors() {
       qualifications: "MBBS, MS (OBG), Fellowship in Reproductive Medicine",
       specialties: ["IVF / ICSI", "Recurrent Pregnancy Loss", "Endometriosis", "PCOS Management"],
       accent: "#a74b99",
+      photo: imgDoctorNew,
     },
     {
       name: "Dr. Srinivas Reddy",
@@ -2944,6 +2946,7 @@ function MeetOurDoctors() {
       qualifications: "MBBS, MS (OBG), Dip. in Assisted Reproductive Technology",
       specialties: ["Male Infertility", "PESA / TESA", "Donor Programs", "Advanced ART"],
       accent: "#0288c2",
+      photo: null,
     },
   ];
 
@@ -2970,15 +2973,19 @@ function MeetOurDoctors() {
             className="bg-white rounded-[28px] flex flex-col items-center p-[40px] gap-[20px] flex-1 max-w-[580px]"
             style={{ boxShadow: "0 4px 32px rgba(167,75,153,0.10)", border: "1px solid rgba(167,75,153,0.10)" }}
           >
-            {/* Image placeholder */}
+            {/* Doctor photo */}
             <div
-              className="w-[200px] h-[200px] rounded-full flex items-center justify-center shrink-0"
-              style={{ background: `linear-gradient(135deg, ${doc.accent}18, ${doc.accent}35)`, border: `3px solid ${doc.accent}30` }}
+              className="w-[200px] h-[200px] rounded-full overflow-hidden shrink-0 flex items-center justify-center"
+              style={{ border: `3px solid ${doc.accent}30`, background: `linear-gradient(135deg, ${doc.accent}18, ${doc.accent}35)` }}
             >
-              <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke={doc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="12" cy="7" r="4" stroke={doc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              {doc.photo ? (
+                <img src={doc.photo} alt={doc.name} className="w-full h-full object-cover object-top" />
+              ) : (
+                <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke={doc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="12" cy="7" r="4" stroke={doc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )}
             </div>
 
             {/* Name & title */}
