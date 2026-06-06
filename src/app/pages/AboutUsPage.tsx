@@ -98,7 +98,7 @@ export function AboutUsPage() {
 
         {/* Stats bar */}
         <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] pb-[0px]">
-          <div className="bg-[rgba(255,255,255,0.12)] backdrop-blur-sm rounded-t-[24px] px-[48px] py-[32px] grid grid-cols-4 divide-x divide-[rgba(255,255,255,0.2)]">
+          <div className="bg-[rgba(255,255,255,0.12)] backdrop-blur-sm rounded-t-[24px] px-[16px] sm:px-[48px] py-[32px] grid grid-cols-2 sm:grid-cols-4 gap-y-[24px] sm:gap-y-0 sm:divide-x divide-[rgba(255,255,255,0.2)]">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center gap-[6px] px-[24px]">
                 <span className="font-['Anek_Latin',sans-serif] font-semibold text-[40px] text-white leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>{stat.value}</span>

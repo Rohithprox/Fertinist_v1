@@ -1726,7 +1726,7 @@ function Container64() {
   ];
 
   return (
-    <div className="absolute gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(3,minmax(0,1fr))] items-start left-[77px] right-[78px] top-[988px]" data-name="Container">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[32px] px-5 sm:px-10 lg:px-[80px] w-full" data-name="Container">
       {cards.map((card, i) => {
         const isHovered = hoveredIndex === i;
         const anyHovered = hoveredIndex !== null;
@@ -1764,7 +1764,7 @@ function ViewMoreServices() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="absolute left-0 top-[1340px] w-[1440px] flex justify-center" style={{ zIndex: 20 }}>
+    <div className="flex justify-center mt-[40px]" style={{ zIndex: 20 }}>
       <button
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1816,7 +1816,7 @@ function RotatingWord() {
 
 function Background11() {
   return (
-    <div className="absolute bg-[#43c5fd] content-stretch flex gap-[16.405px] h-[41.426px] items-center left-[100px] pl-[22.195px] pr-[22.44px] py-[5.79px] rounded-[9649.216px] top-[180px]" data-name="Background">
+    <div className="bg-[#43c5fd] inline-flex gap-[16.405px] h-[41.426px] items-center pl-[22.195px] pr-[22.44px] py-[5.79px] rounded-[9649.216px]" data-name="Background">
       <div className="h-[24.055px] relative shrink-0 w-[25.986px]" data-name="Icon">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.9855 26.0555">
           <path d={svgPaths.p164ee00} fill="var(--fill-0, #004F6B)" id="Icon" />
@@ -1841,7 +1841,7 @@ function Background11() {
 
 function Button4() {
   return (
-    <div className="absolute bg-[#a74b99] content-stretch flex flex-col items-center justify-center left-[100px] px-[30.881px] py-[15.44px] rounded-[48px] top-[555px]" data-name="Button">
+    <div className="relative bg-[#a74b99] inline-flex flex-col items-center justify-center px-[30.881px] py-[15.44px] rounded-[48px] self-start cursor-pointer" data-name="Button">
       <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.61px_-0.02px_0] rounded-[23.16px] shadow-[0px_9.65px_14.475px_-2.895px_rgba(0,0,0,0.1),0px_3.86px_5.79px_-3.86px_rgba(0,0,0,0.1)]" data-name="Button:shadow" />
       <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[17.37px] text-center text-white whitespace-nowrap">
         <p className="leading-[27.021px]">Start Your Journey</p>
@@ -2172,7 +2172,7 @@ function Container86() {
 function Container77() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[_364px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid flex flex-col sm:grid sm:grid-cols-[repeat(2,minmax(0,1fr))] relative w-full">
         <Background12 />
         <Container86 />
       </div>
@@ -2182,7 +2182,7 @@ function Container77() {
 
 function BackgroundBorderShadow2() {
   return (
-    <div className="absolute bg-white left-[290px] max-w-[896px] rounded-[32px] top-[3855px] w-[896px]" data-name="Background+Border+Shadow">
+    <div className="bg-white w-full max-w-[896px] mx-auto rounded-[32px]" data-name="Background+Border+Shadow">
       <div className="content-stretch flex flex-col items-start max-w-[inherit] overflow-clip p-px relative rounded-[inherit] size-full">
         <Container77 />
       </div>
@@ -2194,8 +2194,8 @@ function BackgroundBorderShadow2() {
 function Heading19() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 2">
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#650a76] text-[48px] tracking-[-1.2px] w-full">
-        <p className="leading-[48px]">Our Laboratory</p>
+      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#650a76] text-[32px] sm:text-[48px] tracking-[-1.2px] w-full">
+        <p className="leading-[1.2] sm:leading-[48px]">Our Laboratory</p>
       </div>
     </div>
   );
@@ -2393,7 +2393,7 @@ function Container95() {
 
 function Container94() {
   return (
-    <div className="col-[1/span_5] content-stretch flex flex-col gap-[32px] items-start justify-self-stretch relative row-1 self-center shrink-0" data-name="Container">
+    <div className="flex-[5] flex flex-col gap-[32px] items-start relative self-center shrink-0 min-w-0" data-name="Container">
       <Heading19 />
       <Container95 />
     </div>
@@ -2450,7 +2450,7 @@ function Background13() {
 
 function Container109() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[16px] items-start justify-self-stretch pt-[48px] relative row-1 self-start shrink-0" data-name="Container">
+    <div className="flex flex-col gap-[16px] items-start relative self-start shrink-0" data-name="Container">
       <Ab6AXuD54JAjKmRcJpdldObCpGxUabcts8GhR8TNwNpq8Fsxvofw1JH9FgZiIDcXvgVj7NB7RWfTxTkuwqHjXpQm6TaYeMxIPzexqNj2MzHy7HvKz5NpIhWcU0QUaYVo5Di2GqPjJdKvx7Jk8Mczq9Ep0Kt49T4XtMs3S0XBxvmLRkRt2U0TKn2CnX3Yq2AAIgExb0JOdJybyfvqi5SaxvvH0HdopsZxj6G2Eyx3ZjMH2Omu24Yzz5Wyh7WM7ACWiLoAnCgWoK />
       <Background13 />
     </div>
@@ -2469,7 +2469,7 @@ function Ab6AXuB8HIuYOuoXteVycObqunBgCwKxPjZkgY7Ef3M0T4YtPFnHb6AF2HTHjRj9Id0Amf7
 
 function Container112() {
   return (
-    <div className="col-2 content-stretch flex flex-col items-start justify-self-stretch pb-[92px] relative row-1 self-start shrink-0" data-name="Container">
+    <div className="flex flex-col items-start relative self-start shrink-0" data-name="Container">
       <Ab6AXuB8HIuYOuoXteVycObqunBgCwKxPjZkgY7Ef3M0T4YtPFnHb6AF2HTHjRj9Id0Amf7ImP4MqHMu6XS0KcikaAEcthJd1R4X6JRmfz9AAp9CtgvGLur5PqbQehXaC46MrQtYKMMdCYR7GMn4Iq0DDn0VoNnZjFdXys0ZoDIoH2K63GnImoxhGMtVy5YKTrZXvcaIlqmr90S4DdHunTr1Z1TWdwheEk5UOdo5Sojkcn0Gdl86TUbrUop20Bbj7B39V2CHhmF />
     </div>
   );
@@ -2477,7 +2477,7 @@ function Container112() {
 
 function Container108() {
   return (
-    <div className="col-[6/span_7] gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[_604px] justify-self-stretch relative row-1 self-center shrink-0" data-name="Container">
+    <div className="flex-[7] grid grid-cols-1 sm:grid-cols-2 gap-[16px] relative self-center min-w-0" data-name="Container">
       <Container109 />
       <Container112 />
     </div>
@@ -2486,7 +2486,7 @@ function Container108() {
 
 function Container93() {
   return (
-    <div className="gap-x-[64px] gap-y-[64px] grid grid-cols-[repeat(12,minmax(0,1fr))] grid-rows-[_604px] relative shrink-0 w-full" data-name="Container">
+    <div className="flex flex-col lg:flex-row gap-[48px] lg:gap-[64px] relative shrink-0 w-full" data-name="Container">
       <Container94 />
       <Container108 />
     </div>
@@ -2495,7 +2495,7 @@ function Container93() {
 
 function OurLaboratorySection() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-[683px] items-start left-0 pb-[60px] pl-[99px] pr-[56px] pt-[36px] right-0 top-[2405px]" data-name="Our Laboratory Section">
+    <div className="bg-white w-full flex flex-col items-start py-[40px] px-5 sm:px-10 lg:pl-[99px] lg:pr-[56px] lg:pt-[36px] lg:pb-[60px]" data-name="Our Laboratory Section">
       <Container93 />
     </div>
   );
@@ -2504,8 +2504,8 @@ function OurLaboratorySection() {
 function Heading23() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading 2">
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#650a76] text-[48px] text-center whitespace-nowrap">
-        <p className="leading-[48px]">Clinical Success Rates</p>
+      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#650a76] text-[32px] sm:text-[48px] text-center">
+        <p className="leading-[1.2] sm:leading-[48px]">Clinical Success Rates</p>
       </div>
     </div>
   );
@@ -2514,9 +2514,8 @@ function Heading23() {
 function Container114() {
   return (
     <div className="content-stretch flex flex-col items-center max-w-[672px] relative shrink-0 w-[672px]" data-name="Container">
-      <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#4f434f] text-[18px] text-center whitespace-nowrap">
-        <p className="leading-[28px] mb-0">Our commitment to scientific rigor translates directly into industry-leading</p>
-        <p className="leading-[28px]">outcomes for our patients.</p>
+      <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#4f434f] text-[18px] text-center max-w-[640px] px-4">
+        <p className="leading-[28px]">Our commitment to scientific rigor translates directly into industry-leading outcomes for our patients.</p>
       </div>
     </div>
   );
@@ -2730,7 +2729,7 @@ function Stat2() {
 
 function Container116() {
   return (
-    <div className="gap-x-[48px] gap-y-[48px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[_306.25px] relative shrink-0 w-full" data-name="Container">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-[32px] sm:gap-[48px] relative shrink-0 w-full" data-name="Container">
       <Stat />
       <Stat1 />
       <Stat2 />
@@ -2751,7 +2750,7 @@ function Heading27() {
 function Container128() {
   return (
     <div className="content-stretch flex flex-col items-start opacity-70 relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[16px] text-white whitespace-nowrap">
+      <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[16px] text-white opacity-70">
         <p className="leading-[24px]">Schedule a technical walkthrough with our lead embryologists.</p>
       </div>
     </div>
@@ -2760,7 +2759,7 @@ function Container128() {
 
 function Container127() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[469.11px]" data-name="Container">
+    <div className="flex flex-col items-start relative shrink-0 flex-1 min-w-0" data-name="Container">
       <Heading27 />
       <Container128 />
     </div>
@@ -2792,7 +2791,7 @@ function Background14() {
 
 function Container115() {
   return (
-    <div className="content-stretch flex flex-col gap-[80px] items-start max-w-[1152px] px-[32px] relative shrink-0 w-[1152px]" data-name="Container">
+    <div className="w-full max-w-[1152px] flex flex-col gap-[48px] lg:gap-[80px] items-start px-5 sm:px-8 lg:px-[32px] relative shrink-0" data-name="Container">
       <Container116 />
     </div>
   );
@@ -2800,7 +2799,7 @@ function Container115() {
 
 function ClinicalSuccessRatesSection() {
   return (
-    <div className="absolute bg-[#fff7fa] content-stretch flex flex-col gap-[80px] items-center left-[-7px] pb-[93px] pt-[97px] right-[-10px] top-[4481px]" data-name="Clinical Success Rates Section">
+    <div className="bg-[#fff7fa] w-full flex flex-col gap-[60px] lg:gap-[80px] items-center py-[60px] lg:py-[80px]" data-name="Clinical Success Rates Section">
       <Container113 />
       <Container115 />
     </div>
@@ -2907,7 +2906,7 @@ function Button8() {
 
 function Container132() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[586.67px]" data-name="Container">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 flex-1 min-w-0" data-name="Container">
       <div className="h-[24px] relative shrink-0 w-[34px]" data-name="Icon">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 34 24">
           <path d={svgPaths.pd303f00} fill="var(--fill-0, #FFD6FE)" id="Icon" opacity="0.5" />
@@ -2922,7 +2921,7 @@ function Container132() {
 
 function SectionSuccessStorySnippet() {
   return (
-    <div className="absolute content-stretch flex gap-[48px] items-center left-[190px] overflow-clip p-[80px] rounded-[48px] top-[5268px] w-[1088px]" style={{ backgroundImage: "linear-gradient(135.426deg, rgb(171, 74, 156) 32.762%, rgb(85, 15, 91) 110.34%)" }} data-name="Section - Success Story Snippet">
+    <div className="w-full flex flex-col lg:flex-row gap-[40px] lg:gap-[48px] items-center overflow-clip p-[32px] sm:p-[56px] lg:p-[80px] rounded-[32px] lg:rounded-[48px]" style={{ backgroundImage: "linear-gradient(135.426deg, rgb(171, 74, 156) 32.762%, rgb(85, 15, 91) 110.34%)" }} data-name="Section - Success Story Snippet">
       <BackgroundTexture />
       <Container130 />
       <Container132 />
@@ -2951,11 +2950,11 @@ function MeetOurDoctors() {
   ];
 
   return (
-    <div className="absolute left-0 top-[1420px] w-[1440px] bg-[#ffeffc] py-[80px]" data-name="Meet Our Doctors">
+    <div className="w-full bg-[#ffeffc] py-[60px] lg:py-[80px]" data-name="Meet Our Doctors">
       {/* Heading */}
       <div className="flex flex-col items-center gap-[8px] mb-[56px]">
         <div className="inline-flex flex-col items-center gap-[8px]">
-          <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[48px] leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>
+          <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[32px] sm:text-[48px] leading-[1.2] sm:leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>
             Meet Our Specialists
           </h2>
           <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
@@ -2966,7 +2965,7 @@ function MeetOurDoctors() {
       </div>
 
       {/* Doctor Cards */}
-      <div className="flex gap-[40px] px-[80px] justify-center">
+      <div className="flex flex-col sm:flex-row gap-[32px] lg:gap-[40px] px-5 sm:px-10 lg:px-[80px] justify-center">
         {doctors.map((doc, i) => (
           <div
             key={i}
@@ -3095,7 +3094,7 @@ function ClotheslineMarquee() {
       )}
 
       {/* ── Clothesline section ── */}
-      <div style={{ position:"absolute", left:0, top:"5468px", width:"1440px", height:"420px", overflow:"hidden" }}>
+      <div style={{ position:"relative", width:"100%", height:"420px", overflow:"hidden" }}>
         <style>{`
           ${swingKF}
           @keyframes cl-scroll {
@@ -3192,148 +3191,135 @@ function ClotheslineMarquee() {
 export default function HomePage() {
   return (
     <>
-    <div className="bg-white relative w-full h-[6400px]" style={{ overflowX: "clip" }} data-name="Home Page">
-      <HomepageMobile />
-      <div className="absolute h-[548px] left-[710px] top-[165px] w-[681px]" data-name="Gemini_Generated_Image_5wvf7r5wvf7r5wvf 1">
-        <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1} />
-      </div>
-      <div className="absolute h-[338px] left-[664px] top-[390px] w-[200px]" data-name="Logo Graphic 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover opacity-17 pointer-events-none size-full" src={imgLogoGraphic1} />
-      </div>
-      <div className="absolute bg-[#ffeffc] h-[720px] left-0 rounded-tl-[98px] rounded-tr-[98px] top-[700px] w-[1440px]" />
-      <div className="absolute left-0 top-[880px] w-[1440px] flex justify-center">
-        <div className="inline-flex flex-col items-stretch gap-[8px]">
-          <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[48px] leading-[56px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Our Services</h2>
-          <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
-        </div>
-      </div>
-      <Container64 />
-      <ViewMoreServices />
-      <div className="absolute flex h-[380px] items-center justify-center left-[120px] top-[3143px] w-[1200px]">
-        <div className="flex-none rotate-180">
-          <div className="bg-[#ab4a9c] h-[380px] rounded-[98px] w-[1200px]" />
-        </div>
-      </div>
-      <div className="absolute flex items-center justify-center left-[948px] size-[260px] top-[3203px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
-        <div className="-rotate-90 flex-none">
-          <div className="relative size-[260px]">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 352.115 352.115">
-              <circle cx="176.057" cy="176.057" fill="url(#paint0_linear_1_553)" fillOpacity="0.5" id="Ellipse 1" r="176.057" />
-              <defs>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_553" x1="176.057" x2="176.057" y1="0" y2="352.115">
-                  <stop stopColor="#D9D9D9" />
-                  <stop offset="1" stopColor="white" stopOpacity="0.24" />
-                </linearGradient>
-              </defs>
-            </svg>
+      <div className="bg-white relative w-full" style={{ overflowX: "clip" }}>
+
+        {/* ── Header ── */}
+        <SharedHeader />
+
+        {/* ── Hero ── */}
+        <div className="relative w-full overflow-hidden pt-[80px] lg:pt-[100px]">
+          {/* Logo watermark — desktop only */}
+          <div className="absolute h-[338px] right-[80px] top-[80px] w-[200px] pointer-events-none hidden lg:block" style={{ opacity: 0.17 }}>
+            <img alt="" className="max-w-none object-cover size-full" src={imgLogoGraphic1} />
           </div>
-        </div>
-      </div>
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Manrope',sans-serif] font-extrabold justify-center leading-[0] left-[100px] text-[#221823] text-[64.481px] top-[335px] tracking-[-1.737px] w-[800px]">
-        <p className="font-['Anek_Latin',sans-serif] font-semibold leading-[64.481px] mb-0" style={{ fontVariationSettings: "'wdth' 100" }}>
-          Building Families
-        </p>
-        <p className="font-['Anek_Latin',sans-serif] font-semibold">
-          <span className="leading-[64.481px]" style={{ fontVariationSettings: "'wdth' 100" }}>{`with `}</span>
-          <span className="leading-[64.481px] text-[#ab4a9c]" style={{ fontVariationSettings: "'wdth' 100" }}>
-            Science
-          </span>
-          <span className="leading-[64.481px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` and `}</span>
-          <span className="leading-[64.481px] text-[#ab4a9c]" style={{ fontVariationSettings: "'wdth' 100" }}>
-            Soul
-          </span>
-          <span className="leading-[64.481px] tracking-[-52.111px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-            .
-          </span>
-        </p>
-      </div>
-      <SharedHeader />
-      <Background11 />
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] left-[100px] text-[#4f434f] text-[17.37px] top-[468px] whitespace-nowrap">
-        <p className="leading-[28.227px] mb-0">Experienced Fertility Specialists, 95% Success Rate, and State-of-</p>
-        <p className="leading-[28.227px] mb-0">the-art ART Labs in the heart of Nellore. Your journey to parenthood</p>
-        <p className="leading-[28.227px]">begins with empathy.</p>
-      </div>
-      <Button4 />
-      <Group1 />
-      <div className="absolute bg-white h-[90px] left-[275px] rounded-[97.403px] shadow-[0px_3.896px_3.896px_0px_rgba(0,0,0,0.25)] top-[735px] w-[890.909px]" />
-      <Button5 />
-      <div className="absolute flex items-center justify-center left-[275px] top-[735px] h-[90px] w-[890.909px]">
-        <p className="font-['Anek_Telugu',sans-serif] font-bold m-0 text-[#0383c5] text-[34px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100", lineHeight: '38.961px', marginTop: '12px' }}>
-          <RotatingWord />
-          <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
-        </p>
-      </div>
-      <div className="absolute left-[120px] top-[3235px] w-[760px] flex justify-center">
-        <p className="font-['Anek_Latin',sans-serif] font-semibold text-[48px] text-white m-0 leading-[1.1] text-center" style={{ fontVariationSettings: "'wdth' 100" }}>Our Locations</p>
-      </div>
-      <div className="absolute left-[140px] top-[3315px] w-[760px] flex justify-center">
-        <div className="flex gap-[16px] w-full px-[20px]">
-          <a
-            href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 no-underline"
-            style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}
-          >
-            <div className="flex items-center justify-between mb-[10px]">
-              <div className="flex items-center gap-[12px]">
-                <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0">
-                  <path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/>
-                </svg>
-                <p className="font-['Anek_Latin',sans-serif] font-semibold text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Nellore</p>
+
+          <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[100px]">
+            {/* Badge */}
+            <div className="mb-[20px]">
+              <Background11 />
+            </div>
+
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] lg:gap-[0]">
+              {/* Left: heading + subtitle + CTA */}
+              <div className="flex-1 flex flex-col gap-[24px] lg:pr-[40px]">
+                <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#221823] text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.02] m-0 tracking-[-1.5px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+                  Building Families<br />
+                  with <span className="text-[#ab4a9c]">Science</span> and <span className="text-[#ab4a9c]">Soul</span>.
+                </h1>
+                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[#4f434f] text-[16px] sm:text-[17px] leading-[28px] m-0 max-w-[480px]">
+                  Experienced Fertility Specialists, 95% Success Rate, and State-of-the-art ART Labs in the heart of Nellore. Your journey to parenthood begins with empathy.
+                </p>
+                <Button4 />
               </div>
-              <span style={{ background: 'rgba(255,195,244,0.25)', color: '#ffc3f4', fontSize: '11px', fontFamily: 'Manrope, sans-serif', fontWeight: 700, padding: '4px 10px', borderRadius: '99px', border: '1px solid rgba(255,195,244,0.4)', letterSpacing: '0.6px', textTransform: 'uppercase' }}>Flagship</span>
-            </div>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
-          </a>
 
-          <a
-            href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 no-underline"
-            style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}
-          >
-            <div className="flex items-center gap-[12px] mb-[10px]">
-              <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0">
-                <path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/>
-              </svg>
-              <p className="font-['Anek_Latin',sans-serif] font-semibold text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Ananthapur</p>
+              {/* Right: hero image — desktop only */}
+              <div className="hidden lg:block w-[580px] h-[520px] shrink-0 relative">
+                <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1} />
+              </div>
             </div>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
-          </a>
-        </div>
-      </div>
-      <MeetOurDoctors />
-      <BackgroundBorderShadow2 />
 
-      <OurLaboratorySection />
-      <ClinicalSuccessRatesSection />
-      <div className="absolute left-[1260px] size-[74px] top-[3994px]" data-name="Next Page">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgNextPage} />
-      </div>
-      <div className="absolute flex items-center justify-center left-[134px] size-[74px] top-[3996px]">
-        <div className="flex-none rotate-180">
-          <div className="relative size-[74px]" data-name="Next Page">
-            <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgNextPage} />
+            {/* Hero image — mobile only */}
+            <div className="block lg:hidden w-full h-[260px] sm:h-[320px] relative mt-[16px]">
+              <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1} />
+            </div>
+
+            {/* Telugu banner */}
+            <div className="mt-[24px] mb-[40px] bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
+              <p className="font-['Anek_Telugu',sans-serif] font-bold m-0 text-[#0383c5] text-[18px] sm:text-[28px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100", lineHeight: '38px', marginTop: '4px' }}>
+                <RotatingWord />
+                <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="absolute left-0 top-[3600px] w-[1440px] flex flex-col items-center gap-[14px]">
-        <div className="inline-flex flex-col items-stretch gap-[8px]">
-          <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[48px] leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>Your Fertility Toolkit</h2>
-          <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
+
+        {/* ── Services ── */}
+        <div className="bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full pt-[56px] pb-[56px] lg:pt-[80px] lg:pb-[80px]">
+          <div className="flex justify-center mb-[40px] lg:mb-[56px]">
+            <div className="inline-flex flex-col items-stretch gap-[8px]">
+              <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[36px] sm:text-[48px] leading-[56px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Our Services</h2>
+              <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
+            </div>
+          </div>
+          <Container64 />
+          <ViewMoreServices />
         </div>
-        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-normal text-[#4f434f] text-[17px] m-0 text-center leading-[28px]">Track your cycle, estimate success rates, and plan your path to parenthood.</p>
+
+        {/* ── Meet Our Doctors ── */}
+        <MeetOurDoctors />
+
+        {/* ── Our Laboratory ── */}
+        <OurLaboratorySection />
+
+        {/* ── Locations ── */}
+        <div className="relative w-full overflow-hidden py-[56px] lg:py-[80px]">
+          {/* Purple pill background */}
+          <div className="absolute inset-0 bg-[#ab4a9c] rounded-[40px] sm:rounded-[60px] lg:rounded-[98px] mx-5 sm:mx-10 lg:mx-[120px] pointer-events-none" />
+          {/* Andhra Map — desktop only */}
+          <div className="absolute right-[160px] top-[30px] h-[300px] w-[356px] pointer-events-none hidden xl:block opacity-40">
+            <img alt="" className="max-w-none object-cover size-full" src={imgAndhraMap1} />
+          </div>
+          <div className="relative max-w-[800px] mx-auto px-8 sm:px-12 lg:px-[40px]">
+            <p className="font-['Anek_Latin',sans-serif] font-semibold text-[32px] sm:text-[48px] text-white m-0 leading-[1.1] text-center mb-[32px]" style={{ fontVariationSettings: "'wdth' 100" }}>Our Locations</p>
+            <div className="flex flex-col sm:flex-row gap-[16px] w-full">
+              <a href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw" target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
+                <div className="flex items-center justify-between mb-[10px]">
+                  <div className="flex items-center gap-[12px]">
+                    <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0"><path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/></svg>
+                    <p className="font-['Anek_Latin',sans-serif] font-semibold text-[22px] sm:text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Nellore</p>
+                  </div>
+                  <span style={{ background: 'rgba(255,195,244,0.25)', color: '#ffc3f4', fontSize: '11px', fontFamily: 'Manrope, sans-serif', fontWeight: 700, padding: '4px 10px', borderRadius: '99px', border: '1px solid rgba(255,195,244,0.4)', letterSpacing: '0.6px', textTransform: 'uppercase' }}>Flagship</span>
+                </div>
+                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
+              </a>
+              <a href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw" target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
+                <div className="flex items-center gap-[12px] mb-[10px]">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0"><path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/></svg>
+                  <p className="font-['Anek_Latin',sans-serif] font-semibold text-[22px] sm:text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Ananthapur</p>
+                </div>
+                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Fertility Toolkit ── */}
+        <div className="w-full py-[56px] lg:py-[80px] flex flex-col items-center gap-[14px] px-5">
+          <div className="inline-flex flex-col items-stretch gap-[8px]">
+            <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[32px] sm:text-[48px] leading-[1.2] sm:leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>Your Fertility Toolkit</h2>
+            <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
+          </div>
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] font-normal text-[#4f434f] text-[16px] sm:text-[17px] m-0 text-center leading-[28px] max-w-[560px]">Track your cycle, estimate success rates, and plan your path to parenthood.</p>
+        </div>
+
+        {/* ── Ovulation Tracker preview card ── */}
+        <div className="flex justify-center px-5 sm:px-10 lg:px-[80px] mb-[60px] lg:mb-[80px]">
+          <BackgroundBorderShadow2 />
+        </div>
+
+        {/* ── Clinical Success Rates ── */}
+        <ClinicalSuccessRatesSection />
+
+        {/* ── Success Story ── */}
+        <div className="px-5 sm:px-10 lg:px-[80px] py-[40px] lg:py-[60px]">
+          <SectionSuccessStorySnippet />
+        </div>
+
+        {/* ── Testimonials ── */}
+        <ClotheslineMarquee />
+
       </div>
-      <ClotheslineMarquee />
-    </div>
-    <SharedFooter />
+      <SharedFooter />
     </>
   );
 }
