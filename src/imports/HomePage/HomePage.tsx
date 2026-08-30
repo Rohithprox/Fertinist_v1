@@ -1816,15 +1816,15 @@ function RotatingWord() {
 
 function Background11() {
   return (
-    <div className="bg-[#43c5fd] inline-flex gap-[16.405px] h-[41.426px] items-center pl-[22.195px] pr-[22.44px] py-[5.79px] rounded-[9649.216px]" data-name="Background">
+    <div className="bg-[#43c5fd] inline-flex gap-[10px] lg:gap-[16.405px] min-h-[41.426px] max-w-full items-center pl-[16px] pr-[16px] lg:pl-[22.195px] lg:pr-[22.44px] py-[8px] lg:py-[5.79px] rounded-[9649.216px]" data-name="Background">
       <div className="h-[24.055px] relative shrink-0 w-[25.986px]" data-name="Icon">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.9855 26.0555">
           <path d={svgPaths.p164ee00} fill="var(--fill-0, #004F6B)" id="Icon" />
         </svg>
       </div>
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[17.3px] whitespace-nowrap">
+      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center relative min-w-0 text-[12.5px] sm:text-[15px] lg:text-[17.3px] lg:whitespace-nowrap">
         <p
-          className="leading-[15.44px]"
+          className="leading-[1.35]"
           style={{
             background: 'linear-gradient(90deg, #004f6b 0%, #004f6b 30%, #a8eeff 45%, #ffffff 50%, #a8eeff 55%, #004f6b 70%, #004f6b 100%)',
             backgroundSize: '200% auto',
@@ -1833,7 +1833,7 @@ function Background11() {
             backgroundClip: 'text',
             animation: 'text-shimmer 3s linear infinite',
           }}
-        >{`NELLORE'S LEADING FERTILITY CENTRE`}</p>
+        >{`LEADING FERTILITY CENTER WITH ASSURED CARE & HIGHEST SUCCESS RATE`}</p>
       </div>
     </div>
   );
@@ -3197,7 +3197,7 @@ export default function HomePage() {
         <SharedHeader />
 
         {/* ── Hero ── */}
-        <div className="relative w-full overflow-hidden pt-[80px] lg:pt-[100px]">
+        <div className="relative w-full overflow-hidden pt-[80px] lg:pt-[130px]">
           {/* Logo watermark — desktop only */}
           <div className="absolute h-[338px] right-[80px] top-[80px] w-[200px] pointer-events-none hidden lg:block" style={{ opacity: 0.17 }}>
             <img alt="" className="max-w-none object-cover size-full" src={imgLogoGraphic1} />
