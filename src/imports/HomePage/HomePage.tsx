@@ -5,7 +5,7 @@ import imgHappyCouple from "./3ad14ffb65dd2e98b968b5d03edbb1317c95771e.png";
 import imgDoctor from "./a80c7ab28b3375de2899d3aa5a1bf96cfc38fe5f.png";
 import imgDoctorNew from "./WhatsApp Image 2026-05-21 at 11.06.49 AM.jpeg";
 import imgImage from "./c07bed52fb37b7ddaae3cfd4898d9b22b9ad0db7.png";
-import imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1 from "./b6bd2fc974842d66a403aa9f941daba3aa320b37-removebg-preview.png";
+import imgHeroFamily from "./hero-family.png";
 import imgLogoGraphic1 from "./33a9e540ef550c40ed9e368f8cbf4c7140399000.png";
 import imgFertinestLogo3 from "./1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
 import imgPhone from "./ae80eef40c182e316b8185947a4106e808fe0d4c.png";
@@ -3228,13 +3228,13 @@ export default function HomePage() {
 
               {/* Right: hero image — desktop only */}
               <div className="hidden lg:block w-[580px] h-[520px] shrink-0 relative">
-                <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1} />
+                <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgHeroFamily} />
               </div>
             </div>
 
             {/* Hero image — mobile only */}
             <div className="block lg:hidden w-full h-[260px] sm:h-[320px] relative mt-[16px]">
-              <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgGeminiGeneratedImage5Wvf7R5Wvf7R5Wvf1} />
+              <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgHeroFamily} />
             </div>
 
             {/* Telugu banner */}
