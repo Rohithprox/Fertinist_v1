@@ -1717,6 +1717,9 @@ function Container64() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const cards = [
+    { bg: <Background8 />,  title: 'Female Infertility',           desc: 'Evaluation and treatment of ovulation, tubal, and uterine factors affecting conception.' },
+    { bg: <Background9 />,  title: 'Male Infertility',             desc: 'Semen analysis, hormonal evaluation, and targeted care for male-factor infertility.' },
+    { bg: <Background10 />, title: 'Fertility Preservation',       desc: 'Egg, sperm, and embryo freezing to protect your fertility for the future.' },
     { bg: <Background5 />,  title: 'IVF (In Vitro Fertilization)', desc: 'Gold-standard fertilization protocols in our ISO-certified cleanroom labs.' },
     { bg: <Background6 />,  title: 'IUI Treatment',                 desc: 'Minimally invasive intrauterine insemination for couples with specific fertility needs.' },
     { bg: <Background7 />,  title: 'ICSI & Blastocyst',             desc: 'Advanced single-sperm injection and Day-5 embryo culture for superior results.' },
@@ -1760,31 +1763,22 @@ function Container64() {
   );
 }
 
-function ViewMoreServices() {
-  const [hovered, setHovered] = useState(false);
+// "Mother" across the languages spoken around Nellore. lang= drives both screen
+// readers and per-script font selection; the stack below supplies the glyphs.
+const motherWords = [
+  { word: 'అమ్మ',       lang: 'te' },  // Telugu
+  { word: 'माँ',        lang: 'hi' },  // Hindi
+  { word: 'அம்மா',     lang: 'ta' },  // Tamil
+  { word: 'ماں',        lang: 'ur' },  // Urdu
+  { word: 'ಅಮ್ಮ',       lang: 'kn' },  // Kannada
+  { word: 'അമ്മ',       lang: 'ml' },  // Malayalam
+  { word: 'মা',         lang: 'bn' },  // Bengali
+  { word: 'Mummy',      lang: 'en' },
+];
 
-  return (
-    <div className="flex justify-center mt-[40px]" style={{ zIndex: 20 }}>
-      <button
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          setTimeout(() => window.dispatchEvent(new CustomEvent('open-services-dropdown')), 700);
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="border-2 border-[#a74b99] rounded-full px-[36px] py-[13px] font-['Manrope',sans-serif] font-bold text-[16px] transition-all duration-300"
-        style={{
-          background: hovered ? '#a74b99' : 'transparent',
-          color: hovered ? '#fff' : '#a74b99',
-        }}
-      >
-        View More
-      </button>
-    </div>
-  );
-}
-
-const ammaWords = ['" మా "', '" అమ్మ "', '" మమ్మీ "', '" తల్లి "'];
+const MOTHER_FONTS =
+  "'Anek Telugu','Anek Devanagari','Anek Tamil','Anek Kannada'," +
+  "'Anek Malayalam','Anek Bangla','Noto Naskh Arabic','Anek Latin',sans-serif";
 
 function RotatingWord() {
   const [index, setIndex] = useState(0);
@@ -1794,22 +1788,32 @@ function RotatingWord() {
     const timer = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
-        setIndex(i => (i + 1) % ammaWords.length);
+        setIndex(i => (i + 1) % motherWords.length);
         setVisible(true);
       }, 350);
     }, 2000);
     return () => clearInterval(timer);
   }, []);
 
+  // ponytail: all words share one grid cell, so the box is always as wide as the
+  // widest word and the capsule never jitters when the word swaps.
   return (
-    <span
-      className="leading-[38.961px]"
-      style={{
-        opacity: visible ? 1 : 0,
-        transition: 'opacity 0.35s ease',
-      }}
-    >
-      {ammaWords[index]}
+    <span className="inline-grid justify-items-center align-baseline" style={{ fontFamily: MOTHER_FONTS }}>
+      {motherWords.map(({ word, lang }, i) => (
+        <span
+          key={lang}
+          lang={lang}
+          style={{
+            gridArea: '1 / 1',
+            opacity: i === index && visible ? 1 : 0,
+            transition: 'opacity 0.35s ease',
+            // isolate keeps the RTL Urdu word from reordering the quotes around it
+            unicodeBidi: 'isolate',
+          }}
+        >
+          {'" '}{word}{' "'}
+        </span>
+      ))}
     </span>
   );
 }
@@ -3234,11 +3238,13 @@ export default function HomePage() {
             </div>
 
             {/* Telugu banner */}
-            <div className="mt-[24px] mb-[40px] bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
-              <p className="font-['Anek_Telugu',sans-serif] font-bold m-0 text-[#0383c5] text-[18px] sm:text-[28px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100", lineHeight: '38px', marginTop: '4px' }}>
-                <RotatingWord />
-                <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
-              </p>
+            <div className="mt-[24px] mb-[40px] flex justify-center">
+              <div className="max-w-full bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
+                <p className="font-['Anek_Telugu',sans-serif] font-bold m-0 text-[#0383c5] text-[18px] sm:text-[28px] whitespace-nowrap text-center" style={{ fontVariationSettings: "'wdth' 100", lineHeight: 1.65, marginTop: '4px' }}>
+                  <RotatingWord />
+                  <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -3252,7 +3258,6 @@ export default function HomePage() {
             </div>
           </div>
           <Container64 />
-          <ViewMoreServices />
         </div>
 
         {/* ── Meet Our Doctors ── */}
