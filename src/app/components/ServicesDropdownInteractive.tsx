@@ -147,13 +147,11 @@ interface ServicesDropdownInteractiveProps {
 
 export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdownInteractiveProps) {
   const [activeSection, setActiveSection] = useState<ServiceSection>("fertility-treatments");
-  const [hoveredSection, setHoveredSection] = useState<ServiceSection | null>(null);
   const navigate = useNavigate();
 
   if (!isOpen) return null;
 
-  const displaySection = hoveredSection || activeSection;
-  const content = serviceContent[displaySection];
+  const content = serviceContent[activeSection];
 
   const handleTreatmentClick = (treatment: string) => {
     onClose();
@@ -175,15 +173,14 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
               {/* Left nav — category tabs with icons */}
               <div className="w-[280px] flex flex-col gap-1 pt-1 shrink-0">
                 {navSections.map(({ key, label, icon }) => {
-                  const active = hoveredSection === key || activeSection === key;
+                  const active = activeSection === key;
                   return (
                     <div
                       key={key}
                       className={`cursor-pointer rounded-[10px] px-3 py-2.5 transition-all duration-200 ${
                         active ? "bg-white shadow-sm text-[#ab4a9c]" : "text-[#444] hover:text-[#ab4a9c]"
                       }`}
-                      onMouseEnter={() => setHoveredSection(key)}
-                      onMouseLeave={() => setHoveredSection(null)}
+                      onMouseEnter={() => setActiveSection(key)}
                       onClick={() => setActiveSection(key)}
                     >
                       <div className="flex items-center gap-2.5">
