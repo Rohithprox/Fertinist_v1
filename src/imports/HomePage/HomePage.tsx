@@ -2810,129 +2810,6 @@ function ClinicalSuccessRatesSection() {
   );
 }
 
-function Container129() {
-  return <div className="absolute h-[338px] right-[-80px] top-[-80px] w-[200px]" data-name="Container" />;
-}
-
-function BackgroundTexture() {
-  return (
-    <div className="absolute bottom-0 left-1/2 opacity-10 right-0 top-0" data-name="Background texture">
-      <Container129 />
-    </div>
-  );
-}
-
-function SuccessStory() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative rounded-[9999px] w-full" data-name="Success Story">
-      <div aria-hidden="true" className="absolute border-8 border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
-    </div>
-  );
-}
-
-function Background15() {
-  return (
-    <div className="absolute bg-[#43c5fd] bottom-[-16px] content-stretch flex flex-col items-start px-[16px] py-[8px] right-[-16px] rounded-[9999px]" data-name="Background">
-      <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_0.44px_0_0] rounded-[9999px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]" data-name="Overlay+Shadow" />
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#004f6b] text-[14px] whitespace-nowrap">
-        <p className="leading-[20px]">Ms Sumedha, 2025</p>
-      </div>
-    </div>
-  );
-}
-
-function Container131() {
-  return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 size-[256px]" data-name="Container">
-      <SuccessStory />
-      <Background15 />
-    </div>
-  );
-}
-
-function Container130() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[293.33px]" data-name="Container">
-      <Container131 />
-    </div>
-  );
-}
-
-function Heading28() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal italic justify-center leading-[0] relative shrink-0 text-[30px] text-white w-full">
-        <p className="leading-[36px]">{`"After three years of uncertainty, Fertinest didn't just give us a medical plan; they gave us a home. Every nurse knew our names, and every setback was met with a new bridge of hope."`}</p>
-      </div>
-    </div>
-  );
-}
-
-function Container134() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[20px] text-white w-full">
-        <p className="leading-[28px]">The Thompson Family</p>
-      </div>
-    </div>
-  );
-}
-
-function Container135() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[16px] text-[rgba(248,169,255,0.8)] w-full">
-        <p className="leading-[24px]">Patients since 2021</p>
-      </div>
-    </div>
-  );
-}
-
-function Container133() {
-  return (
-    <div className="content-stretch flex flex-col items-start pb-[16px] pt-[8px] relative shrink-0 w-full" data-name="Container">
-      <Container134 />
-      <Container135 />
-    </div>
-  );
-}
-
-function Button8() {
-  return (
-    <div className="content-stretch flex items-center justify-center px-[34px] py-[14px] relative rounded-[9999px] shrink-0" data-name="Button">
-      <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.3)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[16px] text-center text-white whitespace-nowrap">
-        <p className="leading-[24px]">Read More Stories</p>
-      </div>
-    </div>
-  );
-}
-
-function Container132() {
-  return (
-    <div className="flex flex-col gap-[24px] items-start relative shrink-0 flex-1 min-w-0" data-name="Container">
-      <div className="h-[24px] relative shrink-0 w-[34px]" data-name="Icon">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 34 24">
-          <path d={svgPaths.pd303f00} fill="var(--fill-0, #FFD6FE)" id="Icon" opacity="0.5" />
-        </svg>
-      </div>
-      <Heading28 />
-      <Container133 />
-      <Button8 />
-    </div>
-  );
-}
-
-function SectionSuccessStorySnippet() {
-  return (
-    <div className="w-full flex flex-col lg:flex-row gap-[40px] lg:gap-[48px] items-center overflow-clip p-[32px] sm:p-[56px] lg:p-[80px] rounded-[32px] lg:rounded-[48px]" style={{ backgroundImage: "linear-gradient(135.426deg, rgb(171, 74, 156) 32.762%, rgb(85, 15, 91) 110.34%)" }} data-name="Section - Success Story Snippet">
-      <BackgroundTexture />
-      <Container130 />
-      <Container132 />
-    </div>
-  );
-}
-
 function MeetOurDoctors() {
   const doctors = [
     {
@@ -3219,14 +3096,14 @@ export default function HomePage() {
         <SharedHeader />
 
         {/* ── Hero ── */}
-        <div className="relative w-full overflow-hidden pt-[80px] lg:pt-[130px]">
+        <div className="relative w-full overflow-hidden" style={{ paddingTop: "calc(var(--header-h) + 16px)" }}>
           <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[100px]">
             {/* Badge */}
             <div className="mb-[20px]">
               <Background11 />
             </div>
 
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] lg:gap-[0]">
+            <div className="flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[0]">
               {/* Left: heading + subtitle + CTA */}
               <div className="flex-1 flex flex-col gap-[24px] lg:pr-[40px]">
                 <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#221823] text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.02] m-0 tracking-[-1.5px]" style={{ fontVariationSettings: "'wdth' 100" }}>
@@ -3327,11 +3204,6 @@ export default function HomePage() {
 
         {/* ── Clinical Success Rates ── */}
         <ClinicalSuccessRatesSection />
-
-        {/* ── Success Story ── */}
-        <div className="px-5 sm:px-10 lg:px-[80px] py-[40px] lg:py-[60px]">
-          <SectionSuccessStorySnippet />
-        </div>
 
         {/* ── Testimonials ── */}
         <ClotheslineMarquee />

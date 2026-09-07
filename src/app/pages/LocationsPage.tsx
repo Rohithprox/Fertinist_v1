@@ -113,7 +113,7 @@ export function LocationsPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative w-full pt-[70px] lg:pt-[130px]" style={{ background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
+      <div className="relative w-full" style={{ paddingTop: "var(--header-h)", background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
         <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px] flex flex-col items-center text-center">
           <div className="inline-flex flex-col items-center gap-[16px] mb-[24px]">
             <span className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[2px] uppercase text-[rgba(255,255,255,0.7)] px-[16px] py-[6px] rounded-full border border-[rgba(255,255,255,0.3)]">

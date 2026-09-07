@@ -339,7 +339,7 @@ export function ToolsPage() {
       <Header />
 
       {/* ── Hero ── */}
-      <div className="relative w-full pt-[70px] lg:pt-[130px] overflow-hidden" style={{ background: "linear-gradient(135deg, #ffeffc 0%, #f5e8ff 55%, #eaf5ff 100%)" }}>
+      <div className="relative w-full overflow-hidden" style={{ paddingTop: "var(--header-h)", background: "linear-gradient(135deg, #ffeffc 0%, #f5e8ff 55%, #eaf5ff 100%)" }}>
 
         {/* Decorative blobs */}
         <div className="absolute top-[-100px] right-[-60px] w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,75,153,0.13) 0%, transparent 68%)" }} />

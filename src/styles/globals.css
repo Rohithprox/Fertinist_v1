@@ -1,3 +1,13 @@
+/* The header is position:fixed, so page content has to be offset by its height.
+   Single source of truth: the header sets its height from this, and every page
+   derives its top padding from it. Mobile is a flat 64px bar; desktop scales
+   with the viewport up to 130px. Hardcoding the offset per page made content
+   drift by up to 38px between 1024px and 1440px wide. */
+:root { --header-h: 64px; }
+@media (min-width: 1024px) {
+  :root { --header-h: clamp(80px, 9.028vw, 130px); }
+}
+
 * {
   box-sizing: border-box;
 }

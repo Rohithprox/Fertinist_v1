@@ -536,7 +536,7 @@ export function ResourcesPage() {
       <Header />
 
       {/* Hero */}
-      <div className="relative w-full pt-[70px] lg:pt-[130px] bg-[#ffeffc]">
+      <div className="relative w-full bg-[#ffeffc]" style={{ paddingTop: "var(--header-h)" }}>
         <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
           <div className="inline-flex flex-col items-stretch gap-[8px] mb-[16px]">
             <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[36px] sm:text-[56px] leading-[1.15] sm:leading-[64px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Fertility Resources</h1>

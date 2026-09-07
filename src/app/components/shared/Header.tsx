@@ -101,7 +101,7 @@ export function Header() {
           top: 0,
           zIndex: 50,
           width: "100%",
-          height: "clamp(80px, 9.028vw, 130px)",
+          height: "var(--header-h)",
         }}
       >
         <div style={{ position: "absolute", background: "white", height: "100%", left: 0, width: "100%", boxShadow: "0px 1px 2px 0px rgba(0,0,0,0.15)" }} />
@@ -137,7 +137,7 @@ export function Header() {
 
       {/* ── Mobile header (< lg): logo + hamburger ── */}
       <div className="lg:hidden fixed left-0 top-0 z-[50] w-full bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.15)]">
-        <div className="flex items-center justify-between px-5 h-[64px]">
+        <div className="flex items-center justify-between px-5" style={{ height: "var(--header-h)" }}>
           <Link to="/" className="h-[38px] block" onClick={() => { setMobileOpen(false); setServicesOpen(false); }}>
             <img alt="Fertinest Logo" src={imgFertinestLogo} className="h-full w-auto object-contain" />
           </Link>

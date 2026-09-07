@@ -63,7 +63,7 @@ export function TreatmentPageTemplate({
       <Header />
 
       {/* ── Hero ── */}
-      <div className="relative w-full pt-[130px] overflow-hidden" style={{ minHeight: "480px" }}>
+      <div className="relative w-full overflow-hidden" style={{ paddingTop: "var(--header-h)", minHeight: "480px" }}>
         {/* Full background image */}
         <img
           src={heroImage}
