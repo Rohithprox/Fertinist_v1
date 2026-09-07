@@ -9,76 +9,64 @@ type ServiceSection =
   | "minimal-access-surgery"
   | "high-risk-maternity";
 
-const serviceContent: Record<ServiceSection, { title: string; items: Array<{ main: string; sub?: string }> }> = {
+const serviceContent: Record<ServiceSection, { title: string; items: Array<{ main: string; slug: string; sub?: string }> }> = {
   "female-infertility": {
     title: "Female Infertility Conditions",
     items: [
-      { main: "PCOS / PCOD" },
-      { main: "Low Ovarian Reserve" },
-      { main: "Tubal Blocks / Post Tubectomy" },
-      { main: "Uterine Fibroids" },
-      { main: "Adenomyosis / Endometriosis" },
-      { main: "Uterine Septum / Uterine Malformations" },
-      { main: "Hormonal Imbalance" },
-      { main: "Recurrent Pregnancy Loss" },
+      { main: "PCOS / PCOD", slug: "pcos-pcod" },
+      { main: "Low Ovarian Reserve", slug: "low-ovarian-reserve" },
+      { main: "Tubal Blocks / Post Tubectomy", slug: "tubal-blocks" },
+      { main: "Uterine Fibroids", slug: "uterine-fibroids" },
+      { main: "Adenomyosis / Endometriosis", slug: "adenomyosis-endometriosis" },
+      { main: "Uterine Septum / Uterine Malformations", slug: "uterine-malformations" },
+      { main: "Hormonal Imbalance", slug: "hormonal-imbalance" },
+      { main: "Recurrent Pregnancy Loss", slug: "recurrent-pregnancy-loss" },
     ],
   },
   "male-infertility": {
     title: "Male Infertility Conditions",
     items: [
-      { main: "Low Sperm Count" },
-      { main: "Sperm Motility Problems" },
-      { main: "Erectile Problems" },
+      { main: "Low Sperm Count", slug: "low-sperm-count" },
+      { main: "Sperm Motility Problems", slug: "sperm-motility" },
+      { main: "Erectile Problems", slug: "erectile-problems" },
     ],
   },
   "fertility-treatments": {
     title: "Fertility Treatments",
     items: [
-      { main: "Ovulation Induction" },
-      { main: "Follicular Scan" },
-      { main: "IUI", sub: "(Intrauterine Insemination)" },
-      { main: "IVF", sub: "/ Test Tube Baby" },
-      { main: "ICSI", sub: "(Intracytoplasmic Sperm Injection)" },
-      { main: "Blastocyst Culture" },
-      { main: "TESA / PESA", sub: "(Surgical sperm retrieval)" },
-      { main: "Genetic Screening", sub: "(PGT)" },
-      { main: "Donor Programs", sub: "(Egg, Sperm, and Embryo)" },
-      { main: "Fertility Preservation", sub: "(Egg / Sperm / Embryo freezing)" },
+      { main: "Ovulation Induction", slug: "ovulation-induction" },
+      { main: "Follicular Scan", slug: "follicular-scan" },
+      { main: "IUI", slug: "iui", sub: "(Intrauterine Insemination)" },
+      { main: "IVF", slug: "ivf", sub: "/ Test Tube Baby" },
+      { main: "ICSI", slug: "icsi", sub: "(Intracytoplasmic Sperm Injection)" },
+      { main: "Blastocyst Culture", slug: "blastocyst-culture" },
+      { main: "TESA / PESA", slug: "pesa-tesa", sub: "(Surgical sperm retrieval)" },
+      { main: "Genetic Screening", slug: "pgt", sub: "(PGT)" },
+      { main: "Donor Programs", slug: "donor-programs", sub: "(Egg, Sperm, and Embryo)" },
+      { main: "Fertility Preservation", slug: "egg-freezing", sub: "(Egg / Sperm / Embryo freezing)" },
     ],
   },
   "minimal-access-surgery": {
     title: "Minimal Access Surgery",
     items: [
-      { main: "Hysteroscopic Surgeries", sub: "(Uterine examination and treatment)" },
-      { main: "Laparoscopic Surgery", sub: "(Minimally invasive abdominal surgery)" },
-      { main: "Laparoscopic Myomectomy", sub: "(Fibroid removal)" },
-      { main: "Ovarian Cyst Removal" },
-      { main: "Diagnostic Laparoscopy", sub: "(Investigation of pelvic conditions)" },
-      { main: "Adhesiolysis", sub: "(Removal of scar tissue)" },
+      { main: "Hysteroscopic Surgeries", slug: "hysteroscopic-surgeries", sub: "(Uterine examination and treatment)" },
+      { main: "Laparoscopic Surgery", slug: "laparoscopic-surgery", sub: "(Minimally invasive abdominal surgery)" },
+      { main: "Laparoscopic Myomectomy", slug: "laparoscopic-myomectomy", sub: "(Fibroid removal)" },
+      { main: "Ovarian Cyst Removal", slug: "ovarian-cyst-removal" },
+      { main: "Diagnostic Laparoscopy", slug: "diagnostic-laparoscopy", sub: "(Investigation of pelvic conditions)" },
+      { main: "Adhesiolysis", slug: "adhesiolysis", sub: "(Removal of scar tissue)" },
     ],
   },
   "high-risk-maternity": {
     title: "High Risk Maternity Care",
     items: [
-      { main: "High-Risk Pregnancy Care" },
-      { main: "Antenatal Fetal Monitoring", sub: "(Scanning and baby's health tracking)" },
-      { main: "Labour Analgesia", sub: "(Painless labor options)" },
-      { main: "Normal Delivery" },
-      { main: "Cesarean Delivery (C-Section)" },
+      { main: "High-Risk Pregnancy Care", slug: "high-risk-pregnancy" },
+      { main: "Antenatal Fetal Monitoring", slug: "antenatal-monitoring", sub: "(Scanning and baby's health tracking)" },
+      { main: "Labour Analgesia", slug: "labour-analgesia", sub: "(Painless labor options)" },
+      { main: "Normal Delivery", slug: "normal-delivery" },
+      { main: "Cesarean Delivery (C-Section)", slug: "cesarean-delivery" },
     ],
   },
-};
-
-// Item name -> treatment page. Single source of truth: an item is clickable
-// exactly when it has a route here.
-const TREATMENT_ROUTES: Record<string, string> = {
-  "IVF": "/treatments/ivf",
-  "IUI": "/treatments/iui",
-  "ICSI": "/treatments/icsi",
-  "TESA / PESA": "/treatments/pesa-tesa",
-  "Genetic Screening": "/treatments/pgt",
-  "Donor Programs": "/treatments/donor-programs",
-  "Fertility Preservation": "/treatments/egg-freezing",
 };
 
 const navSections: Array<{ key: ServiceSection; label: string; icon: React.ReactNode }> = [
@@ -153,10 +141,9 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
 
   const content = serviceContent[activeSection];
 
-  const handleTreatmentClick = (treatment: string) => {
+  const handleTreatmentClick = (slug: string) => {
     onClose();
-    const route = TREATMENT_ROUTES[treatment];
-    if (route) navigate(route);
+    navigate(`/treatments/${slug}`);
   };
 
   return (
@@ -210,14 +197,14 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
                 </p>
                 <ul className="space-y-3">
                   {content.items.map((item, index) => {
-                    const isClickable = item.main in TREATMENT_ROUTES;
+                    const isClickable = true;  // every item now has a page
                     return (
                       <li
                         key={index}
                         className={`flex items-start gap-2.5 text-[15px] leading-[24px] group ${
                           isClickable ? "cursor-pointer" : ""
                         }`}
-                        onClick={isClickable ? () => handleTreatmentClick(item.main) : undefined}
+                        onClick={() => handleTreatmentClick(item.slug)}
                       >
                         <svg
                           className={`mt-1 shrink-0 transition-colors duration-150 ${isClickable ? "group-hover:stroke-[#650a76]" : ""}`}

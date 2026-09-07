@@ -28,8 +28,8 @@ interface TreatmentPageProps {
   whatIsDescription: string[];
   rightForYouTitle: string;
   rightForYouItems: string[];
-  journeyTitle: string;
-  journeySubtitle: string;
+  journeyTitle?: string;
+  journeySubtitle?: string;
   steps?: Step[];
   faqs?: FAQ[];
   timelineTitle: string;

@@ -1697,17 +1697,17 @@ export default function FertilityTreatments() {
         <p className="leading-[23.605px]">Also known as Test Tube Baby ,we combine cutting-edge embryology with a deeply human touch to guide you through every step of your journey toward parenthood.</p>
       </div>
       <div className="-translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] left-[100px] text-[#4f434f] text-[0px] top-[2591px] w-[1251px]">
-        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold leading-[25px] mb-0 text-[#943687] text-[36px] whitespace-pre-wrap">IVF Timeline at Fertinest â€“ What to Expect</p>
-        <p className="leading-[25px] mb-0 text-[36px] whitespace-pre-wrap">â€‹</p>
+        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold leading-[25px] mb-0 text-[#943687] text-[36px] whitespace-pre-wrap">IVF Timeline at Fertinest – What to Expect</p>
+        <p className="leading-[25px] mb-0 text-[36px] whitespace-pre-wrap"></p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">For many working couples, understanding the time involved in IVF is important. At Fertinest, we follow a structured and patient-friendly approach designed to fit into your routine. While every journey is unique, a typical IVF cycle usually takes about 4 to 6 weeks.</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">â€‹</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Preparation Phase (Weeks 1â€“2)</p>
+        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap"></p>
+        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Preparation Phase (Weeks 1–2)</p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Your journey begins with planning and preparation. This includes blood tests, ultrasound scans, and sometimes medications to regulate your cycle and prepare your body for treatment.</p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">
           <br aria-hidden="true" />
           Time Commitment: 1 to 2 clinic visits
         </p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Stimulation Phase (Weeks 3â€“4)</p>
+        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Stimulation Phase (Weeks 3–4)</p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Starting on Day 2 or 3 of your period, this phase involves daily hormone injections for around 10 to 12 days to stimulate egg growth. Your progress is monitored through regular scans.</p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">
           <br aria-hidden="true" />
@@ -1715,7 +1715,7 @@ export default function FertilityTreatments() {
         </p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Procedure Phase (Week 4)</p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Once the eggs are ready, they are collected through a short, minimally invasive procedure that usually takes about 20 minutes. The eggs are then fertilized in the lab and allowed to develop for 3 to 5 days.</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">â€‹</p>
+        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap"></p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Transfer Phase (Week 5 or Later)</p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">In this stage, the embryo is placed into the uterus.</p>
         <ul className="list-disc mb-0">
@@ -1726,7 +1726,7 @@ export default function FertilityTreatments() {
             <span className="leading-[25px] text-[20px]">Frozen Transfer (Recommended): Embryos are frozen and transferred in the next menstrual cycle, allowing the body to recover and often improving success rates</span>
           </li>
         </ul>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">â€‹</p>
+        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap"></p>
         <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Overall Timeline</p>
         <ul className="list-disc mb-0">
           <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
@@ -1750,11 +1750,11 @@ export default function FertilityTreatments() {
         </div>
       </div>
       <div className="-translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal h-[350px] justify-center leading-[0] left-[92px] text-[#414753] text-[24.464px] top-[911px] w-[1286px] whitespace-pre-wrap">
-        <p className="leading-[31.804px] mb-0">â€‹</p>
+        <p className="leading-[31.804px] mb-0"></p>
         <p className="font-['Manrope',sans-serif] font-bold leading-[31.804px] mb-0">{`What is IVF? `}</p>
-        <p className="leading-[31.804px] mb-0">â€‹</p>
+        <p className="leading-[31.804px] mb-0"></p>
         <p className="leading-[31.804px] mb-0">In-Vitro Fertilization (IVF) is the process where an egg is fertilized by sperm outside the body, in a specialized laboratory environment. It is the most effective form of assisted reproductive technology (ART) available today.</p>
-        <p className="leading-[31.804px] mb-0">â€‹</p>
+        <p className="leading-[31.804px] mb-0"></p>
         <p className="leading-[31.804px]">At Fertinest, we go beyond the standard procedure by utilizing AI-driven embryo selection and time-lapse monitoring to maximize the potential ofevery cycle. Our laboratory is designed to mimic the natural environment of the womb as closely as possible.</p>
       </div>
       <BackgroundBorder />

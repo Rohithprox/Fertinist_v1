@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../imports/HomePage/HomePage";
-import { IVFPage } from "./pages/IVFPage";
+// rich Figma IVF page (imagery + step diagrams + FAQ); brings its own Header/Footer
+import IVFPage from "../imports/FertilityTreatments-4/FertilityTreatments";
 import { IUIPage } from "./pages/IUIPage";
 import { ICSIPage } from "./pages/ICSIPage";
 import { EggFreezingPage } from "./pages/EggFreezingPage";
@@ -11,6 +12,7 @@ import { DonorProgramsPage } from "./pages/DonorProgramsPage";
 import { LocationsPage } from "./pages/LocationsPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
 import { ToolsPage } from "./pages/ToolsPage";
+import { ServicePage } from "./pages/ServicePage";
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/tools" element={<ToolsPage />} />
           <Route path="/about" element={<AboutUsPage />} />
+          {/* data-driven pages for every other dropdown service */}
+          <Route path="/treatments/:slug" element={<ServicePage />} />
         </Routes>
       </div>
     </BrowserRouter>

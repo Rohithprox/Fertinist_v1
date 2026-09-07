@@ -1,5 +1,5 @@
 import { TreatmentPageTemplate } from "../components/TreatmentPageTemplate";
-import imgHero from "../../imports/FertilityTreatments-4/62c7b9e907f92d9cee0468ccfe33cef4450180bb.png";
+import imgHero from "../assets/heroes/pgt.webp";
 
 export function PGTPage() {
   return (
