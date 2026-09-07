@@ -3,61 +3,107 @@ import { useNavigate } from "react-router-dom";
 import imgLogoGraphic3 from "../../imports/Group7/33a9e540ef550c40ed9e368f8cbf4c7140399000.png";
 
 type ServiceSection =
+  | "female-infertility"
+  | "male-infertility"
   | "fertility-treatments"
-  | "infertility-conditions"
-  | "maternity-surgical-care"
-  | "minimal-access-surgeries";
+  | "minimal-access-surgery"
+  | "high-risk-maternity";
 
 const serviceContent: Record<ServiceSection, { title: string; items: Array<{ main: string; sub?: string }> }> = {
+  "female-infertility": {
+    title: "Female Infertility Conditions",
+    items: [
+      { main: "PCOS / PCOD" },
+      { main: "Low Ovarian Reserve" },
+      { main: "Tubal Blocks / Post Tubectomy" },
+      { main: "Uterine Fibroids" },
+      { main: "Adenomyosis / Endometriosis" },
+      { main: "Uterine Septum / Uterine Malformations" },
+      { main: "Hormonal Imbalance" },
+      { main: "Recurrent Pregnancy Loss" },
+    ],
+  },
+  "male-infertility": {
+    title: "Male Infertility Conditions",
+    items: [
+      { main: "Low Sperm Count" },
+      { main: "Sperm Motility Problems" },
+      { main: "Erectile Problems" },
+    ],
+  },
   "fertility-treatments": {
     title: "Fertility Treatments",
     items: [
-      { main: "IVF", sub: "/ Test Tube Baby" },
+      { main: "Ovulation Induction" },
+      { main: "Follicular Scan" },
       { main: "IUI", sub: "(Intrauterine Insemination)" },
+      { main: "IVF", sub: "/ Test Tube Baby" },
       { main: "ICSI", sub: "(Intracytoplasmic Sperm Injection)" },
+      { main: "Blastocyst Culture" },
+      { main: "TESA / PESA", sub: "(Surgical sperm retrieval)" },
+      { main: "Genetic Screening", sub: "(PGT)" },
       { main: "Donor Programs", sub: "(Egg, Sperm, and Embryo)" },
-      { main: "Egg / Sperm / Embryo Freezing", sub: "(Cryopreservation)" },
-      { main: "Male Infertility Treatment" },
-      { main: "Surgical Sperm Retrieval", sub: "(TESA, PESA, mTESE)" },
-      { main: "Tubal Recanalization", sub: "(Reversing a tubectomy)" },
-      { main: "Laparotomy, Laparoscopy & Hysteroscopy", sub: "(Surgical fertility enhancement)" },
+      { main: "Fertility Preservation", sub: "(Egg / Sperm / Embryo freezing)" },
     ],
   },
-  "infertility-conditions": {
-    title: "Infertility Conditions",
+  "minimal-access-surgery": {
+    title: "Minimal Access Surgery",
     items: [
-      { main: "Uterus & Ovarian Management", sub: "(PCOS, PCOD, Endometriosis)" },
-      { main: "Recurrent Pregnancy Loss Care", sub: "(Special care for recurrent abortions)" },
-      { main: "High-Risk Pregnancy Care" },
-      { main: "Preconceptional Counseling" },
-      { main: "Couple & Fertility Counseling" },
-      { main: "Cancer Screening", sub: "(Preventative reproductive health)" },
-    ],
-  },
-  "maternity-surgical-care": {
-    title: "Maternity & Surgical Care",
-    items: [
-      { main: "Normal Delivery" },
-      { main: "Cesarean Delivery (C-Section)" },
-      { main: "Labour Analgesia", sub: "(Painless labor options)" },
-      { main: "Antenatal Fetal Monitoring", sub: "(Scanning and baby's health tracking)" },
-      { main: "Tubectomy", sub: "(Permanent family planning)" },
-    ],
-  },
-  "minimal-access-surgeries": {
-    title: "Minimal Access Surgeries",
-    items: [
+      { main: "Hysteroscopic Surgeries", sub: "(Uterine examination and treatment)" },
       { main: "Laparoscopic Surgery", sub: "(Minimally invasive abdominal surgery)" },
-      { main: "Hysteroscopy", sub: "(Uterine examination and treatment)" },
       { main: "Laparoscopic Myomectomy", sub: "(Fibroid removal)" },
       { main: "Ovarian Cyst Removal" },
       { main: "Diagnostic Laparoscopy", sub: "(Investigation of pelvic conditions)" },
       { main: "Adhesiolysis", sub: "(Removal of scar tissue)" },
     ],
   },
+  "high-risk-maternity": {
+    title: "High Risk Maternity Care",
+    items: [
+      { main: "High-Risk Pregnancy Care" },
+      { main: "Antenatal Fetal Monitoring", sub: "(Scanning and baby's health tracking)" },
+      { main: "Labour Analgesia", sub: "(Painless labor options)" },
+      { main: "Normal Delivery" },
+      { main: "Cesarean Delivery (C-Section)" },
+    ],
+  },
+};
+
+// Item name -> treatment page. Single source of truth: an item is clickable
+// exactly when it has a route here.
+const TREATMENT_ROUTES: Record<string, string> = {
+  "IVF": "/treatments/ivf",
+  "IUI": "/treatments/iui",
+  "ICSI": "/treatments/icsi",
+  "TESA / PESA": "/treatments/pesa-tesa",
+  "Genetic Screening": "/treatments/pgt",
+  "Donor Programs": "/treatments/donor-programs",
+  "Fertility Preservation": "/treatments/egg-freezing",
 };
 
 const navSections: Array<{ key: ServiceSection; label: string; icon: React.ReactNode }> = [
+  {
+    key: "female-infertility",
+    label: "Female Infertility Conditions",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="5"/>
+        <line x1="12" y1="13" x2="12" y2="21"/>
+        <line x1="9" y1="18" x2="15" y2="18"/>
+      </svg>
+    ),
+  },
+  {
+    key: "male-infertility",
+    label: "Male Infertility Conditions",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="10" cy="14" r="6"/>
+        <line x1="14.5" y1="9.5" x2="21" y2="3"/>
+        <polyline points="15 3 21 3 21 9"/>
+      </svg>
+    ),
+  },
   {
     key: "fertility-treatments",
     label: "Fertility Treatments",
@@ -71,29 +117,8 @@ const navSections: Array<{ key: ServiceSection; label: string; icon: React.React
     ),
   },
   {
-    key: "infertility-conditions",
-    label: "Infertility Conditions",
-    icon: (
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-    ),
-  },
-  {
-    key: "maternity-surgical-care",
-    label: "Maternity & Surgical Care",
-    icon: (
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
-    ),
-  },
-  {
-    key: "minimal-access-surgeries",
-    label: "Minimal Access Surgeries",
+    key: "minimal-access-surgery",
+    label: "Minimal Access Surgery",
     icon: (
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="6" cy="6" r="3"/>
@@ -101,6 +126,15 @@ const navSections: Array<{ key: ServiceSection; label: string; icon: React.React
         <line x1="20" y1="4" x2="8.12" y2="15.88"/>
         <line x1="14.47" y1="14.48" x2="20" y2="20"/>
         <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+      </svg>
+    ),
+  },
+  {
+    key: "high-risk-maternity",
+    label: "High Risk Maternity Care",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78a5.5 5.5 0 0 0 0-7.78z"/>
       </svg>
     ),
   },
@@ -123,15 +157,7 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
 
   const handleTreatmentClick = (treatment: string) => {
     onClose();
-    const routes: Record<string, string> = {
-      "IVF": "/treatments/ivf",
-      "IUI": "/treatments/iui",
-      "ICSI": "/treatments/icsi",
-      "Egg / Sperm / Embryo Freezing": "/treatments/egg-freezing",
-      "Donor Programs": "/treatments/donor-programs",
-      "Surgical Sperm Retrieval": "/treatments/pesa-tesa",
-    };
-    const route = routes[treatment];
+    const route = TREATMENT_ROUTES[treatment];
     if (route) navigate(route);
   };
 
@@ -187,9 +213,7 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
                 </p>
                 <ul className="space-y-3">
                   {content.items.map((item, index) => {
-                    const isClickable =
-                      displaySection === "fertility-treatments" &&
-                      ["IVF", "IUI", "ICSI", "Egg / Sperm / Embryo Freezing", "Donor Programs", "Surgical Sperm Retrieval"].includes(item.main);
+                    const isClickable = item.main in TREATMENT_ROUTES;
                     return (
                       <li
                         key={index}
