@@ -4,9 +4,9 @@ import imgCompassionateCare from "./18240dddcbf6c4f7795ef985ee035eeefcb55433.png
 import imgHappyCouple from "./3ad14ffb65dd2e98b968b5d03edbb1317c95771e.png";
 import imgDoctor from "./a80c7ab28b3375de2899d3aa5a1bf96cfc38fe5f.png";
 import imgDoctorNew from "./WhatsApp Image 2026-05-21 at 11.06.49 AM.jpeg";
+import imgDoctorUdayani from "./doctor-udayani.jpg";
 import imgImage from "./c07bed52fb37b7ddaae3cfd4898d9b22b9ad0db7.png";
 import imgHeroFamily from "./hero-family.png";
-import imgLogoGraphic1 from "./33a9e540ef550c40ed9e368f8cbf4c7140399000.png";
 import imgFertinestLogo3 from "./1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
 import imgPhone from "./ae80eef40c182e316b8185947a4106e808fe0d4c.png";
 import imgAndhraMap1 from "./871a85b22d099e97ef48f7330af28ddb5b4a95bc.png";
@@ -2936,20 +2936,34 @@ function SectionSuccessStorySnippet() {
 function MeetOurDoctors() {
   const doctors = [
     {
-      name: "Dr. Mithilasri Gunapati",
+      name: "Dr. Mithila Sri Gunapati",
       title: "Senior Fertility Specialist & IVF Expert",
-      qualifications: "MBBS, MS (OBG), Fellowship in Reproductive Medicine",
+      qualifications: [
+        "MBBS, M.S (OBG)",
+        "Fellowship in Reproductive Medicine FRM (ICOG)",
+        "Diploma in Reproductive Medicine DRM (Germany)",
+        "Diploma in Minimal Access Surgery D.MAS",
+      ],
       specialties: ["IVF / ICSI", "Recurrent Pregnancy Loss", "Endometriosis", "PCOS Management"],
       accent: "#a74b99",
       photo: imgDoctorNew,
+      // this photo is uncropped, so it needs zooming to fill the circle
+      photoFit: { transform: "scale(1.5)", transformOrigin: "50% 18%" },
     },
     {
-      name: "Dr. Srinivas Reddy",
-      title: "Reproductive Endocrinologist & Andrologist",
-      qualifications: "MBBS, MS (OBG), Dip. in Assisted Reproductive Technology",
-      specialties: ["Male Infertility", "PESA / TESA", "Donor Programs", "Advanced ART"],
+      name: "Dr. M. Udayani",
+      title: "Fertility Specialist & Minimal Access Surgeon",
+      qualifications: [
+        "MBBS, DNB (OBG)",
+        "Fellowship in Infertility (ICOG), Chennai",
+        "Fellowship in Minimal Access Surgery (FMAS)",
+        "Diploma in Cosmetic Gynecology",
+      ],
+      specialties: ["Infertility", "Minimal Access Surgery", "Cosmetic Gynecology", "Obstetrics & Gynaecology"],
       accent: "#0288c2",
-      photo: null,
+      photo: imgDoctorUdayani,
+      // pre-cropped square headshot, so object-cover alone frames it
+      photoFit: {},
     },
   ];
 
@@ -2982,7 +2996,7 @@ function MeetOurDoctors() {
               style={{ border: `3px solid ${doc.accent}30`, background: `linear-gradient(135deg, ${doc.accent}18, ${doc.accent}35)` }}
             >
               {doc.photo ? (
-                <img src={doc.photo} alt={doc.name} className="w-full h-full object-cover" style={{ transform: "scale(1.5)", transformOrigin: "50% 18%" }} />
+                <img src={doc.photo} alt={doc.name} className="w-full h-full object-cover" style={doc.photoFit} />
               ) : (
                 <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
                   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke={doc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -2996,7 +3010,11 @@ function MeetOurDoctors() {
               <h3 className="font-['Manrope',sans-serif] font-bold text-[#221823] text-[24px] m-0">{doc.name}</h3>
               <div className="h-[2px] w-[48px] rounded-full" style={{ background: doc.accent }} />
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-[24px] m-0" style={{ color: doc.accent }}>{doc.title}</p>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] text-[#4f434f] leading-[22px] m-0">{doc.qualifications}</p>
+              <div className="flex flex-col gap-[2px]">
+                {doc.qualifications.map((q) => (
+                  <p key={q} className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] text-[#4f434f] leading-[22px] m-0">{q}</p>
+                ))}
+              </div>
             </div>
 
             {/* Specialties */}
@@ -3202,11 +3220,6 @@ export default function HomePage() {
 
         {/* ── Hero ── */}
         <div className="relative w-full overflow-hidden pt-[80px] lg:pt-[130px]">
-          {/* Logo watermark — desktop only */}
-          <div className="absolute h-[338px] right-[80px] top-[80px] w-[200px] pointer-events-none hidden lg:block" style={{ opacity: 0.17 }}>
-            <img alt="" className="max-w-none object-cover size-full" src={imgLogoGraphic1} />
-          </div>
-
           <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[100px]">
             {/* Badge */}
             <div className="mb-[20px]">
