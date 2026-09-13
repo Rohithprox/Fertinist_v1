@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import imgLogoGraphic3 from "../../imports/Group7/33a9e540ef550c40ed9e368f8cbf4c7140399000.png";
 
 type ServiceSection =
   | "female-infertility"
@@ -230,11 +229,6 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
                     );
                   })}
                 </ul>
-              </div>
-
-              {/* Decorative logo */}
-              <div className="absolute right-12 top-8 opacity-[0.04] pointer-events-none">
-                <img src={imgLogoGraphic3} alt="" className="w-[140px] h-auto" />
               </div>
             </div>
           </div>
