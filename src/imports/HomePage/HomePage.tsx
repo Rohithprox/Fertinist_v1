@@ -1803,13 +1803,13 @@ function RotatingWord() {
 
 function Background11() {
   return (
-    <div className="bg-[#43c5fd] inline-flex gap-[10px] lg:gap-[16.405px] min-h-[41.426px] max-w-full items-center pl-[16px] pr-[16px] lg:pl-[22.195px] lg:pr-[22.44px] py-[8px] lg:py-[5.79px] rounded-[9649.216px]" data-name="Background">
-      <div className="h-[24.055px] relative shrink-0 w-[25.986px]" data-name="Icon">
+    <div className="bg-[#43c5fd] inline-flex gap-[8px] lg:gap-[13px] min-h-[34px] max-w-full items-center pl-[14px] pr-[14px] lg:pl-[18px] lg:pr-[18px] py-[6px] lg:py-[5px] rounded-[9649.216px]" data-name="Background">
+      <div className="h-[19.5px] relative shrink-0 w-[21px]" data-name="Icon">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 27.9855 26.0555">
           <path d={svgPaths.p164ee00} fill="var(--fill-0, #004F6B)" id="Icon" />
         </svg>
       </div>
-      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center relative min-w-0 text-[12.5px] sm:text-[15px] lg:text-[17.3px] lg:whitespace-nowrap">
+      <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center relative min-w-0 text-[11.5px] sm:text-[13px] lg:text-[14px] lg:whitespace-nowrap">
         <p
           className="leading-[1.35]"
           style={{
@@ -3116,7 +3116,7 @@ export default function HomePage() {
         </div>
 
         {/* ── Services ── */}
-        <div className="relative z-[1] bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full mt-[-48px] pt-[40px] pb-[56px] lg:pt-[56px] lg:pb-[80px]">
+        <div className="relative z-[1] bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full mt-[-24px] pt-[48px] pb-[56px] lg:pt-[64px] lg:pb-[80px]">
           {/* Telugu banner */}
           <div className="px-5 sm:px-10 lg:px-[100px] mb-[40px] lg:mb-[56px] flex justify-center">
             <div className="max-w-full bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
