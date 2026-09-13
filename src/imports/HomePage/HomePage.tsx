@@ -3103,20 +3103,20 @@ export default function HomePage() {
                 className="hidden lg:block shrink-0 relative self-end"
                 style={{ width: "clamp(340px, 38vw, 580px)", aspectRatio: "1160 / 849" }}
               >
-                <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} />
+                <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)', maskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)' }} />
               </div>
             </div>
 
             {/* Hero image — mobile only */}
             <div className="block lg:hidden w-full relative mt-[16px]" style={{ aspectRatio: "1160 / 849" }}>
-              <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} />
+              <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)', maskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)' }} />
             </div>
 
           </div>
         </div>
 
         {/* ── Services ── */}
-        <div className="relative z-[1] bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full mt-[-24px] pt-[48px] pb-[56px] lg:pt-[64px] lg:pb-[80px]">
+        <div className="relative z-[1] bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full pt-[48px] pb-[56px] lg:pt-[64px] lg:pb-[80px]">
           {/* Telugu banner */}
           <div className="px-5 sm:px-10 lg:px-[100px] mb-[40px] lg:mb-[56px] flex justify-center">
             <div className="max-w-full bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
