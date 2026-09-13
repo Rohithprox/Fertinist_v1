@@ -78,9 +78,6 @@ function Frame({ onServicesClick }: { onServicesClick: () => void }) {
       <Link to="/resources" style={linkStyle}>
         <p style={{ lineHeight: "20px", margin: 0 }}>Resources</p>
       </Link>
-      <Link to="/tools" style={linkStyle}>
-        <p style={{ lineHeight: "20px", margin: 0 }}>Tools</p>
-      </Link>
     </div>
   );
 }
@@ -121,15 +118,15 @@ export function Header() {
           {/* Nav links */}
           <Frame onServicesClick={() => setServicesOpen((o) => !o)} />
 
-          {/* Phone icon + number */}
-          <div style={{ position: "absolute", left: "76.736%", top: "clamp(24px, 3.125vw, 45px)", height: "clamp(32px, 3.472vw, 50px)", display: "flex", alignItems: "center", gap: "clamp(4px, 0.556vw, 8px)" }}>
+          {/* Phone icon + CONTACT (tel: link) */}
+          <a href="tel:+919182039911" style={{ position: "absolute", left: "76.736%", top: "clamp(24px, 3.125vw, 45px)", height: "clamp(32px, 3.472vw, 50px)", display: "flex", alignItems: "center", gap: "clamp(4px, 0.556vw, 8px)", textDecoration: "none" }}>
             <svg style={{ width: "clamp(14px, 1.667vw, 24px)", height: "clamp(14px, 1.667vw, 24px)", flexShrink: 0, display: "block" }} viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.19h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 8.09 8.09l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
             <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, color: "white", fontSize: "clamp(10px, 1.25vw, 18px)", letterSpacing: "-0.35px", whiteSpace: "nowrap" }}>
-              9182039911
+              CONTACT
             </span>
-          </div>
+          </a>
         </div>
 
         <ServicesDropdownInteractive isOpen={servicesOpen} onClose={() => setServicesOpen(false)} />
@@ -163,7 +160,6 @@ export function Header() {
               { to: "/locations", label: "Locations" },
               { to: "/about", label: "About Us" },
               { to: "/resources", label: "Resources" },
-              { to: "/tools", label: "Tools" },
             ].map(({ to, label }) => (
               <Link
                 key={to}

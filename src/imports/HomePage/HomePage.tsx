@@ -1763,22 +1763,8 @@ function Container64() {
   );
 }
 
-// "Mother" across the languages spoken around Nellore. lang= drives both screen
-// readers and per-script font selection; the stack below supplies the glyphs.
-const motherWords = [
-  { word: 'అమ్మ',       lang: 'te' },  // Telugu
-  { word: 'माँ',        lang: 'hi' },  // Hindi
-  { word: 'அம்மா',     lang: 'ta' },  // Tamil
-  { word: 'ماں',        lang: 'ur' },  // Urdu
-  { word: 'ಅಮ್ಮ',       lang: 'kn' },  // Kannada
-  { word: 'അമ്മ',       lang: 'ml' },  // Malayalam
-  { word: 'মা',         lang: 'bn' },  // Bengali
-  { word: 'Mummy',      lang: 'en' },
-];
-
-const MOTHER_FONTS =
-  "'Anek Telugu','Anek Devanagari','Anek Tamil','Anek Kannada'," +
-  "'Anek Malayalam','Anek Bangla','Noto Naskh Arabic','Anek Latin',sans-serif";
+// The four Telugu words for "mother" - the clinic's original set.
+const motherWords = ['మా', 'అమ్మ', 'మమ్మీ', 'తల్లి'];
 
 function RotatingWord() {
   const [index, setIndex] = useState(0);
@@ -1798,17 +1784,14 @@ function RotatingWord() {
   // ponytail: all words share one grid cell, so the box is always as wide as the
   // widest word and the capsule never jitters when the word swaps.
   return (
-    <span className="inline-grid justify-items-center align-baseline" style={{ fontFamily: MOTHER_FONTS }}>
-      {motherWords.map(({ word, lang }, i) => (
+    <span className="inline-grid justify-items-center align-baseline" lang="te">
+      {motherWords.map((word, i) => (
         <span
-          key={lang}
-          lang={lang}
+          key={word}
           style={{
             gridArea: '1 / 1',
             opacity: i === index && visible ? 1 : 0,
             transition: 'opacity 0.35s ease',
-            // isolate keeps the RTL Urdu word from reordering the quotes around it
-            unicodeBidi: 'isolate',
           }}
         >
           {'" '}{word}{' "'}
@@ -1845,8 +1828,7 @@ function Background11() {
 
 function Button4() {
   return (
-    <div className="relative bg-[#a74b99] inline-flex flex-col items-center justify-center px-[30.881px] py-[15.44px] rounded-[48px] self-start cursor-pointer" data-name="Button">
-      <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.61px_-0.02px_0] rounded-[23.16px] shadow-[0px_9.65px_14.475px_-2.895px_rgba(0,0,0,0.1),0px_3.86px_5.79px_-3.86px_rgba(0,0,0,0.1)]" data-name="Button:shadow" />
+    <div className="relative bg-[#a74b99] inline-flex flex-col items-center justify-center px-[30.881px] py-[15.44px] rounded-[48px] self-start cursor-pointer shadow-[0px_9.65px_14.475px_-2.895px_rgba(0,0,0,0.1),0px_3.86px_5.79px_-3.86px_rgba(0,0,0,0.1)]" data-name="Button">
       <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[17.37px] text-center text-white whitespace-nowrap">
         <p className="leading-[27.021px]">Start Your Journey</p>
       </div>
@@ -3111,7 +3093,7 @@ export default function HomePage() {
                   with <span className="text-[#ab4a9c]">Science</span> and <span className="text-[#ab4a9c]">Soul</span>.
                 </h1>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[#4f434f] text-[16px] sm:text-[17px] leading-[28px] m-0 max-w-[480px]">
-                  Experienced Fertility Specialists, 95% Success Rate, and State-of-the-art ART Labs in the heart of Nellore. Your journey to parenthood begins with empathy.
+                  Experienced Fertility Specialists, Highest Success Rate, and State-of-the-art ART Labs in the heart of Nellore & Ananthapur. Your journey to parenthood begins with empathy.
                 </p>
                 <Button4 />
               </div>
@@ -3130,20 +3112,21 @@ export default function HomePage() {
               <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} />
             </div>
 
-            {/* Telugu banner */}
-            <div className="mt-[24px] mb-[40px] flex justify-center">
-              <div className="max-w-full bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
-                <p className="font-['Anek_Telugu',sans-serif] font-bold m-0 text-[#0383c5] text-[18px] sm:text-[28px] whitespace-nowrap text-center" style={{ fontVariationSettings: "'wdth' 100", lineHeight: 1.65, marginTop: '4px' }}>
-                  <RotatingWord />
-                  <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 
         {/* ── Services ── */}
-        <div className="bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full pt-[56px] pb-[56px] lg:pt-[80px] lg:pb-[80px]">
+        <div className="relative z-[1] bg-[#ffeffc] rounded-tl-[60px] rounded-tr-[60px] lg:rounded-tl-[98px] lg:rounded-tr-[98px] w-full mt-[-48px] pt-[40px] pb-[56px] lg:pt-[56px] lg:pb-[80px]">
+          {/* Telugu banner */}
+          <div className="px-5 sm:px-10 lg:px-[100px] mb-[40px] lg:mb-[56px] flex justify-center">
+            <div className="max-w-full bg-white rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-[20px] sm:px-[30px] py-[14px] overflow-x-auto">
+              <p className="font-['Anek_Telugu',sans-serif] font-bold m-0 text-[#0383c5] text-[18px] sm:text-[28px] whitespace-nowrap text-center" style={{ fontVariationSettings: "'wdth' 100", lineHeight: 1.65, marginTop: '4px' }}>
+                <RotatingWord />
+                <span style={{ color: '#004f6b', marginLeft: '10px' }}>అనే పిలుపు కోసం కలలు కంటున్న వారి కోసం</span>
+              </p>
+            </div>
+          </div>
+
           <div className="flex justify-center mb-[40px] lg:mb-[56px]">
             <div className="inline-flex flex-col items-stretch gap-[8px]">
               <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[36px] sm:text-[48px] leading-[56px] m-0" style={{ fontVariationSettings: "'wdth' 100" }}>Our Services</h2>
