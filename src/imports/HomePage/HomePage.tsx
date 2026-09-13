@@ -3,7 +3,7 @@ import svgPaths from "./svg-vjjq4l2gti";
 import imgCompassionateCare from "./18240dddcbf6c4f7795ef985ee035eeefcb55433.png";
 import imgHappyCouple from "./3ad14ffb65dd2e98b968b5d03edbb1317c95771e.png";
 import imgDoctor from "./a80c7ab28b3375de2899d3aa5a1bf96cfc38fe5f.png";
-import imgDoctorNew from "./WhatsApp Image 2026-05-21 at 11.06.49 AM.jpeg";
+import imgDoctorMithila from "./doctor-mithila.jpg";
 import imgDoctorUdayani from "./doctor-udayani.jpg";
 import imgImage from "./c07bed52fb37b7ddaae3cfd4898d9b22b9ad0db7.png";
 import imgHeroFamily from "./hero-family.png";
@@ -2805,9 +2805,9 @@ function MeetOurDoctors() {
       ],
       specialties: ["IVF / ICSI", "Recurrent Pregnancy Loss", "Endometriosis", "PCOS Management"],
       accent: "#a74b99",
-      photo: imgDoctorNew,
-      // this photo is uncropped, so it needs zooming to fill the circle
-      photoFit: { transform: "scale(1.5)", transformOrigin: "50% 18%" },
+      photo: imgDoctorMithila,
+      // pre-cropped headshot, head sized to match Dr. Udayani
+      photoFit: {},
     },
     {
       name: "Dr. M. Udayani",
