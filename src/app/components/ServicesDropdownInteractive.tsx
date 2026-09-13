@@ -151,9 +151,9 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
       <div className="fixed inset-0 z-[60]" onClick={onClose} />
 
       {/* Dropdown panel */}
-      <div className="absolute left-0 right-0 top-full z-[70] flex justify-center">
-        <div className="w-full max-w-[1440px]">
-          <div className="relative bg-[#ffeffc] shadow-[0px_6px_12px_-3px_rgba(0,0,0,0.06)]">
+      <div className="absolute left-0 right-0 top-full z-[70] bg-[#ffeffc] shadow-[0px_6px_12px_-3px_rgba(0,0,0,0.06)]">
+        <div className="w-full max-w-[1440px] mx-auto">
+          <div className="relative">
             <div className="relative flex items-start justify-center min-h-[360px] px-12 py-8">
 
               {/* Left nav — category tabs with icons */}
