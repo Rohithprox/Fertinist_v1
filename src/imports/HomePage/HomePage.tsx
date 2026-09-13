@@ -3096,7 +3096,7 @@ export default function HomePage() {
         <SharedHeader />
 
         {/* ── Hero ── */}
-        <div className="relative w-full overflow-hidden" style={{ paddingTop: "calc(var(--header-h) + 16px)" }}>
+        <div className="relative w-full overflow-hidden" style={{ paddingTop: "calc(var(--header-h) + 40px)" }}>
           <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[100px]">
             {/* Badge */}
             <div className="mb-[20px]">
@@ -3105,8 +3105,8 @@ export default function HomePage() {
 
             <div className="flex flex-col lg:flex-row items-start gap-[32px] lg:gap-[0]">
               {/* Left: heading + subtitle + CTA */}
-              <div className="flex-1 flex flex-col gap-[24px] lg:pr-[40px]">
-                <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#221823] text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.02] m-0 tracking-[-1.5px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+              <div className="flex-1 min-w-0 flex flex-col gap-[24px] lg:pr-[40px]">
+                <h1 className="font-['Anek_Latin',sans-serif] font-semibold text-[#221823] leading-[1.02] m-0 tracking-[-1.5px]" style={{ fontVariationSettings: "'wdth' 100", fontSize: "clamp(36px, 3.6vw, 64px)" }}>
                   Building Families<br />
                   with <span className="text-[#ab4a9c]">Science</span> and <span className="text-[#ab4a9c]">Soul</span>.
                 </h1>
@@ -3117,14 +3117,17 @@ export default function HomePage() {
               </div>
 
               {/* Right: hero image — desktop only */}
-              <div className="hidden lg:block w-[580px] h-[520px] shrink-0 relative">
-                <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgHeroFamily} />
+              <div
+                className="hidden lg:block shrink-0 relative self-end"
+                style={{ width: "clamp(340px, 38vw, 580px)", aspectRatio: "1160 / 849" }}
+              >
+                <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} />
               </div>
             </div>
 
             {/* Hero image — mobile only */}
-            <div className="block lg:hidden w-full h-[260px] sm:h-[320px] relative mt-[16px]">
-              <img alt="" className="absolute inset-0 max-w-none object-contain object-bottom w-full h-full pointer-events-none" src={imgHeroFamily} />
+            <div className="block lg:hidden w-full relative mt-[16px]" style={{ aspectRatio: "1160 / 849" }}>
+              <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} />
             </div>
 
             {/* Telugu banner */}
