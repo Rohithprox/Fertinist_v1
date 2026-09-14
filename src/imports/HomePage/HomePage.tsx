@@ -2975,7 +2975,7 @@ function ClotheslineMarquee() {
       )}
 
       {/* ── Clothesline section ── */}
-      <div style={{ position:"relative", width:"100%", height:"420px", overflow:"hidden" }}>
+      <div style={{ position:"relative", width:"100%", height:"420px", overflow:"hidden", marginBottom:"56px" }}>
         <style>{`
           ${swingKF}
           @keyframes cl-scroll {
@@ -2996,15 +2996,15 @@ function ClotheslineMarquee() {
         `}</style>
 
         {/* Background */}
-        <div style={{ position:"absolute", inset:0, background:"linear-gradient(180deg,#ede8ee 0%,#e2d8e4 100%)" }} />
+        <div style={{ position:"absolute", inset:0, background:"#ede8ee" }} />
 
         {/* Catenary rope */}
         <svg
-          style={{ position:"absolute", left:"-20px", top:"80px", zIndex:2, overflow:"visible", pointerEvents:"none" }}
-          width="1480" height="22" viewBox="0 0 1480 22"
+          style={{ position:"absolute", left:0, right:0, width:"100%", top:"80px", zIndex:2, overflow:"visible", pointerEvents:"none" }}
+          height="22" viewBox="0 0 1480 22" preserveAspectRatio="none"
         >
-          <path d="M 0 6 Q 740 18 1480 6" stroke="rgba(0,0,0,0.12)" strokeWidth="5" fill="none" strokeLinecap="round" transform="translate(0,3)" />
-          <path d="M 0 6 Q 740 18 1480 6" stroke="#3a2030" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.82" />
+          <path d="M 0 6 Q 740 18 1480 6" stroke="rgba(0,0,0,0.12)" strokeWidth="5" fill="none" strokeLinecap="round" vectorEffect="non-scaling-stroke" transform="translate(0,3)" />
+          <path d="M 0 6 Q 740 18 1480 6" stroke="#3a2030" strokeWidth="2.5" fill="none" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.82" />
         </svg>
 
         {/* Scrolling track — never pauses */}
