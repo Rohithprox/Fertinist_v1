@@ -3192,6 +3192,17 @@ export default function HomePage() {
         <ClinicalSuccessRatesSection />
 
         {/* ── Testimonials ── */}
+        <div className="flex flex-col items-center gap-[8px] pt-[60px] lg:pt-[80px] pb-[40px] lg:pb-[56px]">
+          <div className="inline-flex flex-col items-center gap-[8px]">
+            <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[32px] sm:text-[48px] leading-[1.2] sm:leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>
+              Success Stories
+            </h2>
+            <div className="h-[2px] w-full rounded-full bg-[#650a76]" />
+          </div>
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] text-[#4f434f] leading-[28px] m-0 text-center mt-[8px] px-5">
+            Real families, real journeys. Tap any photo to read their story.
+          </p>
+        </div>
         <ClotheslineMarquee />
 
       </div>
