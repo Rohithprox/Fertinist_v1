@@ -161,7 +161,7 @@ export function LocationsPage() {
               "Mon – Sat: 9:00 AM – 6:00 PM",
               "Sunday: Closed"
             ]}
-            mapsUrl="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw"
+            mapsUrl="https://maps.app.goo.gl/G3ubEjwvEb3APesAA"
           />
         </div>
       </div>

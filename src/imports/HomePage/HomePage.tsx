@@ -2995,9 +2995,6 @@ function ClotheslineMarquee() {
           }
         `}</style>
 
-        {/* Background */}
-        <div style={{ position:"absolute", inset:0, background:"#ede8ee" }} />
-
         {/* Catenary rope */}
         <svg
           style={{ position:"absolute", left:0, right:0, width:"100%", top:"80px", zIndex:2, overflow:"visible", pointerEvents:"none" }}
@@ -3163,7 +3160,7 @@ export default function HomePage() {
                 </div>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
               </a>
-              <a href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw" target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
+              <a href="https://maps.app.goo.gl/G3ubEjwvEb3APesAA" target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
                 <div className="flex items-center gap-[12px] mb-[10px]">
                   <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0"><path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/></svg>
                   <p className="font-['Anek_Latin',sans-serif] font-semibold text-[22px] sm:text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Ananthapur</p>
