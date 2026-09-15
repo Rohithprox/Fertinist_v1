@@ -3097,7 +3097,7 @@ export default function HomePage() {
 
               {/* Right: hero image — desktop only */}
               <div
-                className="hidden lg:block shrink-0 relative self-end"
+                className="hidden lg:block shrink-0 relative mt-[-64px]"
                 style={{ width: "clamp(340px, 38vw, 580px)", aspectRatio: "1160 / 849" }}
               >
                 <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)', maskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)' }} />
