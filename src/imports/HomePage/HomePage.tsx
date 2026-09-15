@@ -2172,7 +2172,7 @@ function BackgroundBorderShadow2() {
       <div className="content-stretch flex flex-col items-start max-w-[inherit] overflow-clip p-px relative rounded-[inherit] size-full">
         <Container77 />
       </div>
-      <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[32px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]" />
+      <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[32px] shadow-[0px_2px_10px_-4px_rgba(0,0,0,0.08)]" />
     </div>
   );
 }
