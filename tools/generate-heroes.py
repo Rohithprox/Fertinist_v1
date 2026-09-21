@@ -1,5 +1,8 @@
 """Generate distinct on-brand hero backgrounds, one per service slug.
 
+SUPERSEDED: the client supplied real hero artwork for 30 of the 31 services.
+Re-running this will overwrite them. Only erectile-problems still uses generated art.
+
 Deterministic from the slug, so re-running produces identical files.
 Art sits on the right; the left stays pale because the template renders the
 heading and body copy there in dark purple over this image.
