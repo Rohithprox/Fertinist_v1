@@ -78,6 +78,9 @@ function Frame({ onServicesClick }: { onServicesClick: () => void }) {
       <Link to="/resources" style={linkStyle}>
         <p style={{ lineHeight: "20px", margin: 0 }}>Resources</p>
       </Link>
+      <Link to="/tools" style={linkStyle}>
+        <p style={{ lineHeight: "20px", margin: 0 }}>Tools</p>
+      </Link>
     </div>
   );
 }
@@ -160,6 +163,7 @@ export function Header() {
               { to: "/locations", label: "Locations" },
               { to: "/about", label: "About Us" },
               { to: "/resources", label: "Resources" },
+              { to: "/tools", label: "Tools" },
             ].map(({ to, label }) => (
               <Link
                 key={to}
