@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-type ServiceSection =
+export type ServiceSection =
   | "female-infertility"
   | "male-infertility"
   | "fertility-treatments"
   | "minimal-access-surgery"
   | "high-risk-maternity";
 
-const serviceContent: Record<ServiceSection, { title: string; items: Array<{ main: string; slug: string; sub?: string }> }> = {
+export const serviceContent: Record<ServiceSection, { title: string; items: Array<{ main: string; slug: string; sub?: string }> }> = {
   "female-infertility": {
     title: "Female Infertility Conditions",
     items: [
@@ -130,10 +130,16 @@ const navSections: Array<{ key: ServiceSection; label: string; icon: React.React
 interface ServicesDropdownInteractiveProps {
   isOpen: boolean;
   onClose: () => void;
+  /** section to show when opened from elsewhere, e.g. a footer category */
+  requestedSection?: ServiceSection | null;
 }
 
-export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdownInteractiveProps) {
+export function ServicesDropdownInteractive({ isOpen, onClose, requestedSection }: ServicesDropdownInteractiveProps) {
   const [activeSection, setActiveSection] = useState<ServiceSection>("fertility-treatments");
+
+  useEffect(() => {
+    if (requestedSection) setActiveSection(requestedSection);
+  }, [requestedSection]);
   const navigate = useNavigate();
 
   if (!isOpen) return null;
@@ -151,13 +157,13 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
       <div className="fixed inset-0 z-[60]" onClick={onClose} />
 
       {/* Dropdown panel */}
-      <div className="absolute left-0 right-0 top-full z-[70] bg-[#ffeffc] shadow-[0px_6px_12px_-3px_rgba(0,0,0,0.06)]">
+      <div className="absolute left-0 right-0 top-full z-[70] bg-[#ffeffc] shadow-[0px_6px_12px_-3px_rgba(0,0,0,0.06)] max-h-[70vh] overflow-y-auto lg:max-h-none lg:overflow-visible">
         <div className="w-full max-w-[1440px] mx-auto">
           <div className="relative">
-            <div className="relative flex items-start justify-center min-h-[360px] px-12 py-8">
+            <div className="relative flex flex-col lg:flex-row items-stretch lg:items-start justify-start lg:justify-center min-h-0 lg:min-h-[360px] px-4 sm:px-8 lg:px-12 py-5 lg:py-8">
 
               {/* Left nav — category tabs with icons */}
-              <div className="w-[280px] flex flex-col gap-1 pt-1 shrink-0">
+              <div className="w-full lg:w-[280px] flex flex-col gap-1 pt-1 shrink-0">
                 {navSections.map(({ key, label, icon }) => {
                   const active = activeSection === key;
                   return (
@@ -190,7 +196,7 @@ export function ServicesDropdownInteractive({ isOpen, onClose }: ServicesDropdow
               </div>
 
               {/* Right content — service items */}
-              <div className="flex-1 bg-white rounded-[16px] shadow-[0px_2px_6px_rgba(0,0,0,0.06)] p-7 ml-6 max-w-[680px]">
+              <div className="flex-1 w-full bg-white rounded-[16px] shadow-[0px_2px_6px_rgba(0,0,0,0.06)] p-5 lg:p-7 mt-4 lg:mt-0 ml-0 lg:ml-6 lg:max-w-[680px]">
                 <p className="font-['Manrope',sans-serif] font-bold text-[13px] tracking-[0.6px] uppercase text-[#0287C6] mb-4">
                   {content.title}
                 </p>

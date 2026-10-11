@@ -1,3 +1,9 @@
+/* The mobile tab bar is position:fixed, so page content needs clearance
+   above it. Desktop has no bar, so the reserve collapses to zero. */
+:root { --bottom-nav-h: calc(70px + env(safe-area-inset-bottom, 0px)); }
+@media (min-width: 1024px) { :root { --bottom-nav-h: 0px; } }
+body { padding-bottom: var(--bottom-nav-h); }
+
 /* The header is position:fixed, so page content has to be offset by its height.
    Single source of truth: the header sets its height from this, and every page
    derives its top padding from it. Mobile is a flat 64px bar; desktop scales

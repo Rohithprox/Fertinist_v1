@@ -401,14 +401,14 @@ export function ToolsPage() {
       <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[64px]">
         <SectionHeader title="Interactive Tools" subtitle="Select a tool below to get started — all calculations are private and happen in your browser." />
 
-        <div className="flex gap-[32px]">
+        <div className="flex flex-col lg:flex-row gap-[20px] lg:gap-[32px]">
           {/* Tool Picker */}
-          <div className="flex flex-col gap-[12px] w-[320px] shrink-0">
+          <div className="flex flex-col gap-[12px] w-full lg:w-[320px] shrink-0">
             {tools.map(tool => (
               <button
                 key={tool.id}
                 onClick={() => setActiveTool(tool.id)}
-                className="flex items-center gap-[16px] p-[20px] rounded-[16px] border-2 text-left cursor-pointer transition-all duration-200"
+                className="flex items-center gap-[16px] p-[16px] sm:p-[20px] rounded-[16px] border-2 text-left cursor-pointer transition-all duration-200 w-full min-w-0"
                 style={{
                   background: activeTool === tool.id ? "rgba(167,75,153,0.07)" : "white",
                   borderColor: activeTool === tool.id ? "#a74b99" : "rgba(167,75,153,0.12)",
@@ -427,7 +427,7 @@ export function ToolsPage() {
           </div>
 
           {/* Active Calculator */}
-          <div className="flex-1 bg-white rounded-[24px] p-[40px]" style={{ boxShadow: "0 4px 32px rgba(167,75,153,0.10)", border: "1px solid rgba(167,75,153,0.12)" }}>
+          <div className="flex-1 min-w-0 w-full bg-white rounded-[24px] p-[20px] sm:p-[28px] lg:p-[40px]" style={{ boxShadow: "0 4px 32px rgba(167,75,153,0.10)", border: "1px solid rgba(167,75,153,0.12)" }}>
             {active && (
               <>
                 <div className="flex items-center gap-[14px] mb-[28px]">

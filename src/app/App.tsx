@@ -13,6 +13,7 @@ import { LocationsPage } from "./pages/LocationsPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
 import { ToolsPage } from "./pages/ToolsPage";
 import { ServicePage } from "./pages/ServicePage";
+import { MobileBottomNav } from "./components/shared/MobileBottomNav";
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           {/* data-driven pages for every other dropdown service */}
           <Route path="/treatments/:slug" element={<ServicePage />} />
         </Routes>
+        <MobileBottomNav />
       </div>
     </BrowserRouter>
   );

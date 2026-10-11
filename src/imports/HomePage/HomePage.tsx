@@ -3189,7 +3189,7 @@ export default function HomePage() {
         <ClinicalSuccessRatesSection />
 
         {/* ── Testimonials ── */}
-        <div className="flex flex-col items-center gap-[8px] pt-[60px] lg:pt-[80px] pb-[40px] lg:pb-[56px]">
+        <div id="success-stories" className="flex flex-col items-center gap-[8px] pt-[60px] lg:pt-[80px] pb-[40px] lg:pb-[56px]">
           <div className="inline-flex flex-col items-center gap-[8px]">
             <h2 className="font-['Anek_Latin',sans-serif] font-semibold text-[#a74b99] text-[32px] sm:text-[48px] leading-[1.2] sm:leading-[56px] m-0 text-center" style={{ fontVariationSettings: "'wdth' 100" }}>
               Success Stories

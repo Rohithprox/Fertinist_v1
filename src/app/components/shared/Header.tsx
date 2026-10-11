@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ServicesDropdownInteractive } from "../ServicesDropdownInteractive";
 import imgFertinestLogo from "../../../imports/HomePage/1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
@@ -87,6 +87,20 @@ function Frame({ onServicesClick }: { onServicesClick: () => void }) {
 
 export function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
+
+  // the mobile tab bar and the footer categories ask the header to open its
+  // dropdown; the footer also names which section to show
+  const [requestedSection, setRequestedSection] = useState<string | null>(null);
+  useEffect(() => {
+    const open = (e: Event) => {
+      const section = (e as CustomEvent).detail?.section ?? null;
+      setRequestedSection(section);
+      setServicesOpen(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    window.addEventListener("open-services-dropdown", open);
+    return () => window.removeEventListener("open-services-dropdown", open);
+  }, []);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -132,7 +146,7 @@ export function Header() {
           </a>
         </div>
 
-        <ServicesDropdownInteractive isOpen={servicesOpen} onClose={() => setServicesOpen(false)} />
+        <ServicesDropdownInteractive isOpen={servicesOpen} onClose={() => setServicesOpen(false)} requestedSection={requestedSection as never} />
       </div>
 
       {/* ── Mobile header (< lg): logo + hamburger ── */}
@@ -185,7 +199,7 @@ export function Header() {
           </div>
         )}
 
-        <ServicesDropdownInteractive isOpen={servicesOpen} onClose={() => setServicesOpen(false)} />
+        <ServicesDropdownInteractive isOpen={servicesOpen} onClose={() => setServicesOpen(false)} requestedSection={requestedSection as never} />
       </div>
     </>
   );
