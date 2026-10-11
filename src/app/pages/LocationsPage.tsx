@@ -1,4 +1,6 @@
 import { Header } from "../components/shared/Header";
+import { mapsHref, NELLORE_MAPS, ANANTAPUR_MAPS } from "../lib/mapsLink";
+import imgAndhraMap from "../../imports/HomePage/871a85b22d099e97ef48f7330af28ddb5b4a95bc.png";
 import { Footer as SharedFooter } from "../components/shared/Footer";
 
 function LocationCard({
@@ -113,8 +115,15 @@ export function LocationsPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative w-full" style={{ paddingTop: "var(--header-h)", background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px] flex flex-col items-center text-center">
+      <div className="relative w-full overflow-hidden" style={{ paddingTop: "var(--header-h)", background: "linear-gradient(135deg, #a74b99 0%, #650a76 100%)" }}>
+        <img
+          src={imgAndhraMap}
+          alt=""
+          aria-hidden="true"
+          className="absolute right-[-40px] sm:right-[20px] lg:right-[80px] top-1/2 -translate-y-1/2 h-[75%] w-auto max-w-none pointer-events-none select-none"
+          style={{ opacity: 0.16 }}
+        />
+        <div className="relative max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[80px] py-[80px] flex flex-col items-center text-center">
           <div className="inline-flex flex-col items-center gap-[16px] mb-[24px]">
             <span className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[2px] uppercase text-[rgba(255,255,255,0.7)] px-[16px] py-[6px] rounded-full border border-[rgba(255,255,255,0.3)]">
               Andhra Pradesh · India
@@ -143,25 +152,25 @@ export function LocationsPage() {
           <LocationCard
             name="Nellore"
             badge="Flagship Clinic"
-            address="Mythri Fertinest, MG Road, Nellore, Andhra Pradesh – 524 001"
+            address="3rd Floor, PMR Arcade, Mini Bypass Road, above Unlimited Showroom, Gomati Nagar, Nellore, Andhra Pradesh 524003"
             phone="+91 91820 39911"
+            email="mythrifertinest@gmail.com"
+            hours={[
+              "Open 24 hours",
+              "7 days a week"
+            ]}
+            mapsUrl={mapsHref(NELLORE_MAPS)}
+          />
+          <LocationCard
+            name="Anantapur"
+            address="4th Floor, One Par Centre, opp. Old Balaji Nursing Home, Sangameswar Circle, Sai Nagar, Anantapur, Andhra Pradesh 515001"
+            phone="+91 951555 3093"
             email="mythrifertinest@gmail.com"
             hours={[
               "Mon – Sat: 8:00 AM – 8:00 PM",
               "Sunday: By Appointment Only"
             ]}
-            mapsUrl="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw"
-          />
-          <LocationCard
-            name="Ananthapur"
-            address="Mythri Fertinest, Station Road, Ananthapur, Andhra Pradesh – 515 001"
-            phone="+91 91820 39911"
-            email="mythrifertinest@gmail.com"
-            hours={[
-              "Mon – Sat: 9:00 AM – 6:00 PM",
-              "Sunday: Closed"
-            ]}
-            mapsUrl="https://maps.app.goo.gl/G3ubEjwvEb3APesAA"
+            mapsUrl={mapsHref(ANANTAPUR_MAPS)}
           />
         </div>
       </div>

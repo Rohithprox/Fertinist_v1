@@ -16,6 +16,48 @@ function SectionHeader({ title, subtitle }: { title: string; subtitle?: string }
   );
 }
 
+const MONTHS = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
+const SELECT_CLS =
+  "bg-[#f0dded] rounded-[14px] px-[12px] py-[12px] font-['Plus_Jakarta_Sans',sans-serif] " +
+  "text-[16px] text-[#221823] border-none outline-none cursor-pointer min-w-0";
+
+function DateField({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [y, m, d] = value ? value.split("-") : ["", "", ""];
+  const thisYear = new Date().getFullYear();
+  const years = Array.from({ length: 4 }, (_, i) => String(thisYear - 2 + i));
+
+  const set = (nd: string, nm: string, ny: string) => {
+    if (!nd || !nm || !ny) return onChange("");
+    // clamp the day so 31 February can't be submitted
+    const last = new Date(Number(ny), Number(nm), 0).getDate();
+    const day = Math.min(Number(nd), last);
+    onChange(`${ny}-${nm}-${String(day).padStart(2, "0")}`);
+  };
+
+  return (
+    <div className="grid grid-cols-3 gap-[8px]">
+      <select aria-label="Day" value={d} onChange={(e) => set(e.target.value, m, y)} className={SELECT_CLS}>
+        <option value="">Day</option>
+        {Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, "0")).map((n) => (
+          <option key={n} value={n}>{n}</option>
+        ))}
+      </select>
+      <select aria-label="Month" value={m} onChange={(e) => set(d, e.target.value, y)} className={SELECT_CLS}>
+        <option value="">Month</option>
+        {MONTHS.map((name, i) => (
+          <option key={name} value={String(i + 1).padStart(2, "0")}>{name}</option>
+        ))}
+      </select>
+      <select aria-label="Year" value={y} onChange={(e) => set(d, m, e.target.value)} className={SELECT_CLS}>
+        <option value="">Year</option>
+        {years.map((n) => <option key={n} value={n}>{n}</option>)}
+      </select>
+    </div>
+  );
+}
+
 function OvulationCalculator() {
   const [lastPeriod, setLastPeriod] = useState("");
   const [cycleLength, setCycleLength] = useState("28");
@@ -40,12 +82,7 @@ function OvulationCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
         <div className="flex flex-col gap-[8px]">
           <label className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[0.6px] uppercase text-[#4f434f]">First Day of Last Period</label>
-          <input
-            type="date"
-            value={lastPeriod}
-            onChange={e => setLastPeriod(e.target.value)}
-            className="bg-[#f0dded] rounded-[14px] px-[16px] py-[12px] font-['Plus_Jakarta_Sans',sans-serif] text-[16px] text-[#221823] border-none outline-none"
-          />
+          <DateField value={lastPeriod} onChange={setLastPeriod} />
         </div>
         <div className="flex flex-col gap-[8px]">
           <label className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[0.6px] uppercase text-[#4f434f]">Average Cycle Length (Days)</label>
@@ -243,12 +280,7 @@ function DueDateCalculator() {
     <div className="flex flex-col gap-[24px]">
       <div className="flex flex-col gap-[8px]">
         <label className="font-['Manrope',sans-serif] font-bold text-[12px] tracking-[0.6px] uppercase text-[#4f434f]">First Day of Last Menstrual Period</label>
-        <input
-          type="date"
-          value={lmp}
-          onChange={e => setLmp(e.target.value)}
-          className="bg-[#f0dded] rounded-[14px] px-[16px] py-[12px] font-['Plus_Jakarta_Sans',sans-serif] text-[16px] text-[#221823] border-none outline-none"
-        />
+        <DateField value={lmp} onChange={setLmp} />
         <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] text-[#4f434f] m-0">Uses Naegele's rule: LMP + 280 days</p>
       </div>
       <button

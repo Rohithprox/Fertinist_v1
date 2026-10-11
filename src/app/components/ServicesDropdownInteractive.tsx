@@ -68,7 +68,7 @@ export const serviceContent: Record<ServiceSection, { title: string; items: Arra
   },
 };
 
-const navSections: Array<{ key: ServiceSection; label: string; icon: React.ReactNode }> = [
+export const navSections: Array<{ key: ServiceSection; label: string; icon: React.ReactNode }> = [
   {
     key: "female-infertility",
     label: "Female Infertility Conditions",

@@ -26,7 +26,7 @@ function openServices(section: string) {
 
 const LOCATIONS = [
   { label: "Nellore", to: "/locations" },
-  { label: "Ananthapur", to: "/locations" },
+  { label: "Anantapur", to: "/locations" },
 ];
 
 const RESOURCES = [

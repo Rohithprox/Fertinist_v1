@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { mapsHref, NELLORE_MAPS, ANANTAPUR_MAPS } from "../../app/lib/mapsLink";
 import svgPaths from "./svg-vjjq4l2gti";
 import imgCompassionateCare from "./18240dddcbf6c4f7795ef985ee035eeefcb55433.png";
 import imgHappyCouple from "./3ad14ffb65dd2e98b968b5d03edbb1317c95771e.png";
@@ -2211,7 +2212,7 @@ function Heading20() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
       <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#221823] text-[20px] whitespace-nowrap">
-        <p className="leading-[28px]">ISO-5 Cleanroom Environment</p>
+        <p className="leading-[28px]">ISO Certified Laboratory</p>
       </div>
     </div>
   );
@@ -2271,7 +2272,7 @@ function Heading21() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
       <div className="flex flex-col font-['Manrope',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#221823] text-[20px] whitespace-nowrap">
-        <p className="leading-[28px]">AI-Driven Embryo Selection</p>
+        <p className="leading-[28px]">Comfortable Consultation Suites</p>
       </div>
     </div>
   );
@@ -2281,9 +2282,8 @@ function Container103() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#4f434f] text-[16px] whitespace-nowrap">
-        <p className="leading-[26px] mb-0">Non-invasive predictive algorithms analyze</p>
-        <p className="leading-[26px] mb-0">thousands of data points to identify the embryos</p>
-        <p className="leading-[26px]">with the highest implantation potential.</p>
+        <p className="leading-[26px] mb-0">Private, serene spaces designed for your comfort</p>
+        <p className="leading-[26px]">and confidentiality.</p>
       </div>
     </div>
   );
@@ -2803,7 +2803,18 @@ function MeetOurDoctors() {
         "Diploma in Reproductive Medicine DRM (Germany)",
         "Diploma in Minimal Access Surgery D.MAS",
       ],
-      specialties: ["IVF / ICSI", "Recurrent Pregnancy Loss", "Endometriosis", "PCOS Management"],
+      specialties: [
+        "IVF / ICSI",
+        "Reproductive Medicine",
+        "Recurrent Pregnancy Loss",
+        "Endometriosis",
+        "PCOS Management",
+        "IUI",
+        "Fertility Preservation",
+        "Donor Programs",
+        "Minimal Access Surgery",
+        "Obstetrics & Gynaecology",
+      ],
       accent: "#a74b99",
       photo: imgDoctorMithila,
       // pre-cropped headshot, head sized to match Dr. Udayani
@@ -3075,7 +3086,7 @@ export default function HomePage() {
         <SharedHeader />
 
         {/* ── Hero ── */}
-        <div className="relative w-full overflow-hidden" style={{ paddingTop: "calc(var(--header-h) + 40px)" }}>
+        <div className="relative w-full" style={{ paddingTop: "calc(var(--header-h) + 40px)", paddingBottom: "24px" }}>
           <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-[100px]">
             {/* Badge */}
             <div className="mb-[20px]">
@@ -3090,15 +3101,15 @@ export default function HomePage() {
                   with <span className="text-[#ab4a9c]">Science</span> and <span className="text-[#ab4a9c]">Soul</span>.
                 </h1>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[#4f434f] text-[16px] sm:text-[17px] leading-[28px] m-0 max-w-[480px]">
-                  Experienced Fertility Specialists, Highest Success Rate, and State-of-the-art ART Labs in the heart of Nellore & Ananthapur. Your journey to parenthood begins with empathy.
+                  Experienced Fertility Specialists, Highest Success Rate, and State-of-the-art ART Labs in the heart of Nellore & Anantapur. Your journey to parenthood begins with empathy.
                 </p>
                 <Button4 />
               </div>
 
               {/* Right: hero image — desktop only */}
               <div
-                className="hidden lg:block shrink-0 relative mt-[-64px]"
-                style={{ width: "clamp(340px, 38vw, 580px)", aspectRatio: "1160 / 849" }}
+                className="hidden lg:block shrink-0 relative z-[2] mt-[-64px] mb-[-200px]"
+                style={{ width: "clamp(380px, 42vw, 580px)", aspectRatio: "1160 / 849" }}
               >
                 <img alt="" className="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none" src={imgHeroFamily} style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)', maskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)' }} />
               </div>
@@ -3150,7 +3161,7 @@ export default function HomePage() {
           <div className="relative max-w-[800px] mx-auto px-8 sm:px-12 lg:px-[40px]">
             <p className="font-['Anek_Latin',sans-serif] font-semibold text-[32px] sm:text-[48px] text-white m-0 leading-[1.1] text-center mb-[32px]" style={{ fontVariationSettings: "'wdth' 100" }}>Our Locations</p>
             <div className="flex flex-col sm:flex-row gap-[16px] w-full">
-              <a href="https://maps.app.goo.gl/Q3hTYenGrXYGorCB8?g_st=iw" target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
+              <a href={mapsHref(NELLORE_MAPS)} target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
                 <div className="flex items-center justify-between mb-[10px]">
                   <div className="flex items-center gap-[12px]">
                     <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0"><path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/></svg>
@@ -3160,10 +3171,10 @@ export default function HomePage() {
                 </div>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
               </a>
-              <a href="https://maps.app.goo.gl/G3ubEjwvEb3APesAA" target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
+              <a href={mapsHref(ANANTAPUR_MAPS)} target="_blank" rel="noopener noreferrer" className="flex-1 no-underline" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '28px', padding: '22px 26px', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.3s ease', display: 'block' }} onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,195,244,0.25)'; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; el.style.borderColor = '#ffc3f4'; }} onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.1)'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}>
                 <div className="flex items-center gap-[12px] mb-[10px]">
                   <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="shrink-0"><path d="M10 0C4.477 0 0 4.477 0 10c0 7.5 10 14 10 14s10-6.5 10-14C20 4.477 15.523 0 10 0zm0 13a3 3 0 110-6 3 3 0 010 6z" fill="#ffc3f4"/></svg>
-                  <p className="font-['Anek_Latin',sans-serif] font-semibold text-[22px] sm:text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Ananthapur</p>
+                  <p className="font-['Anek_Latin',sans-serif] font-semibold text-[22px] sm:text-[26px] text-white m-0 leading-none" style={{ fontVariationSettings: "'wdth' 100" }}>Anantapur</p>
                 </div>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] m-0 leading-[1.5]" style={{ color: 'rgba(255,255,255,0.80)' }}>Andhra Pradesh · Open in Google Maps →</p>
               </a>
