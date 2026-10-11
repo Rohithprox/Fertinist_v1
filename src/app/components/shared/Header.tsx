@@ -1,16 +1,9 @@
 import { useEffect, useState } from "react";
+import { BRANCHES } from "../../lib/branches";
 import { Link } from "react-router-dom";
 import { ServicesDropdownInteractive } from "../ServicesDropdownInteractive";
 import { MobileServicesMenu } from "./MobileServicesMenu";
 import imgFertinestLogo from "../../../imports/HomePage/1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
-
-// Both branches, so the Contact button can offer a choice instead of silently
-// dialling one. Nellore's number is the one used across the site; if Anantapur
-// has its own line, change it here and it updates every surface.
-const BRANCHES = [
-  { city: "Nellore", display: "+91 91820 39911", dial: "+919182039911" },
-  { city: "Anantapur", display: "+91 951555 3093", dial: "+919515553093" },
-];
 
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
