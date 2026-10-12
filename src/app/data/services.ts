@@ -145,7 +145,7 @@ export const services: ServiceContent[] = [
         timeCommitment: "1 procedure visit",
       },
       {
-        title: "Route decision",
+        title: "Treatment plan discussion",
         description:
           "Where a short, healthy segment can be rejoined, surgical repair may be offered. Where tubes are extensively damaged, IVF bypasses them entirely and is usually the stronger option.",
         timeCommitment: "1 consultation",
@@ -154,7 +154,7 @@ export const services: ServiceContent[] = [
         title: "Treatment",
         description:
           "Either laparoscopic tubal surgery followed by a period of trying naturally, or an IVF cycle where the tubes are not involved at all.",
-        timeCommitment: "Depends on route chosen",
+        timeCommitment: "Depends on treatment plan",
       },
     ],
     overall: [
