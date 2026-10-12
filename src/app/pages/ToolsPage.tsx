@@ -24,33 +24,37 @@ const SELECT_CLS =
   "text-[16px] text-[#221823] border-none outline-none cursor-pointer min-w-0";
 
 function DateField({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  const [y, m, d] = value ? value.split("-") : ["", "", ""];
+  // The three parts are held here rather than derived from `value`: until all
+  // three are chosen there is no valid date to store, so deriving them meant
+  // each pick was read back from an empty string and immediately lost.
+  const [parts, setParts] = useState({ d: "", m: "", y: "" });
   const thisYear = new Date().getFullYear();
   const years = Array.from({ length: 4 }, (_, i) => String(thisYear - 2 + i));
 
-  const set = (nd: string, nm: string, ny: string) => {
-    if (!nd || !nm || !ny) return onChange("");
+  const update = (next: { d: string; m: string; y: string }) => {
+    setParts(next);
+    if (!next.d || !next.m || !next.y) return onChange("");
     // clamp the day so 31 February can't be submitted
-    const last = new Date(Number(ny), Number(nm), 0).getDate();
-    const day = Math.min(Number(nd), last);
-    onChange(`${ny}-${nm}-${String(day).padStart(2, "0")}`);
+    const last = new Date(Number(next.y), Number(next.m), 0).getDate();
+    const day = Math.min(Number(next.d), last);
+    onChange(`${next.y}-${next.m}-${String(day).padStart(2, "0")}`);
   };
 
   return (
     <div className="grid grid-cols-3 gap-[8px]">
-      <select aria-label="Day" value={d} onChange={(e) => set(e.target.value, m, y)} className={SELECT_CLS}>
+      <select aria-label="Day" value={parts.d} onChange={(e) => update({ ...parts, d: e.target.value })} className={SELECT_CLS}>
         <option value="">Day</option>
         {Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, "0")).map((n) => (
           <option key={n} value={n}>{n}</option>
         ))}
       </select>
-      <select aria-label="Month" value={m} onChange={(e) => set(d, e.target.value, y)} className={SELECT_CLS}>
+      <select aria-label="Month" value={parts.m} onChange={(e) => update({ ...parts, m: e.target.value })} className={SELECT_CLS}>
         <option value="">Month</option>
         {MONTHS.map((name, i) => (
           <option key={name} value={String(i + 1).padStart(2, "0")}>{name}</option>
         ))}
       </select>
-      <select aria-label="Year" value={y} onChange={(e) => set(d, m, e.target.value)} className={SELECT_CLS}>
+      <select aria-label="Year" value={parts.y} onChange={(e) => update({ ...parts, y: e.target.value })} className={SELECT_CLS}>
         <option value="">Year</option>
         {years.map((n) => <option key={n} value={n}>{n}</option>)}
       </select>
