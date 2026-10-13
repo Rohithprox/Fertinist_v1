@@ -1683,7 +1683,7 @@ function Container83() {
 }
 
 const CANVAS_W = 1445;
-const CANVAS_H = 3750;
+const CANVAS_H = 4320;
 
 export default function FertilityTreatments() {
   const [scale, setScale] = useState(1);
@@ -1777,7 +1777,7 @@ export default function FertilityTreatments() {
             experience throughout your IVF journey.
           </p>
         </div>
-      <div className="absolute flex h-[8.344px] items-center justify-center left-[98.38px] top-[4752.83px] w-[78.984px]" style={{ "--transform-inner-width": "1183", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[8.344px] items-center justify-center left-[98.38px] top-[5182.83px] w-[78.984px]" style={{ "--transform-inner-width": "1183", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
           <div className="h-0 relative w-[79.424px]">
             <div className="absolute inset-[-1px_0_0_0]">
@@ -1800,7 +1800,7 @@ export default function FertilityTreatments() {
       <div className="absolute content-stretch flex flex-col h-[575px] items-start left-[75px] overflow-clip right-[85px] top-[1564px]" data-name="Section - Step-by-Step Process Wrapper">
         <SectionStepByStepProcess />
       </div>
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal h-[23.071px] justify-center leading-[0] left-[calc(50%-13.18px)] text-[#001e2c] text-[46.143px] text-center top-[3134.54px] w-[512.377px]">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal h-[23.071px] justify-center leading-[0] left-[calc(50%-13.18px)] text-[#001e2c] text-[46.143px] text-center top-[3564.54px] w-[512.377px]">
         <p className="leading-[23.071px]">Common Questions</p>
       </div>
       <FAQAccordion />
