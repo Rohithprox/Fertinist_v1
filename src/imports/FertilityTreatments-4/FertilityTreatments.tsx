@@ -1,4 +1,5 @@
-﻿import { Link as RouterLink } from "react-router-dom";
+﻿import { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import svgPaths from "./svg-4q2uz0d3e9";
 import imgIvfHero1 from "./62c7b9e907f92d9cee0468ccfe33cef4450180bb.png";
 import imgFertinestLogo2 from "./1aed5dd75bf09891e19f587c012f471fdb93ed82.png";
@@ -1681,11 +1682,34 @@ function Container83() {
   );
 }
 
+const CANVAS_W = 1445;
+const CANVAS_H = 3750;
+
 export default function FertilityTreatments() {
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const fit = () => setScale(Math.min(1, window.innerWidth / CANVAS_W));
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
+
   return (
     <div className="bg-white relative w-full" data-name="Fertility Treatments">
       <Header />
-      <div className="relative mx-auto" style={{ width: "1445px", maxWidth: "100%" }} data-name="IVF canvas">
+      {/* This page is a Figma export: 75 absolutely positioned children on a
+          fixed 1445px canvas with no breakpoints. Rather than rewrite it, the
+          whole canvas is scaled to fit the viewport so nothing is cut off. */}
+      <div style={{ position: "relative", width: "100%", height: CANVAS_H * scale, overflow: "hidden" }}>
+      <div
+        data-name="IVF canvas"
+        style={{
+          position: "absolute", top: 0, left: "50%",
+          width: CANVAS_W, height: CANVAS_H,
+          transform: `translateX(-50%) scale(${scale})`,
+          transformOrigin: "top center",
+        }}
+      >
       <div className="absolute h-[552px] left-0 top-[165px] w-[1445px]" data-name="IVF Hero 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIvfHero1} />
       </div>
@@ -1773,8 +1797,7 @@ export default function FertilityTreatments() {
       <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-semibold h-[24px] justify-center leading-[0] left-[715px] not-italic text-[#414753] text-[20px] text-center top-[1693px] w-[1280px]">
         <p className="leading-[24px]">Five dedicated stages designed for safety, precision, and the highest success potential.</p>
       </div>
-      {/* Spacer gives the canvas its height - absolute children contribute none */}
-      <div style={{ height: "3750px" }} aria-hidden="true" />
+      </div>
       </div>
       <SharedFooter />
     </div>
