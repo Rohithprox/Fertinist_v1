@@ -12,6 +12,7 @@ import { LocationsPage } from "./pages/LocationsPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
 import { ToolsPage } from "./pages/ToolsPage";
 import { ServicePage } from "./pages/ServicePage";
+import { ArticlePage } from "./pages/ArticlePage";
 import { MobileBottomNav } from "./components/shared/MobileBottomNav";
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/treatments/donor-programs" element={<DonorProgramsPage />} />
           <Route path="/locations" element={<LocationsPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/resources/:slug" element={<ArticlePage />} />
           <Route path="/tools" element={<ToolsPage />} />
           <Route path="/about" element={<AboutUsPage />} />
           {/* data-driven pages for every other dropdown service */}

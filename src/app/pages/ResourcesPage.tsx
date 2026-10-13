@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import { articles as writtenArticles, readTime } from "../data/articles";
 import { INSTAGRAM_POSTS, INSTAGRAM_PROFILE } from "../data/instagram";
 
 const CARD_COLORS = ["#a74b99", "#0288c2", "#650a76", "#43b960"];
@@ -32,70 +34,19 @@ const categories: { id: Category; label: string }[] = [
   { id: "lifestyle", label: "Lifestyle & Wellness" },
 ];
 
+// Written articles come from src/app/data/articles.ts. The remaining entries
+// below are placeholders, shown but not clickable until their copy arrives.
 const articles = [
-  {
-    category: "fertility-basics" as Category,
-    tag: "Fertility Basics",
-    tagColor: "#a74b99",
-    readTime: "8 min read",
-    title: "Understanding IVF: A Complete Step-by-Step Guide",
-    excerpt: "In vitro fertilisation demystified — from ovarian stimulation to embryo transfer. What to expect, what questions to ask, and how to prepare your body and mind.",
-    featured: true,
-  },
-  {
-    category: "female-fertility" as Category,
-    tag: "Female Fertility",
-    tagColor: "#0288c2",
-    readTime: "6 min read",
-    title: "Fertility After 35: Everything You Need to Know",
-    excerpt: "Age and fertility have a complex relationship. Learn what actually changes in your 30s, what still works in your favour, and what modern medicine can do.",
-    featured: false,
-  },
-  {
-    category: "male-fertility" as Category,
-    tag: "Male Fertility",
-    tagColor: "#650a76",
-    readTime: "5 min read",
-    title: "Male Fertility: Common Myths Debunked",
-    excerpt: "From laptops to boxers — separating fact from fiction about what actually affects sperm health and what you can genuinely improve.",
-    featured: false,
-  },
-  {
-    category: "female-fertility" as Category,
-    tag: "Female Fertility",
-    tagColor: "#0288c2",
-    readTime: "7 min read",
-    title: "PCOS and Fertility: Your Questions Answered",
-    excerpt: "PCOS is one of the most common causes of female infertility — but it's also one of the most treatable. Here's what the research actually says.",
-    featured: false,
-  },
-  {
-    category: "lifestyle" as Category,
-    tag: "Lifestyle & Wellness",
-    tagColor: "#43b960",
-    readTime: "5 min read",
-    title: "Nutrition and Fertility: What to Eat (and What to Avoid)",
-    excerpt: "A fertility dietitian's evidence-based guide to foods that support conception, hormonal balance, and egg and sperm quality.",
-    featured: false,
-  },
-  {
-    category: "treatments" as Category,
-    tag: "Treatments",
-    tagColor: "#a74b99",
-    readTime: "6 min read",
-    title: "IUI vs IVF: Which Treatment is Right for You?",
-    excerpt: "A clear, no-jargon comparison of two of the most common fertility treatments — costs, success rates, and who each one suits best.",
-    featured: false,
-  },
-  {
-    category: "fertility-basics" as Category,
-    tag: "Fertility Basics",
-    tagColor: "#a74b99",
-    readTime: "4 min read",
-    title: "Understanding Your Ovulation Cycle",
-    excerpt: "Your fertile window is narrower than you might think. Learn how to identify your peak fertility days using signs your body is already giving you.",
-    featured: false,
-  },
+  ...writtenArticles.map((a) => ({
+    category: a.category as Category,
+    tag: a.tag,
+    tagColor: a.tagColor,
+    readTime: readTime(a.body),
+    title: a.title,
+    excerpt: a.excerpt,
+    featured: !!a.featured,
+    slug: a.slug as string | undefined,
+  })),
   {
     category: "lifestyle" as Category,
     tag: "Lifestyle & Wellness",
@@ -270,9 +221,11 @@ function InstagramSection() {
 // ─── Article Card ─────────────────────────────────────────────────────────────
 
 function ArticleCard({ article }: { article: typeof articles[0] }) {
+  const Wrapper = (article.slug ? Link : "div") as React.ElementType;
   return (
-    <div
-      className="bg-white rounded-[20px] p-[28px] flex flex-col gap-[16px] cursor-pointer transition-all duration-300 hover:-translate-y-[4px]"
+    <Wrapper
+      {...(article.slug ? { to: `/resources/${article.slug}` } : {})}
+      className={`bg-white rounded-[20px] p-[28px] flex flex-col gap-[16px] transition-all duration-300 no-underline ${article.slug ? "cursor-pointer hover:-translate-y-[4px]" : "cursor-default"}`}
       style={{ boxShadow: "0 2px 16px rgba(167,75,153,0.08)", border: "1px solid rgba(167,75,153,0.08)" }}
       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(167,75,153,0.15)"; }}
       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(167,75,153,0.08)"; }}
@@ -301,7 +254,7 @@ function ArticleCard({ article }: { article: typeof articles[0] }) {
           <path d="M5 12h14M12 5l7 7-7 7" stroke={article.tagColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-    </div>
+    </Wrapper>
   );
 }
 
