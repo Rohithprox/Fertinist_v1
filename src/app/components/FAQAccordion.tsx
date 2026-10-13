@@ -29,7 +29,7 @@ export function FAQAccordion() {
   };
 
   return (
-    <div className="absolute content-stretch flex flex-col gap-[23.184px] items-start left-[193px] right-[203.71px] top-[3640.48px]" data-name="FAQ Container">
+    <div className="absolute content-stretch flex flex-col gap-[23.184px] items-start left-[193px] right-[203.71px] top-[3210.48px]" data-name="FAQ Container">
       {faqs.map((faq, index) => (
         <div
           key={index}

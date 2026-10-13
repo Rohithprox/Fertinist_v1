@@ -10,7 +10,7 @@ export function IVFPage() {
       whatIsTitle="What is IVF?"
       whatIsDescription={[
         "In-Vitro Fertilization (IVF) is the process where an egg is fertilized by sperm outside the body, in a specialized laboratory environment. It is the most effective form of assisted reproductive technology (ART) available today.",
-        "At Fertinest, we go beyond the standard procedure by utilizing AI-driven embryo selection and time-lapse monitoring to maximize the potential of every cycle. Our laboratory is designed to mimic the natural environment of the womb as closely as possible, giving your embryos the best possible start.",
+        "At Fertinest, every cycle is handled in our own ISO-certified embryology lab, with careful monitoring at each stage and a treatment plan built around your results rather than a fixed protocol. Our laboratory is designed to mimic the natural environment of the womb as closely as possible, giving your embryos the best possible start.",
       ]}
       rightForYouTitle="Is IVF right for you?"
       rightForYouItems={[

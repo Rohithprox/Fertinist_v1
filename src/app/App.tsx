@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../imports/HomePage/HomePage";
-// rich Figma IVF page (imagery + step diagrams + FAQ); brings its own Header/Footer
-import IVFPage from "../imports/FertilityTreatments-4/FertilityTreatments";
+import { IVFPage } from "./pages/IVFPage";
 import { IUIPage } from "./pages/IUIPage";
 import { ICSIPage } from "./pages/ICSIPage";
 import { EggFreezingPage } from "./pages/EggFreezingPage";
