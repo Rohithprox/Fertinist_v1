@@ -1722,48 +1722,61 @@ export default function FertilityTreatments() {
       <div className="-translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] left-[95px] text-[#4f434f] text-[20px] top-[486.5px] w-[379px]">
         <p className="leading-[23.605px]">Also known as Test Tube Baby ,we combine cutting-edge embryology with a deeply human touch to guide you through every step of your journey toward parenthood.</p>
       </div>
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-normal justify-center leading-[0] left-[100px] text-[#4f434f] text-[0px] top-[2591px] w-[1251px]">
-        <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold leading-[25px] mb-0 text-[#943687] text-[36px] whitespace-pre-wrap">IVF Timeline at Fertinest – What to Expect</p>
-        <p className="leading-[25px] mb-0 text-[36px] whitespace-pre-wrap"></p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">For many working couples, understanding the time involved in IVF is important. At Fertinest, we follow a structured and patient-friendly approach designed to fit into your routine. While every journey is unique, a typical IVF cycle usually takes about 4 to 6 weeks.</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap"></p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Preparation Phase (Weeks 1–2)</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Your journey begins with planning and preparation. This includes blood tests, ultrasound scans, and sometimes medications to regulate your cycle and prepare your body for treatment.</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">
-          <br aria-hidden="true" />
-          Time Commitment: 1 to 2 clinic visits
-        </p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Stimulation Phase (Weeks 3–4)</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Starting on Day 2 or 3 of your period, this phase involves daily hormone injections for around 10 to 12 days to stimulate egg growth. Your progress is monitored through regular scans.</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">
-          <br aria-hidden="true" />
-          Time Commitment: 3 to 4 short clinic visits
-        </p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Procedure Phase (Week 4)</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Once the eggs are ready, they are collected through a short, minimally invasive procedure that usually takes about 20 minutes. The eggs are then fertilized in the lab and allowed to develop for 3 to 5 days.</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap"></p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">The Transfer Phase (Week 5 or Later)</p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">In this stage, the embryo is placed into the uterus.</p>
-        <ul className="list-disc mb-0">
-          <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-            <span className="leading-[25px] text-[20px]">Fresh Transfer: Done 3 to 5 days after egg retrieval</span>
-          </li>
-          <li className="ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-            <span className="leading-[25px] text-[20px]">Frozen Transfer (Recommended): Embryos are frozen and transferred in the next menstrual cycle, allowing the body to recover and often improving success rates</span>
-          </li>
-        </ul>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap"></p>
-        <p className="leading-[25px] mb-0 text-[20px] whitespace-pre-wrap">Overall Timeline</p>
-        <ul className="list-disc mb-0">
-          <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-            <span className="leading-[25px] text-[20px]">Fresh IVF Cycle: Approximately 3 to 4 weeks (from Day 1 of period to embryo transfer)</span>
-          </li>
-          <li className="ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-            <span className="leading-[25px] text-[20px]">Frozen IVF Cycle: Approximately 6 to 8 weeks (spread across two menstrual cycles)</span>
-          </li>
-        </ul>
-        <p className="leading-[25px] text-[20px] whitespace-pre-wrap">At Fertinest, every step is carefully guided to ensure a smooth, efficient, and supportive experience throughout your IVF journey.</p>
-      </div>
+              <div className="absolute left-[100px] top-[2460px] w-[1251px]">
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[36px] text-[#943687] m-0 mb-[18px]">
+            IVF Timeline at Fertinest – What to Expect
+          </p>
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] m-0 mb-[32px]">
+            For many working couples, understanding the time involved in IVF is important. At Fertinest,
+            we follow a structured and patient-friendly approach designed to fit into your routine.
+            While every journey is unique, a typical IVF cycle usually takes about 4 to 6 weeks.
+          </p>
+          <div className="mb-[28px]">
+            <p className="font-['Manrope',sans-serif] font-bold text-[21px] text-[#221823] m-0 mb-[6px]">
+              The Preparation Phase <span className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[17px] text-[#943687]">(Weeks 1–2)</span>
+            </p>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] m-0">Your journey begins with planning and preparation. This includes blood tests, ultrasound scans, and sometimes medications to regulate your cycle and prepare your body for treatment.</p>
+            <p className="font-['Manrope',sans-serif] font-bold text-[16px] text-[#943687] m-0 mt-[10px]">Time commitment: <span className="font-['Plus_Jakarta_Sans',sans-serif] font-normal text-[#4f434f]">1 to 2 clinic visits</span></p>
+          </div>
+          <div className="mb-[28px]">
+            <p className="font-['Manrope',sans-serif] font-bold text-[21px] text-[#221823] m-0 mb-[6px]">
+              The Stimulation Phase <span className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[17px] text-[#943687]">(Weeks 3–4)</span>
+            </p>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] m-0">Starting on Day 2 or 3 of your period, this phase involves daily hormone injections for around 10 to 12 days to stimulate egg growth. Your progress is monitored through regular scans.</p>
+            <p className="font-['Manrope',sans-serif] font-bold text-[16px] text-[#943687] m-0 mt-[10px]">Time commitment: <span className="font-['Plus_Jakarta_Sans',sans-serif] font-normal text-[#4f434f]">3 to 4 short clinic visits</span></p>
+          </div>
+          <div className="mb-[28px]">
+            <p className="font-['Manrope',sans-serif] font-bold text-[21px] text-[#221823] m-0 mb-[6px]">
+              The Procedure Phase <span className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[17px] text-[#943687]">(Week 4)</span>
+            </p>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] m-0">Once the eggs are ready, they are collected through a short, minimally invasive procedure that usually takes about 20 minutes. The eggs are then fertilized in the lab and allowed to develop for 3 to 5 days.</p>
+          </div>
+          <div className="mb-[28px]">
+            <p className="font-['Manrope',sans-serif] font-bold text-[21px] text-[#221823] m-0 mb-[6px]">
+              The Transfer Phase <span className="font-['Plus_Jakarta_Sans',sans-serif] font-medium text-[17px] text-[#943687]">(Week 5 or later)</span>
+            </p>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] m-0 mb-[8px]">
+              In this stage, the embryo is placed into the uterus.
+            </p>
+            <ul className="list-disc pl-[24px] m-0">
+              <li className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] mb-[6px]"><span className="font-semibold text-[#221823]">Fresh Transfer:</span> done 3 to 5 days after egg retrieval</li>
+              <li className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] mb-[6px]"><span className="font-semibold text-[#221823]">Frozen Transfer (recommended):</span> embryos are frozen and transferred in the next menstrual cycle, allowing the body to recover and often improving success rates</li>
+            </ul>
+          </div>
+          <div className="rounded-[16px] p-[24px] mb-[20px]" style={{ background: "rgba(167,75,153,0.07)" }}>
+            <p className="font-['Manrope',sans-serif] font-bold text-[18px] text-[#943687] m-0 mb-[10px] tracking-[0.4px] uppercase">
+              Overall timeline
+            </p>
+            <ul className="list-disc pl-[24px] m-0">
+              <li className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] mb-[6px]"><span className="font-semibold text-[#221823]">Fresh IVF cycle:</span> approximately 3 to 4 weeks, from Day 1 of your period to embryo transfer</li>
+              <li className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] mb-[6px]"><span className="font-semibold text-[#221823]">Frozen IVF cycle:</span> approximately 6 to 8 weeks, spread across two menstrual cycles</li>
+            </ul>
+          </div>
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[19px] leading-[31px] text-[#4f434f] m-0">
+            At Fertinest, every step is carefully guided to ensure a smooth, efficient, and supportive
+            experience throughout your IVF journey.
+          </p>
+        </div>
       <div className="absolute flex h-[8.344px] items-center justify-center left-[98.38px] top-[4752.83px] w-[78.984px]" style={{ "--transform-inner-width": "1183", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[6.03deg] skew-x-[0.04deg]">
           <div className="h-0 relative w-[79.424px]">
