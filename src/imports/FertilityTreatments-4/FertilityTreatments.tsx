@@ -1684,6 +1684,8 @@ function Container83() {
 export default function FertilityTreatments() {
   return (
     <div className="bg-white relative w-full" data-name="Fertility Treatments">
+      <Header />
+      <div className="relative mx-auto" style={{ width: "1445px", maxWidth: "100%" }} data-name="IVF canvas">
       <div className="absolute h-[552px] left-0 top-[165px] w-[1445px]" data-name="IVF Hero 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIvfHero1} />
       </div>
@@ -1771,10 +1773,10 @@ export default function FertilityTreatments() {
       <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['Plus_Jakarta_Sans',sans-serif] font-semibold h-[24px] justify-center leading-[0] left-[715px] not-italic text-[#414753] text-[20px] text-center top-[1693px] w-[1280px]">
         <p className="leading-[24px]">Five dedicated stages designed for safety, precision, and the highest success potential.</p>
       </div>
-      <Header />
-      {/* Spacer pushes the footer below all absolutely-positioned content (~3610px deep) */}
+      {/* Spacer gives the canvas its height - absolute children contribute none */}
       <div style={{ height: "3750px" }} aria-hidden="true" />
-      <SharedFooter topOffset={3872} />
+      </div>
+      <SharedFooter />
     </div>
   );
 }
