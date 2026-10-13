@@ -2,6 +2,22 @@ import { useState, useRef } from "react";
 import { INSTAGRAM_POSTS, INSTAGRAM_PROFILE } from "../data/instagram";
 
 const CARD_COLORS = ["#a74b99", "#0288c2", "#650a76", "#43b960"];
+
+// Reel covers, downloaded by tools/fetch-instagram-covers.py. Instagram's CDN
+// urls are signed and expire, so the images are hosted here instead.
+const COVERS = import.meta.glob("../assets/instagram/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+const coverFor = (url: string) => {
+  const code = url.match(/\/(?:reel|p|tv)\/([A-Za-z0-9_-]+)/)?.[1];
+  if (!code) return undefined;
+  const hit = Object.entries(COVERS).find(([path]) => path.endsWith(`/${code}.webp`));
+  return hit?.[1];
+};
+
 import { Header } from "../components/shared/Header";
 import { Footer as SharedFooter } from "../components/shared/Footer";
 
@@ -190,14 +206,25 @@ function InstagramSection() {
                   className="relative w-full rounded-[16px] overflow-hidden"
                   style={{ aspectRatio: "1/1", background: `linear-gradient(135deg, ${CARD_COLORS[i % CARD_COLORS.length]}28 0%, ${CARD_COLORS[i % CARD_COLORS.length]}55 100%)` }}
                 >
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-[54px] h-[54px] rounded-full flex items-center justify-center" style={{ background: `${CARD_COLORS[i % CARD_COLORS.length]}28` }}>
+                  {coverFor(post.url) && (
+                    <img
+                      src={coverFor(post.url)}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <div
+                      className="w-[54px] h-[54px] rounded-full flex items-center justify-center backdrop-blur-[2px]"
+                      style={{ background: coverFor(post.url) ? "rgba(0,0,0,0.42)" : `${CARD_COLORS[i % CARD_COLORS.length]}28` }}
+                    >
                       {post.type === "Reel" ? (
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={CARD_COLORS[i % CARD_COLORS.length]} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={coverFor(post.url) ? "#ffffff" : CARD_COLORS[i % CARD_COLORS.length]} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <polygon points="5 3 19 12 5 21 5 3" />
                         </svg>
                       ) : (
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={CARD_COLORS[i % CARD_COLORS.length]} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={coverFor(post.url) ? "#ffffff" : CARD_COLORS[i % CARD_COLORS.length]} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="3" y="3" width="18" height="18" rx="2" />
                           <circle cx="8.5" cy="8.5" r="1.5" />
                           <polyline points="21 15 16 10 5 21" />
